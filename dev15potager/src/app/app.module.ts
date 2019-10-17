@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { PersoComponent } from './perso/perso.component';
 import { NavbarPersoComponent } from './navbar-perso/navbar-perso.component';
 import { RecherchelistepotagersComponent } from './recherchelistepotagers/recherchelistepotagers.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -21,7 +20,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     
   ],
   providers: [],
