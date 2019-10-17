@@ -12,6 +12,7 @@ import { PersoComponent } from './perso/perso.component';
 import { NavbarPersoComponent } from './navbar-perso/navbar-perso.component';
 import { RecherchelistepotagersComponent } from './recherchelistepotagers/recherchelistepotagers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -30,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
