@@ -1,0 +1,32 @@
+.image {
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    position:absolute;
+	top: 100px;
+    }
+
+.example-card {
+    max-width: 400px;
+}
+    
+.gras {
+    font-weight: bold;
+}
+
+.titre {
+    color : green;
+    font : 150% georgia, palatino, serif;
+    font-weight: bold;
+}
+
+.texteim1{
+    color : white;
+    font : 150% georgia, palatino, serif;
+    font-weight: bold;
+}
+
+.texteim2 {
+    color : white;
+    font :  100% georgia, palatino, serif;
+}

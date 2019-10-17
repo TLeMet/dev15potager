@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 // Pour utiliser des liens http :
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +20,9 @@ import { ModaldetailpotagerComponent } from './modaldetailpotager/modaldetailpot
 import { MydialogjoComponent } from './mydialogjo/mydialogjo.component';
 import { MyexempledialogComponent } from './myexempledialog/myexempledialog.component';
 import { MymodeljoComponent } from './mymodeljo/mymodeljo.component';
+import {MatCardModule} from '@angular/material/card';
+
+
 
 @NgModule({
   declarations: [
@@ -37,13 +41,16 @@ import { MymodeljoComponent } from './mymodeljo/mymodeljo.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
     FormsModule,
     HttpClientModule,
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
