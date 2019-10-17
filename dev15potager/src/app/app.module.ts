@@ -18,16 +18,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     PersoComponent,
     NavbarPersoComponent,
-    RecherchelistepotagersComponent
+    RecherchelistepotagersComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RecherchelistepotagersComponent,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule
   ],

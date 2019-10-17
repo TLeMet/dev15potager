@@ -1,33 +1,30 @@
-<p>recherchelistepotagers works!!!</p>
 
+<br><br>
 
 <div class="container">
     <div class="row">
-            <div class="col-sm-7">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Id</th>
                             <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Mail</th>
-                            <th>Âge</th>
-                            <th>Modifier</th>
-                            <th>Supprimer</th>
+                            <th>Lieu</th>
+                            <th>Surface</th>
+                            <th>Utilisateurs</th>
+                            <th>Horaires</th>
                         </tr>
                     </thead>
     
                     <tbody>
                         <!-- C'est dans le tr que je mets la boucle car c'est lui que je veux faire générer plusieurs fois. -->
-                        <tr>
-                            <td>caca</td>
-                            <td>czcz</td>
-                            <td>cece</td>
-                            <td>crcr</td>
-                            <td>ctct</td>
-                            <td><button class="btn btn-primary" mat-mini-fab aria-label="Example icon-button with a heart icon">
-                                <mat-icon>delete</mat-icon>
-                            </button></td>
+                        <tr *ngFor="let u of data">
+                            <td>{{ u.nom }}</td>
+                            <td>{{ u.adresse }}</td>
+                            <td>{{ u.surface }}</td>
+                            <td>{{ u.listusers }} / {{ u.maxusers }}</td>
+                            <td>{{ u.horaires }}</td>
                         </tr>
                     </tbody>
                 </table>
