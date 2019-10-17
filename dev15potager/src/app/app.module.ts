@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecherchelistepotagersComponent } from './recherchelistepotagers/recherchelistepotagers.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { RecherchelistepotagersComponent } from './recherchelistepotagers/recher
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RecherchelistepotagersComponent
+    RecherchelistepotagersComponent,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
