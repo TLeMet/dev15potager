@@ -16,7 +16,6 @@ import { NavbarPersoComponent } from './navbar-perso/navbar-perso.component';
 import { RecherchelistepotagersComponent } from './recherchelistepotagers/recherchelistepotagers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ModaldetailpotagerComponent } from './modaldetailpotager/modaldetailpotager.component';
 import { MydialogjoComponent } from './mydialogjo/mydialogjo.component';
 import { MyexempledialogComponent } from './myexempledialog/myexempledialog.component';
 import { MymodeljoComponent } from './mymodeljo/mymodeljo.component';
@@ -30,7 +29,6 @@ import {MatCardModule} from '@angular/material/card';
     PersoComponent,
     NavbarPersoComponent,
     RecherchelistepotagersComponent,
-    ModaldetailpotagerComponent,
     MydialogjoComponent,
     MyexempledialogComponent,
     MymodeljoComponent,
