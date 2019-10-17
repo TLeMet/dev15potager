@@ -14,12 +14,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PersoComponent,
     NavbarPersoComponent,
     RecherchelistepotagersComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RecherchelistepotagersComponent,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
