@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Bootstrap Dev15</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleJO.css">
+
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+    
+    ||<a href="index.html">Home</a>|| .
+    ||<a href="liste.html">Liste</a>|| .
+    ||<a href="tableau.html">Tableau</a>|| .
+    ||<a href="formulaire.html">Formulaire</a>|| . 
+    ||<a href="withcss.html">Avec CSS</a>|| .
+    ||<a href="bootstrap.html">Avec Bootstrap</a>|| .
+    ||<a href="withJS.html">Avec JavaScript</a>|| .
+    ||<a href="withJQuery.html">Avec JQuery</a>||
+
+
+    <br><br>
+    <h1 class="text-center gtitre" style="background-color: white">Bienvenue dans JavaScript.</h1>
+
+    <br>
+
+
+    <div class="container" style="background-color: white">
+        <div class="row">
+            <div class="col-sm-4">
+                <h5 class="titre text-center">Clique sur le bouton :</h5>
+                <input type="text" style="visibility: hidden">
+                <button class="btn btn-primary btn-block" onclick="ditBonjour()">Valider</button>
+            </div>
+            <div class="col-sm-4">
+
+                <h5 class="titre text-center">Écris un truc :</h5>
+                <input id="varsaisie" type="text" class="form-control" placeholder="Votre nom">
+                <button class="btn btn-primary btn-block" onclick="afficheBonjour()">Valider</button>
+
+            </div>
+            <div class="col-sm-4">
+                <h5 class="text-center titre">Résultat ici :</h5>
+                <p id="czonesaisie" class="text-center" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"></p>
+                <br>
+                </div>
+        </div>
+
+
+        <hr><br>
+
+
+
+        <div class="row">
+            <div class="text-center">
+                <h5 class="titre">Entrez votre âge :</h5>
+                <input type="number" id="age" placeholder="Votre âge" class="form-control">
+                <button class="btn btn-primary" onclick="detectAge()">Valider</button>
+                <p id="infoage">
+
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <hr>
+            <div class="row">
+                <div class="col-sm-6">
+                        <div class="text-center">
+                            <a href="" onmouseover="anim1()" onmouseout="anim2()">Passe ta souris ici.
+                                <br>
+                                <img src="http://iconfever.com/images/portfolio/spongebob.jpg" alt="" name="myImage" height="100px">
+                            </a>
+                        </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-center">
+                        
+                        <img src="http://www.abajournal.com/images/main_images/spongebob.png" alt="" name="imx" height="100px">
+                        
+                    </div>
+
+                </div>
+                    
+                            
+                    
+                
+            </div>
+            
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+</html>

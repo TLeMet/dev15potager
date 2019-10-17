@@ -1,0 +1,48 @@
+
+<div class="container containerbackground">
+
+    <p class="colorGray">La date du jour, dans un fichier service (afin de pouvoir être appelée dans tous les components) : {{ d | date: 'd/M/y' }}</p>
+
+    <br>
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <h5 class="colorGray">Binding property (x2)</h5> <br>
+
+            <!-- Deux Manières de chercher des variables-->
+            <div>
+            <input type="text" value="{{ name }}" class="form-control text-center">
+            </div>
+            <br>
+            <div>
+                <input type="text" [value] = "name" class="form-control text-center">
+            </div>
+        </div>
+
+        
+        <div class="col-sm-4 text-center">
+            <h5 class="colorGray">Binding property</h5> <br>
+
+
+            <!-- En cliquant sur le bouton, on appelle une fonction-->
+            <div>
+            <button type="button" (click)="changeName()" class="btn btn-primary">Change name</button>
+            </div>
+        </div>
+
+
+        <div class="col-sm-4 text-center">
+            <h5 class="colorGray">Binding bi-directionnel</h5>
+            <p class="colorSB">[(Two way data binding)]</p>
+
+            <!-- On lie le champ input directement à la valeur de variable 'name'. C'est le binding bidirectionnel. Grâce à ngModel-->
+            <div>
+            <input type="text" [(ngModel)]="name" class="form-control fColorV text-center">
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+
+
+</div>

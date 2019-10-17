@@ -1,0 +1,35 @@
+
+
+<div class="container containerbackground">
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="msgAf pAffs colorGray" [hidden]="nomAction.valid"> <!-- valid renvoie true or false -->
+                Saisir le nom :
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <!-- Il faut créer un modèle de formulaire. Voir dans le dossier model/User.ts -->
+            <!-- On déclare notre template attribute #forme, on lui associe ngForm de angular -->
+            <form #forme="ngForm">
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" placeholder="Nom" #nomAction="ngModel" required
+                            name="lecouteau" [(ngModel)]="lapersonne.nom">                    <!-- Le ngModel sauvegarde toutes les données de notre input -->
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control text-center" placeholder="Prénom"
+                            name="lafourchette" [(ngModel)]="lapersonne.prenom">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control text-center" placeholder="Mail"
+                            name="lacuillere" [(ngModel)]="lapersonne.mail">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control text-center" placeholder="Âge"
+                            name="leverre" [(ngModel)]="lapersonne.age">
+                </div>
+                <button (click)="addPersonne()" [disabled]="!forme.form.valid" class="btn btn-primary btn-block">Ajouter personne</button>
+            </form>                                     <!-- On checke si le form est valide -->
+        </div>
+    </div>
+</div>

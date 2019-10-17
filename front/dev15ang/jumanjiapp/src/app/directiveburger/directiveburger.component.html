@@ -1,0 +1,32 @@
+
+
+<div class="container containerbackground" >
+    <br>
+    <h4 class="colorSB text-center">Directives</h4>
+
+    <br>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h5 class="fColorV text-center">Boucles</h5>
+            <ul class="list-unstyled">
+                <li *ngFor="let s of superHeros">{{s}}</li>
+            </ul>
+
+        </div>
+
+        <div class="col-sm-3">
+            <h5 class="colorGray text-center">Condition</h5> <br>
+            <div class="btn-group" *ngIf="visible">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Super Héros</button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" *ngFor="let s of superHeros">{{ s }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <button class="btn btn-primary" (click)="voirCacher()">Cacher/Afficher</button>
+        </div>
+    </div>
+</div>

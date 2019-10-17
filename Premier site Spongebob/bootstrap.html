@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Bootstrap Dev15</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+</head>
+<body>
+    
+    ||<a href="index.html">Home</a>|| .
+    ||<a href="liste.html">Liste</a>|| .
+    ||<a href="tableau.html">Tableau</a>|| .
+    ||<a href="formulaire.html">Formulaire</a>|| . 
+    ||<a href="withcss.html">Avec CSS</a>|| .
+    ||<a href="bootstrap.html">Avec Bootstrap</a>|| .
+    ||<a href="withJS.html">Avec JavaScript</a>|| .
+    ||<a href="withJQuery.html">Avec JQuery</a>||
+
+
+    <h1 class="text-center">Bienvenue dans Bootstrap.</h1>
+
+    <div class="container">
+        <p class="text-danger">Message de danger</p>
+        <p class="text-success">Message de succès</p>
+        <p class="text-info">Message d'information</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <p>Bonjour à vous</p>
+                <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facere eaque minus dolor voluptatibus libero, adipisci fuga perferendis dolore atque consectetur quis porro itaque cumque? Est delectus ipsam aspernatur corrupti!
+            </div>
+            <div class="col-sm-4">
+                <p>Bon aprem à vous</p>
+                <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui numquam maiores atque eius quod molestias impedit! Temporibus tempora eius porro et est pariatur quia, odit at quasi quis, odio iusto?
+            </div>
+            <div class="col-sm-4">
+                <p>Bonsoir à vous</p>
+                <br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque eos adipisci maiores! Excepturi sit amet inventore similique voluptas at esse velit fugiat exercitationem aut placeat, obcaecati asperiores voluptate omnis ex.
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Liste des meilleurs desserts "non stylés"</h2>
+        <ul class="list-unstyled">
+            <li>Cheese cake</li>
+            <li>Fraisier</li>
+            <li>Banana split</li>
+            <li>Java</li>
+        </ul>
+
+        <h2>Liste des meilleurs desserts sur même ligne</h2>
+        <ul class="list-inline">
+            <li class="list-inline-item">Cheese cake</li>
+            <li class="list-inline-item">Fraisier</li>
+            <li class="list-inline-item">Banana split</li>
+            <li class="list-inline-item">Java</li>
+        </ul>
+
+        <h2>Liste avec description</h2>
+        <dl class="row">
+            <dt class="col-sm-3">Cheese cake</dt>
+            <dd class="col-sm-9">C'est le meilleur dessert du monde</dd>
+
+            <dt class="col-sm-3">Fraisier</dt>
+            <dd class="col-sm-9">C'est le dessert préféré de Vincent</dd>
+
+            <dt class="col-sm-3">Banana split</dt>
+            <dd class="col-sm-9">C'est l'un des meilleurs desserts du monde</dd>
+
+            <dt class="col-sm-3">Java</dt>
+            <dd class="col-sm-9">C'est le dessert certifié.</dd>
+        </dl>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h2>Entrer au clavier</h2>
+        <p>Pour un sourire au clavier, faites :
+            <kbd>alt+1 (pav num) -> ☺</kbd>
+        </p>
+    </div>
+
+    <div class="container">
+        <h2>Image avec bord arrondi</h2>
+        <img src="http://www.laut.de/Spongebob-Schwammkopf/spongebob-schwammkopf-168710.jpg" alt="" class="rounded" height="200">
+        <h2>Image ronde</h2>
+        <img src="https://www.dailydot.com/wp-content/uploads/93c/fb/72b8c984c5ff079598aecd33489a0a9b.jpg" alt="" class="rounded-circle" height="200">
+        <br>
+    
+
+    
+        <h2>Images alignées</h2>
+
+        <img src="https://wallpapercave.com/wp/9zQmzVS.jpg" alt="" class="rounded float-left" height="200">
+        <img src="https://i.pinimg.com/originals/05/66/b2/0566b26b542d9f19789228d6d0d73989.jpg" alt="" class="rounded float-right" height="200">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/47c21d81-d637-4760-afc1-b661dfdc5d75/d95opkp-f9d97b42-3278-47bf-9f5d-b8a921e558d2.png/v1/fill/w_1024,h_792,strp/summer_by_boy_wolf_d95opkp-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzkyIiwicGF0aCI6IlwvZlwvNDdjMjFkODEtZDYzNy00NzYwLWFmYzEtYjY2MWRmZGM1ZDc1XC9kOTVvcGtwLWY5ZDk3YjQyLTMyNzgtNDdiZi05ZjVkLWI4YTkyMWU1NThkMi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.48AInVux2oKvEnrBpY7xwvs_IVb7NJwsf8GWlG4LM1o" alt="" class="rounded mx-auto d-block" height="200">
+        <br>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nom</th>
+                    <th>Club</th>
+                    <th>Poste</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Neymar</td>
+                    <td>PSG</td>
+                    <td>Blessé</td>
+                </tr>
+                <tr>
+                    <td>Mbappé</td>
+                    <td>PSG</td>
+                    <td>AT</td>
+                </tr>
+                <tr>
+                    <td>Veratti</td>
+                    <td>PSG</td>
+                    <td>AT</td>
+                </tr>
+                <tr>
+                    <td>Marquinos</td>
+                    <td>PSG</td>
+                    <td>DEF</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <hr>
+
+
+
+    <div class="container">
+        <h4 class="text-center">Login</h4>
+        <div style="margin: auto; width: 50%">
+            <form>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="login">
+                </div>
+                <div class="form-group">
+                        <input class="form-control" type="password" placeholder="password">
+                </div>
+                <button class="btn btn-primary btn-block">Valider</button>
+            </form>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br>
+</body>
+</html>

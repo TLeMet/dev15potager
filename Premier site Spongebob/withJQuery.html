@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Bootstrap Dev15</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleJO.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+
+
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+
+    <script>
+        $(
+            function(){
+                $('#show').click(function(){
+                    $('.mydivgoback').show(1000);
+                });
+                $('#hide').click(function(){
+                    $('.mydivgoback').hide(1000);
+                });
+                $('#clic').click(function(){
+                    $('#tag').toggle('slow');
+                });
+
+                var allTags = [
+                    "Casa de papel",
+                    "Peaky Blinders",
+                    "Diversion",
+                    "Seven",
+                    "Double Impact",
+                    "Predator",
+                    "Fight Club",
+                    "Anaconda",
+                    "Pirates des Caraïbes",
+                    "Titanic",
+                    "Avatar"
+                ];
+                $('#auto').autocomplete({
+                    source: allTags
+                });
+
+                $('#accordeon').accordion();
+
+                $('#cacher').click(function(){
+                    $('#accordeon').hide("explode", {pieces: 100}, 1000);
+                });
+
+                $('#voir').click(function(){
+                    $('#accordeon').show("explode", {pieces: 100}, 1000);
+                });
+                $('#effet').click(function(){
+                    $('#accordeon').effect("pulsate", {times: 5}, 500);
+                });
+
+            }
+        )
+    </script>
+
+    
+    ||<a href="index.html">Home</a>|| .
+    ||<a href="liste.html">Liste</a>|| .
+    ||<a href="tableau.html">Tableau</a>|| .
+    ||<a href="formulaire.html">Formulaire</a>|| . 
+    ||<a href="withcss.html">Avec CSS</a>|| .
+    ||<a href="bootstrap.html">Avec Bootstrap</a>|| .
+    ||<a href="withJS.html">Avec JavaScript</a>|| .
+    ||<a href="withJQuery.html">Avec JQuery</a>||
+    
+    <br><br>
+
+    <h1 class="text-center gtitre" style="background-color: white">Bienvenue dans JQuery.</h1>
+
+    <br>
+
+    <div class="container" style="background-color: white">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <h5 class="titre">Deux boutons qui cachent et affichent :</h5>
+                <div class="mydivgoback">
+                    <p class="pgreen">Ici le message qui va et vient <br>
+                        ça s'en va et ça revient.</p>
+                </div>
+                <button class="btn btn-primary btn-block" id="hide">Cacher</button>
+                <button class="btn btn-primary btn-block" id="show">Afficher</button>
+
+            </div>
+            <div class="col-sm-4">
+                <p class="pgreen" id="clic">Clique sur moi pour faire disparaitre ci-dessous.</p>
+                <div class="titre text-center" id="tag">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium suscipit incidunt dignissimos architecto esse asperiores cumque eveniet consectetur aperiam ad, minima deserunt quis odio ab voluptates blanditiis error provident dolor?
+                    <img src="http://3.bp.blogspot.com/-SfP1nMMZdFk/TwElzgJS_II/AAAAAAAADuU/G5qae0yYRX4/s1600/Spongebob%2BWallpaper%2B038.jpg" alt="" height="150px">                    
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h5 class="titre">JQuery UI (auto completion)</h5>
+                <input type="text" id="auto" class="form-control text-center" placeholder="Liste de séries et films">
+            </div>
+        </div>
+
+
+
+        <hr>
+        
+        <div class="row">
+            <div class="col-sm-4">
+                <button id="cacher" class="btn btn-primary btn-block">Hide</button>
+            </div>
+            <div class="col-sm-4">
+                <button id="voir" class="btn btn-primary btn-block">Show</button>
+            </div>
+            <div class="col-sm-4">
+                <button id="effet" class="btn btn-primary btn-block">Effet</button>
+            </div>
+
+        </div>
+        
+        <hr>
+
+
+
+        <div id="accordeon">
+            <h3>Do Ré Mi</h3>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda libero ut tempore ea eveniet voluptatem, quis deserunt dolor, minus veritatis nam omnis! Ut aspernatur quae ex deserunt eum. In, non?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, natus laudantium porro dicta incidunt ipsa et voluptatum quaerat corporis vero quidem odit iure. Aut dolor amet natus harum eligendi.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo earum qui sequi voluptates alias impedit repellendus recusandae, et ratione amet tempora deleniti consequuntur inventore cumque, repellat laudantium harum, facilis autem.
+                </p>
+            </div>
+            <h3>Fa Sol La</h3>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda libero ut tempore ea eveniet voluptatem, quis deserunt dolor, minus veritatis nam omnis! Ut aspernatur quae ex deserunt eum. In, non?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, natus laudantium porro dicta incidunt ipsa et voluptatum quaerat corporis vero quidem odit iure. Aut dolor amet natus harum eligendi.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo earum qui sequi voluptates alias impedit repellendus recusandae, et ratione amet tempora deleniti consequuntur inventore cumque, repellat laudantium harum, facilis autem.
+                </p>
+            </div>
+            <h3>Si Do</h3>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda libero ut tempore ea eveniet voluptatem, quis deserunt dolor, minus veritatis nam omnis! Ut aspernatur quae ex deserunt eum. In, non?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque, natus laudantium porro dicta incidunt ipsa et voluptatum quaerat corporis vero quidem odit iure. Aut dolor amet natus harum eligendi.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo earum qui sequi voluptates alias impedit repellendus recusandae, et ratione amet tempora deleniti consequuntur inventore cumque, repellat laudantium harum, facilis autem.
+                </p>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>

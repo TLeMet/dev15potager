@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { PersoComponent } from './perso/perso.component';
 import { NavbarPersoComponent } from './navbar-perso/navbar-perso.component';
 import { from } from 'rxjs';
+import { RecherchelistepotagersComponent } from './recherchelistepotagers/recherchelistepotagers.component';
 
 const routes: Routes = [
-
+  {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent}
 
 ];
 

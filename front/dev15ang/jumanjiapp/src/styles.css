@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+.backgroundimage{
+    background-image: url("http://images6.fanpop.com/image/photos/33900000/Spongebob-Schwammkopf-spongebob-squarepants-33903236-1280-1024.jpg");
+    background-size: cover;
+}
+
+.containerbackground{
+    background-color: white;
+}
+
+.active{
+    /*On ajoute "important" pour que bootstrap ne prenne pas le dessus.*/
+    background-image: url("https://cbimg9.com/graphics/08/05/51881b.jpg") !important;
+    color: white !important;
+}
+
+
+.colorGray{
+    color: darkgray;
+}
+
+.colorSB{
+    color: steelblue;
+}
+
+.fColor{
+    color: rgb(194, 155, 26);
+}
+
+.pAffs{
+    color: red;
+}
+
+.fColorV{
+    color: rgb(100, 216, 77);
+}
+
+.Aff{
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.msgAff{
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

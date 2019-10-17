@@ -1,0 +1,32 @@
+
+
+<div class="container containerbackground">
+    <h5 class="colorGray text-center">|| Les pipes ||</h5> <br>
+
+    <div class="row colorGray pAffS">
+        <div class="sol-sm-6 text-center">
+            {{msg | uppercase}}
+        </div>
+
+
+        <div class="col-sm-3">
+            {{ dateJour }} => normal
+        </div>
+        <div class="col-sm-3">
+            {{ dateJour | date:'d/M/y' }} => pipé
+        </div>
+
+        <h3>Fab Buttons</h3>
+        <div class="example-button-row">
+            <button mat-fab>Basic</button>
+            <button mat-fab color="primary">Primary</button>
+            <button mat-fab color="accent">Accent</button>
+            <button mat-fab color="warn">Warn</button>
+            <button mat-fab disabled>Disabled</button>
+            <button mat-fab aria-label="Example icon-button with a heart icon">
+            <mat-icon>favorite</mat-icon>
+            </button>
+            <a mat-fab routerLink=".">Link</a>
+        </div>
+    </div>
+</div>
