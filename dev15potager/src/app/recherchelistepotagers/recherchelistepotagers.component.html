@@ -3,31 +3,38 @@
 
 <div class="container">
     <div class="row">
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-8">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Nom</th>
-                            <th>Lieu</th>
-                            <th>Surface</th>
-                            <th>Utilisateurs</th>
-                            <th>Horaires</th>
-                        </tr>
-                    </thead>
-    
-                    <tbody>
-                        <!-- C'est dans le tr que je mets la boucle car c'est lui que je veux faire générer plusieurs fois. -->
-                        <tr *ngFor="let u of data">
-                            <td>{{ u.nom }}</td>
-                            <td>{{ u.adresse }}</td>
-                            <td>{{ u.surface }}</td>
-                            <td>{{ u.listusers }} / {{ u.maxusers }}</td>
-                            <td>{{ u.horaires }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="col-sm-2">
+        </div>
+
+        <div class="col-sm-8">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Lieu</th>
+                        <th>Surface</th>
+                        <th>Utilisateurs</th>
+                        <th>Horaires</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- C'est dans le tr que je mets la boucle car c'est lui que je veux faire générer plusieurs fois. -->
+                    <tr *ngFor="let u of data">
+                        <td>{{ u.nom }}</td>
+                        <td>{{ u.adresse }}</td>
+                        <td>{{ u.surface }}</td>
+                        <td>{{ u.listusers }} / {{ u.maxusers }}</td>
+                        <td>{{ u.horaires }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-2">
+            <modaldetailpotager></modaldetailpotager>
+            <app-mydialogjo></app-mydialogjo>
+            
+            <button (click)="openDev15Potage()">test</button>
+        </div>
     </div>
 </div>

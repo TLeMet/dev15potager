@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MatDialogRef, MatDialog } from '@angular/material';
+import { MymodeljoComponent } from '../mymodeljo/mymodeljo.component';
+
 
 @Component({
-  selector: 'app-recherchelistepotagers',
+  selector: 'recherchelistepotagers',
   templateUrl: './recherchelistepotagers.component.html',
   styleUrls: ['./recherchelistepotagers.component.css']
 })
@@ -10,7 +13,14 @@ export class RecherchelistepotagersComponent implements OnInit {
 
   data;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private dialog: MatDialog) { }
+
+
+
+  openDev15Potage() {
+    const mydial = this.dialog.open(MymodeljoComponent);
+}
+
 
   ngOnInit() {
     // On fait ça ici car si on le faisait dans le constructeur, on devrait attendre l'affichage de la page etc, ce serait trop long.
