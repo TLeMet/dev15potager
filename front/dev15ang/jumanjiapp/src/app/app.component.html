@@ -1,0 +1,42 @@
+
+
+
+<!-- On peut aller chercher des variables dans le fichier .ts -->
+<div class="container text-center">
+  <br>
+  <h2 style="color: white;">Welcome to {{ville}} !</h2>
+  <img src="front\dev15ang\jumanjiapp\src\assets\PHOTOS\bikini_bottom.png" width="100%">
+</div>
+
+<!-- Notre navbar -->
+<div class="text-center">
+    <ul id="menu" class="nav nav-tabs flex-fill justify-content-center bg-primary">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="kebab" routerLinkActive="active" >Kebab</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="tacos" routerLinkActive="active">Tacos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="burger" routerLinkActive="active">Pâté de crabe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="saucisse" routerLinkActive="active">Hot dog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="sushi" routerLinkActive="active">Liste clients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="banane" routerLinkActive="active">Nouveau client (banane)</a>
+      </li>
+    </ul>
+  </div>
+
+<br>
+
+
+
+<router-outlet></router-outlet>
+
+
+<app-footer></app-footer>
