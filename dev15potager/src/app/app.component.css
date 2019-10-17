@@ -1,9 +1,9 @@
 .image {
+    
     background-size: cover;
-    height: 200px;
     width: 100%;
     position:absolute;
-	top: 100px;
+	top: 150px;
     }
 
 .example-card {
@@ -22,11 +22,11 @@
 
 .texteim1{
     color : white;
-    font : 150% georgia, palatino, serif;
+    font : 300% georgia, palatino, serif;
     font-weight: bold;
 }
 
 .texteim2 {
     color : white;
-    font :  100% georgia, palatino, serif;
+    font :  200% georgia, palatino, serif;
 }
