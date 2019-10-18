@@ -10,6 +10,7 @@ export class PersoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

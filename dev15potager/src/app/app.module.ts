@@ -20,6 +20,9 @@ import { MydialogjoComponent } from './mydialogjo/mydialogjo.component';
 import { MyexempledialogComponent } from './myexempledialog/myexempledialog.component';
 import { MymodeljoComponent } from './mymodeljo/mymodeljo.component';
 import {MatCardModule} from '@angular/material/card';
+import { AccueilpersoComponent } from './accueilperso/accueilperso.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 
@@ -32,6 +35,9 @@ import {MatCardModule} from '@angular/material/card';
     MydialogjoComponent,
     MyexempledialogComponent,
     MymodeljoComponent,
+    AccueilpersoComponent,
+    
+    
 
   ],
   entryComponents: [MyexempledialogComponent, MymodeljoComponent],
@@ -49,6 +55,12 @@ import {MatCardModule} from '@angular/material/card';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    BrowserAnimationsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory}),
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
