@@ -13,26 +13,36 @@ import { DialogconnexionComponent } from '../dialogconnexion/dialogconnexion.com
 export class RecherchelistepotagersComponent implements OnInit {
 
   data;
+  nbUsers;
 
   constructor(private http: HttpClient, private dialog: MatDialog) { }
 
 
 
   ouvreDetailsPotager() {
-    const mydial = this.dialog.open(DialogdetailspotagerComponent);
+    const mydial = this.dialog.open(DialogdetailspotagerComponent, {
+      height: '800px',
+      width: '800px',
+    });
   }
+
   ouvreConnexion() {
     const mydial2 = this.dialog.open(DialogconnexionComponent, {
       height: '800px',
-      width: '1200px',
+      width: '1400px',
     });
+  }
+
+  countUsers(users) {
+    this.nbUsers = users.count();
+    return "caca" + this.nbUsers;
   }
 
 
   ngOnInit() {
     // On fait ça ici car si on le faisait dans le constructeur, on devrait attendre l'affichage de la page etc, ce serait trop long.
     // get : va chercher des API.
-    this.http.get('http://localhost:8085/terrains').subscribe(response => {
+    this.http.get('http://localhost:8086/terrains').subscribe(response => {
       // Response n'est pas accessible en dehors de la fonction, alors on le met dans notre var data.
       this.data = response;
       // On affiche dans la console.

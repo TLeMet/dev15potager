@@ -8,7 +8,13 @@
 
         <div class="col-sm-8">
             <table class="table">
-                <thead class="thead-dark">
+                <col width="150">
+                <col width="200">
+                <col width="130">
+                <col width="100">
+                <col width="200">
+                <col width="100">
+                <thead class="thead-dark text-center">
                     <tr>
                         <th>Nom</th>
                         <th>Lieu</th>
@@ -23,9 +29,9 @@
                     <!-- C'est dans le tr que je mets la boucle car c'est lui que je veux faire générer plusieurs fois. -->
                     <tr *ngFor="let u of data">
                         <td>{{ u.nom }}</td>
-                        <td>{{ u.adresse }}</td>
-                        <td>{{ u.surface }}</td>
-                        <td>{{ u.listusers }} / {{ u.maxusers }}</td>
+                        <td>{{ u.adresse }}, {{ u.ville }}</td>
+                        <td>{{ u.surface }} m²</td>
+                        <td> countUsers({{ u.userOfTerrain }}) / {{ u.maxUser }}</td>
                         <td>{{ u.horaires }}</td>
                         <td><button class="btn btn-primary" (click)="ouvreDetailsPotager()">Détails</button></td>
                     </tr>
