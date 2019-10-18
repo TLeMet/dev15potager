@@ -23,11 +23,8 @@ export class DialogdetailspotagerComponent implements OnInit {
     //Il faut d'abord récupérer l'utilisateur ou le terrain
 
 
-<<<<<<< HEAD
 
-=======
     
->>>>>>> 5952cd517a7919947fde1dd1af4d9afccc1cbf22
   }
 
 }
