@@ -1,0 +1,80 @@
+
+
+<div class="container">
+
+    <div class="row">
+
+
+        <div class="col-sm-6">
+
+            <h3 class="text-center">Connectez-vous !</h3>
+            <br><br>
+            <div class="text-center">
+                <form>
+                    <mat-form-field style="width: 100%">
+                        <input type="email" matInput placeholder="Mail">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field style="width: 100%">
+                        <input type="password" matInput placeholder="Mot de passe">
+                    </mat-form-field>
+
+                    <br><br>
+
+                    <button class="btn btn-primary" (click)="goConnexion()">Connexion</button>
+                    <br>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="col-sm-1 verticalLine">
+        </div>
+
+        <div class="col-sm-5">
+
+            <h3 class="text-center">Vous êtes nouveau ? Inscrivez-vous !</h3>
+            <br><br>
+            <div class="text-center">
+                <form>
+                    <mat-form-field style="width: 100%">
+                        <input type="text"  matInput placeholder="Choisissez votre pseudo">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field style="width: 100%">
+                        <input type="text" matInput placeholder="Nom">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field style="width: 100%">
+                        <input type="text" matInput placeholder="Prénom">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field style="width: 100%">
+                        <input type="email" matInput placeholder="Mail">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field style="width: 100%">
+                        <input type="password" matInput placeholder="Mot de passe">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field style="width: 100%">
+                        <input type="number" matInput placeholder="Votre numéro de téléphone">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field style="width: 100%">
+                        <input type="number" matInput placeholder="Votre âge">
+                    </mat-form-field>
+
+                    <br><br>
+
+                    <button class="btn btn-primary" (click)="goInscription()">Inscription</button>
+                    <br>
+                </form>
+            </div>
+
+            
+            <button class="btn btn-primary" (click)="fermerDialog()">Annuler</button>
+        </div>
+
+    </div>
+</div>

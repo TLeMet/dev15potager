@@ -14,11 +14,11 @@ import { AppComponent } from './app.component';
 import { PersoComponent } from './perso/perso.component';
 import { NavbarPersoComponent } from './navbar-perso/navbar-perso.component';
 import { RecherchelistepotagersComponent } from './recherchelistepotagers/recherchelistepotagers.component';
+import { DialogdetailspotagerComponent } from './dialogdetailspotager/dialogdetailspotager.component';
+import { DialogconnexionComponent } from './dialogconnexion/dialogconnexion.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MydialogjoComponent } from './mydialogjo/mydialogjo.component';
-import { MyexempledialogComponent } from './myexempledialog/myexempledialog.component';
-import { MymodeljoComponent } from './mymodeljo/mymodeljo.component';
 import {MatCardModule} from '@angular/material/card';
 import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
 
@@ -30,13 +30,14 @@ import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.componen
     PersoComponent,
     NavbarPersoComponent,
     RecherchelistepotagersComponent,
-    MydialogjoComponent,
-    MyexempledialogComponent,
-    MymodeljoComponent,
+    DialogdetailspotagerComponent,
+    DialogconnexionComponent,
     NavbarAccueilComponent,
 
   ],
-  entryComponents: [MyexempledialogComponent, MymodeljoComponent],
+  
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
