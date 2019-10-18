@@ -1,6 +1,6 @@
 <div>
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #6edfc3;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fdfdfd;">
         <button type="button" class="navbar-brand btn-primary-outline">
             <a class="navbar-brand" href="#">PotaPotes</a>
         </button>
@@ -47,42 +47,53 @@
                 </li>
 
             </ul>
-            
+            <div style="float: right;">
                 <ul class="navbar-nav">
                     <li>
-                        <form class="form-inline">
-                            <input class="form-control " type="search" placeholder="Recherche" aria-label="Search">
-                            <button class="btn" style="color: brown;" type="submit">Rechercher</button>
-                        </form>
+                        <div style="float: right;">
+                            <input type="text" placeholder="Recherche" #rechTerr class="form-control text-center">
+                            <button class="btn" style="color: brown;" (click) = "chercheTerrain(rechTerr.value)" style="float: right;" >Rechercher</button>
+                        </div>
                     </li>
                     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-                    <div style="position: relative;">
-                    <li>
-                        <a href="">
-                            <mat-icon>mail</mat-icon>
-                        </a>
-                        &nbsp; &nbsp; &nbsp;
-                        
-                        <button class="btn btn-default dropdown-toggle" type="button" id="menuProfil"
-                            data-toggle="dropdown">
-                            <a href="">
-                                <mat-icon>face</mat-icon>
-                            </a>
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menuProfil">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Modifier son profil</a>
-                            </li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mes messages</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Se déconnecter</a></li>
-                            <li role="presentation" class="divider"></li>
+                    <div style="position: relative; float: right;">
+                        <li>
 
-                        </ul>
-                    
-                        &nbsp; &nbsp; &nbsp;
-                    </li>
-                </div>
-                </ul>            
+
+
+                            <button class="btn btn-default dropdown-toggle" type="button" id="menuProfil"
+                                data-toggle="dropdown" style="float: right;">
+                                <a href="">
+                                    <mat-icon>face</mat-icon>
+                                </a>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menuProfil">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">&nbsp; &nbsp; Modifier
+                                        son profil</a>
+                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">&nbsp; &nbsp; Mes
+                                        messages</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">&nbsp; &nbsp; Se
+                                        déconnecter</a></li>
+                                <li role="presentation" class="divider"></li>
+
+                            </ul>
+
+
+                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+
+                            <a href="" style="float: right; margin-top: 9px;">
+                                <mat-icon>mail</mat-icon>
+                            </a>
+
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                        </li>
+                    </div>
+                </ul>
+            </div>
         </div>
     </nav>
 </div>
+
+

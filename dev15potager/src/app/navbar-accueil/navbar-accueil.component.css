@@ -2,3 +2,21 @@
     position: absolute;
     top: 50%;
 }
+
+.pad1 {
+    padding: 0 10% 0 0;
+}
+
+.example-icon {
+    padding: 0 10%;
+  }
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mat-toolbar.mat-primary {
+    background: #00ff80;
+    color: #fff;
+  }
