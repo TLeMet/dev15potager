@@ -6,6 +6,7 @@ import { RecherchelistepotagersComponent } from './recherchelistepotagers/recher
 
 const routes: Routes = [
   {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent}
+  
 
 ];
 
