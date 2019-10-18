@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { MatDialog } from '@angular/material';
+import { DialogconnexionComponent } from '../dialogconnexion/dialogconnexion.component';
 
 @Component({
   selector: 'dialogdetailspotager',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogdetailspotagerComponent implements OnInit {
 
-  constructor() { }
+  nomproprio;
+  prenomproprio;
+  adresseterrain;
+  imageterrain;
+  nompotager;
+  descriptionpotager;
+
+  constructor(private http: HttpClient, private dialog: MatDialog) { }
 
   ngOnInit() {
+    //Il faut d'abord récupérer l'utilisateur ou le terrain
+
+
+    })
   }
 
 }
