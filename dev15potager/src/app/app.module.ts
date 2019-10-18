@@ -23,6 +23,7 @@ import {MatCardModule} from '@angular/material/card';
 import { AccueilpersoComponent } from './accueilperso/accueilperso.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
 
 
 
@@ -38,6 +39,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     AccueilpersoComponent,
     
     
+    NavbarAccueilComponent,
 
   ],
   entryComponents: [MyexempledialogComponent, MymodeljoComponent],

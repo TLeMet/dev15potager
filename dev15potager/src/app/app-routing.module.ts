@@ -8,6 +8,11 @@ import { AccueilpersoComponent } from './accueilperso/accueilperso.component';
 const routes: Routes = [
   {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent},
   {path: 'accueilperso', component: AccueilpersoComponent},
+import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
+
+const routes: Routes = [
+  {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent},
+  {path: 'navbar-accueil', component: NavbarAccueilComponent},
   
 
 ];
