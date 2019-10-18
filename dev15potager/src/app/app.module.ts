@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
+import { FooterComponent } from './footer/footer.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 
@@ -33,6 +35,7 @@ import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.componen
     DialogdetailspotagerComponent,
     DialogconnexionComponent,
     NavbarAccueilComponent,
+    FooterComponent,
 
   ],
   
@@ -52,6 +55,7 @@ import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.componen
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
