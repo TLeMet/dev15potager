@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ServiceRechercheterrainService } from '../service-rechercheterrain.service'
 
 @Component({
   selector: 'app-navbar-perso',
@@ -9,18 +8,10 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class NavbarPersoComponent implements OnInit {
 
-  constructor( private http : HttpClient) { }
+  constructor(private servi : ServiceRechercheterrainService) { }
 
-data;
-  terrainTrouve
-
-  chercheTerrain(terrain){
-    this.data = terrain;
-    this.http.get('http://localhost:8086/terrains/nom/'+ this.data).subscribe(response => {
-      this.terrainTrouve = response;
-      console.log(response);
-
-    })
+  chercheTerrain(nomt){
+    this.servi.rechTerr = nomt;
   }
 
  
