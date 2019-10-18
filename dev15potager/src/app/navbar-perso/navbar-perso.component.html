@@ -50,10 +50,10 @@
             <div style="float: right;">
                 <ul class="navbar-nav">
                     <li>
-                        <form class="form-inline" style="float: right;">
-                            <input class="form-control " type="search" placeholder="Recherche" aria-label="Search">
-                            <button class="btn" style="color: brown;" type="submit">Rechercher</button>
-                        </form>
+                        <div style="float: right;">
+                            <input type="text" placeholder="Recherche" #rechTerr class="form-control text-center">
+                            <button class="btn" style="color: brown;" (click) = "chercheTerrain(rechTerr.value)" style="float: right;" >Rechercher</button>
+                        </div>
                     </li>
                     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
                     <div style="position: relative; float: right;">

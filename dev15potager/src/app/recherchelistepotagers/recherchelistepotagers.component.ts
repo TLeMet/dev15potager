@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MatDialogRef, MatDialog } from '@angular/material';
-import { MymodeljoComponent } from '../mymodeljo/mymodeljo.component';
+import { MatDialog } from '@angular/material';
+import { DialogdetailspotagerComponent } from '../dialogdetailspotager/dialogdetailspotager.component';
+import { DialogconnexionComponent } from '../dialogconnexion/dialogconnexion.component';
 
 
 @Component({
@@ -17,15 +18,21 @@ export class RecherchelistepotagersComponent implements OnInit {
 
 
 
-  openDev15Potage() {
-    const mydial = this.dialog.open(MymodeljoComponent);
-}
+  ouvreDetailsPotager() {
+    const mydial = this.dialog.open(DialogdetailspotagerComponent);
+  }
+  ouvreConnexion() {
+    const mydial2 = this.dialog.open(DialogconnexionComponent, {
+      height: '800px',
+      width: '1200px',
+    });
+  }
 
 
   ngOnInit() {
     // On fait ça ici car si on le faisait dans le constructeur, on devrait attendre l'affichage de la page etc, ce serait trop long.
     // get : va chercher des API.
-    this.http.get('http://localhost:8185/terrain').subscribe(response => {
+    this.http.get('http://localhost:8086/terrains').subscribe(response => {
       // Response n'est pas accessible en dehors de la fonction, alors on le met dans notre var data.
       this.data = response;
       // On affiche dans la console.

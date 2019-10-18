@@ -4,26 +4,28 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 // Pour utiliser des liens http :
 import { HttpClientModule } from '@angular/common/http';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule } from '@angular/material/input';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersoComponent } from './perso/perso.component';
 import { NavbarPersoComponent } from './navbar-perso/navbar-perso.component';
 import { RecherchelistepotagersComponent } from './recherchelistepotagers/recherchelistepotagers.component';
+import { DialogdetailspotagerComponent } from './dialogdetailspotager/dialogdetailspotager.component';
+import { DialogconnexionComponent } from './dialogconnexion/dialogconnexion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MydialogjoComponent } from './mydialogjo/mydialogjo.component';
-import { MyexempledialogComponent } from './myexempledialog/myexempledialog.component';
-import { MymodeljoComponent } from './mymodeljo/mymodeljo.component';
-import {MatCardModule} from '@angular/material/card';
-import { AccueilpersoComponent } from './accueilperso/accueilperso.component';
+import { MatCardModule } from '@angular/material/card';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
+import { CommonModule } from '@angular/common';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarComponent } from './calendar/calendar.component';
+import { RechercheComponent } from './recherche/recherche.component';
 
 
 
@@ -33,16 +35,17 @@ import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.componen
     PersoComponent,
     NavbarPersoComponent,
     RecherchelistepotagersComponent,
-    MydialogjoComponent,
-    MyexempledialogComponent,
-    MymodeljoComponent,
-    AccueilpersoComponent,
-    
-    
+    DialogdetailspotagerComponent,
+    DialogconnexionComponent,
     NavbarAccueilComponent,
+    CalendarComponent,
+    RechercheComponent,
 
+  
   ],
-  entryComponents: [MyexempledialogComponent, MymodeljoComponent],
+  
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -57,14 +60,18 @@ import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.componen
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    FormsModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
-      useFactory: adapterFactory}),
-    
+      useFactory: adapterFactory
+    }),   
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
