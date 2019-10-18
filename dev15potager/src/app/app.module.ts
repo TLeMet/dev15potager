@@ -20,6 +20,7 @@ import { MydialogjoComponent } from './mydialogjo/mydialogjo.component';
 import { MyexempledialogComponent } from './myexempledialog/myexempledialog.component';
 import { MymodeljoComponent } from './mymodeljo/mymodeljo.component';
 import {MatCardModule} from '@angular/material/card';
+import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
 
 
 
@@ -32,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
     MydialogjoComponent,
     MyexempledialogComponent,
     MymodeljoComponent,
+    NavbarAccueilComponent,
 
   ],
   entryComponents: [MyexempledialogComponent, MymodeljoComponent],
