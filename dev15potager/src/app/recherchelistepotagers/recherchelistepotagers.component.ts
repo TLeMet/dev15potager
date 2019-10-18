@@ -13,19 +13,29 @@ import { DialogconnexionComponent } from '../dialogconnexion/dialogconnexion.com
 export class RecherchelistepotagersComponent implements OnInit {
 
   data;
+  nbUsers;
 
   constructor(private http: HttpClient, private dialog: MatDialog) { }
 
 
 
   ouvreDetailsPotager() {
-    const mydial = this.dialog.open(DialogdetailspotagerComponent);
+    const mydial = this.dialog.open(DialogdetailspotagerComponent, {
+      height: '800px',
+      width: '800px',
+    });
   }
+
   ouvreConnexion() {
     const mydial2 = this.dialog.open(DialogconnexionComponent, {
       height: '800px',
-      width: '1200px',
+      width: '1400px',
     });
+  }
+
+  countUsers(users) {
+    this.nbUsers = users.count();
+    return "caca" + this.nbUsers;
   }
 
 
