@@ -5,75 +5,85 @@
     <div class="row">
 
 
-        <div class="col-sm-6">
+        <div class="col-sm-5">
 
-            <h3 class="text-center">Connectez-vous !</h3>
+            <h4 class="text-center">Connexion :</h4>
             <br><br>
             <div class="text-center">
-                <form>
-                    <mat-form-field style="width: 100%">
-                        <input type="email" matInput placeholder="Mail">
-                    </mat-form-field>
-                    <br>
-                    <mat-form-field style="width: 100%">
-                        <input type="password" matInput placeholder="Mot de passe">
-                    </mat-form-field>
+                <form #formeCo="ngForm">
+
+                    <div class="form-group">
+                        <input type="email" class="form-control text-center" placeholder="Mail" #nomActionCo="ngModel" required
+                            name="lelogin" [(ngModel)]="personneCo.mail">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <input type="password" class="form-control text-center" placeholder="Mot de passe" required
+                            name="lepassword" [(ngModel)]="personneCo.pw">
+                    </div>
 
                     <br><br>
 
-                    <button class="btn btn-primary" (click)="goConnexion()">Connexion</button>
+                    <button [disabled]="!formeCo.form.valid" class="btn btn-primary btn-block" (click)="goConnexion()">Connexion</button>
                     <br>
                 </form>
+                <button class="btn btn-primary text-center" style="position: absolute; bottom: 0%; left: 0%;" (click)="fermerDialog()">Fermer</button>
             </div>
-
         </div>
 
+
+
+        <div class="col-sm-1">
+            </div>
         <div class="col-sm-1 verticalLine">
         </div>
 
         <div class="col-sm-5">
 
-            <h3 class="text-center">Vous êtes nouveau ? Inscrivez-vous !</h3>
+            <h4 class="text-center">Nouveau ? Inscrivez-vous !</h4>
             <br><br>
             <div class="text-center">
-                <form>
-                    <mat-form-field style="width: 100%">
-                        <input type="text"  matInput placeholder="Choisissez votre pseudo">
-                    </mat-form-field>
+                <form #formeIns="ngForm">
+
                     <br>
-                    <mat-form-field style="width: 100%">
-                        <input type="text" matInput placeholder="Nom">
-                    </mat-form-field>
+                    <div class="form-group">
+                        <input type="text" class="form-control text-center" placeholder="Nom*" required
+                            name="lassiette" [(ngModel)]="lapersonne.nom">
+                    </div>
                     <br>
-                    <mat-form-field style="width: 100%">
-                        <input type="text" matInput placeholder="Prénom">
-                    </mat-form-field>
+                    <div class="form-group">
+                        <input type="text" class="form-control text-center" placeholder="Prénom*" required
+                            name="lafourchette" [(ngModel)]="lapersonne.prenom">
+                    </div>
                     <br>
-                    <mat-form-field style="width: 100%">
-                        <input type="email" matInput placeholder="Mail">
-                    </mat-form-field>
+                    <div class="form-group">
+                        <input type="email" class="form-control text-center" placeholder="Mail*" required
+                            name="lacuillere" [(ngModel)]="lapersonne.mail">
+                    </div>
                     <br>
-                    <mat-form-field style="width: 100%">
-                        <input type="password" matInput placeholder="Mot de passe">
-                    </mat-form-field>
+                    <div class="form-group">
+                        <input type="password" class="form-control text-center" placeholder="Mot de passe*" required
+                            name="leverre" [(ngModel)]="lapersonne.pw">
+                    </div>
                     <br>
-                    <mat-form-field style="width: 100%">
-                        <input type="number" matInput placeholder="Votre numéro de téléphone">
-                    </mat-form-field>
+                    <div class="form-group">
+                        <input type="text" class="form-control text-center" placeholder="Numéro de téléphone"
+                            name="lesopalin" [(ngModel)]="lapersonne.tel">
+                    </div>
                     <br>
-                    <mat-form-field style="width: 100%">
-                        <input type="number" matInput placeholder="Votre âge">
-                    </mat-form-field>
+                    <div class="form-group">
+                        <input type="number" class="form-control text-center" placeholder="Âge"
+                            name="latable" [(ngModel)]="lapersonne.age">
+                    </div>
+                    <br>
+                    <button (click)="goInscription()" [disabled]="!formeIns.form.valid" class="btn btn-primary btn-block">Inscription</button>
 
                     <br><br>
-
-                    <button class="btn btn-primary" (click)="goInscription()">Inscription</button>
-                    <br>
                 </form>
             </div>
 
             
-            <button class="btn btn-primary" (click)="fermerDialog()">Annuler</button>
+            
         </div>
 
     </div>
