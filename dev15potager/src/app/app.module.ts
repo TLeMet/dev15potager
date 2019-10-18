@@ -19,7 +19,8 @@ import { DialogconnexionComponent } from './dialogconnexion/dialogconnexion.comp
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatCardModule } from '@angular/material/card';
+import {MatCardModule} from '@angular/material/card';
+import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
 
 
 
@@ -31,6 +32,7 @@ import { MatCardModule } from '@angular/material/card';
     RecherchelistepotagersComponent,
     DialogdetailspotagerComponent,
     DialogconnexionComponent,
+    NavbarAccueilComponent,
 
   ],
   

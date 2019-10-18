@@ -1,42 +1,15 @@
 
-<div class="text-center">
-    <ul id="menu" class="nav nav-tabs flex-fill justify-content-center bg-primary">
-      <li class="nav-item">
-        <a class="nav-link" routerLink = "kebab" routerLinkActive="active" >Binding</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink = "tacos" routerLinkActive="active">Template Att</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  routerLink = "burger" routerLinkActive="active" >Directive</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink = "saucisse" routerLinkActive="active" >Pipe</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink = "sushi" routerLinkActive="active" >Listes Users</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink = "banane" routerLinkActive="active">Add User</a>
-      </li>
-    </ul>
-  </div>
 
+<app-navbar-accueil></app-navbar-accueil>
 
-<app-navbar-perso></app-navbar-perso>
- 
-
-
-  <br><br>
-
+<div  style="background-image: url(assets/image/potager_censored.jpg); background-size: cover;">
   <div>
-        <div>
-          <img  class="image" src="https://www.anitta.fr/wp-content/uploads/2016/11/potager.jpg">
-        </div>
+        <!--https://www.anitta.fr/wp-content/uploads/2016/11/potager.jpg-->
         <div class="row">
           <div class="col-sm-4"></div>
           <div class="col-sm-4 text-center" style="z-index:1">
               <div>
+                  <br><br><br><br>
                 <p class="texteim1">Bienvenue sur le site</p>
               </div>
               <div>
@@ -46,14 +19,16 @@
           </div>
         </div>
     </div>
-
-    <br><br><br><br><br><br>
+    <br><br><br><br>
+</div>
+    <br><br><br>
     
     <div class="container text-center">
       <div class="row">
         <div class="col-sm-4">
           <mat-card class="example-card">
-            <img mat-card-image src="https://www.univ-larochelle.fr/wp-content/uploads/2017/12/le-mode-demploi-de-linscription-a-luniversite-de-la-rochelle-1600x640.jpg" alt="u">
+            <img mat-card-image src="assets/image/image1.jpg" 
+            alt="u" width="220" height="300">
             <mat-card-content>
               <p class="gras">
                 Inscrivez-vous
@@ -66,7 +41,8 @@
         </div>
         <div class="col-sm-4">
             <mat-card class="example-card">
-                <img mat-card-image src="https://jardins-solidaires-citoyens.paris/wp-content/uploads/2018/11/Carte-interactive-des-potagers-urbains-dIle-de-France-e1541789458114.png" alt="u">
+                <img mat-card-image src="assets/image/image2.png" 
+                alt="u" width="220" height="300">
                 <mat-card-content>
                   <p class="gras">
                     Regoignez un potager prêt de chez vous
@@ -79,7 +55,8 @@
         </div>
         <div class="col-sm-4">
             <mat-card class="example-card">
-                <img mat-card-image src="https://photos.gammvert.fr/v5/products/full/40290-carre-potager-bois-traite-l120-l120-cm-lignz-2.jpg" alt="u">
+                <img mat-card-image src="assets/image/image3.jpg" 
+                alt="u" width="220" height="300">
                 <mat-card-content>
                   <p class="gras">
                     Silence, sa pousse !
@@ -94,9 +71,11 @@
 
     </div>
 
-    <br><br><br><br><br><br><br><br>
+
+    <br><br>
 
     <div class="container">
+<br><br>
       <p class="titre">
         Des légumes frais et de saison de vos propres mains ? C'est à vous de jouer !
       </p>

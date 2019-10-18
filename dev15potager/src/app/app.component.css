@@ -30,3 +30,19 @@
     color : white;
     font :  200% georgia, palatino, serif;
 }
+
+#colonne1 {
+    float : left;
+}
+#fleche1 {
+    float : left;
+}
+#colonne2 {
+    float : center;
+}
+#fleche2 {
+    float : right;
+}
+#colonne3 {
+    float : right;
+}
