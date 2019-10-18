@@ -15,6 +15,7 @@
                         <th>Surface</th>
                         <th>Utilisateurs</th>
                         <th>Horaires</th>
+                        <th>Détails</th>
                     </tr>
                 </thead>
 
@@ -26,15 +27,16 @@
                         <td>{{ u.surface }}</td>
                         <td>{{ u.listusers }} / {{ u.maxusers }}</td>
                         <td>{{ u.horaires }}</td>
+                        <td><button class="btn btn-primary" (click)="ouvreDetailsPotager()">Détails</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="col-sm-2">
+            <td><button class="btn btn-primary" (click)="ouvreDetailsPotager()">Détails</button></td>
+
+            <td><button class="btn btn-primary" (click)="ouvreConnexion()">Connexion</button></td>
             
-            <app-mydialogjo></app-mydialogjo>
-            
-            <button (click)="openDev15Potage()">test</button>
         </div>
     </div>
 </div>
