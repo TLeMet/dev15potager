@@ -21,16 +21,13 @@ import { MatCardModule } from '@angular/material/card';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
-<<<<<<< HEAD
 import { FooterComponent } from './footer/footer.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
-=======
 import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
 import { RechercheComponent } from './recherche/recherche.component';
->>>>>>> 4e01b919230443de9687a566c506b03a0fd9f1ad
 
 
 
@@ -43,12 +40,9 @@ import { RechercheComponent } from './recherche/recherche.component';
     DialogdetailspotagerComponent,
     DialogconnexionComponent,
     NavbarAccueilComponent,
-<<<<<<< HEAD
     FooterComponent,
-=======
     CalendarComponent,
     RechercheComponent,
->>>>>>> 4e01b919230443de9687a566c506b03a0fd9f1ad
 
   
   ],
@@ -69,9 +63,7 @@ import { RechercheComponent } from './recherche/recherche.component';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-<<<<<<< HEAD
     MatSidenavModule,
-=======
     CommonModule,
     FormsModule,
     NgbModalModule,
@@ -81,7 +73,6 @@ import { RechercheComponent } from './recherche/recherche.component';
       useFactory: adapterFactory
     }),   
 
->>>>>>> 4e01b919230443de9687a566c506b03a0fd9f1ad
   ],
   providers: [],
   bootstrap: [AppComponent],
