@@ -21,10 +21,14 @@ export class DialogdetailspotagerComponent implements OnInit {
 
   ngOnInit() {
     //Il faut d'abord récupérer l'utilisateur ou le terrain
-
+    //Demander session back ou front
+    //demander menu déroulant angular
 
 
     
   }
 
+  testco(){
+
+  }
 }
