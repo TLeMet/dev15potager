@@ -29,6 +29,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import {MatListModule} from '@angular/material/list';
+import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import {MatListModule} from '@angular/material/list';
     FooterComponent,
     CalendarComponent,
     RechercheComponent,
+    EspacePotagersComponent,
 
   
   ],
