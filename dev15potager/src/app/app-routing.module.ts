@@ -4,6 +4,7 @@ import { RecherchelistepotagersComponent } from './recherchelistepotagers/recher
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { AppComponent } from './app.component';
 import { PersoComponent } from './perso/perso.component';
+import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent},
   {path: 'modifProfil', component: ModifprofilComponent},
   {path: 'espacePerso', component: PersoComponent},
+  {path: 'demandeAd', component: DialogdetaildemandeComponent},
 
 
 ];

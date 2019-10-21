@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material';
+import { DialogdetaildemandeComponent } from '../dialogdetaildemande/dialogdetaildemande.component';
 
 @Component({
   selector: 'app-espace-potagers',
@@ -19,6 +20,12 @@ export class EspacePotagersComponent implements OnInit {
 
       console.log(response);
     })
+  }
+  openConsulter(){
+    const mydial2 = this.dialog.open(DialogdetaildemandeComponent, {
+      height: '680px',
+      width: '1400px',
+    });
   }
 
 }
