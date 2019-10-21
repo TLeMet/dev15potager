@@ -1,16 +1,16 @@
 <mat-card class="example-card">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Mettre le titre du potager ici</mat-card-title>
+        <mat-card-title> {{ titre}} </mat-card-title>
         <mat-card-subtitle>
-            Mettre l'adresse du potager ici <br>
-            Mettre le nom du proprio ici
+            {{adresse}} <br>
+            {{nomproprio}}
         </mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="" alt="Mettre la photo du potager ici">
     <mat-card-content>
         <p>
-        Mettre la description du potager ici
+        {{description}}
         </p>
     </mat-card-content>
     <mat-card-actions>

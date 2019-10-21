@@ -28,6 +28,7 @@
 
                     <button [disabled]="!formeCo.form.valid" class="btn btn-primary btn-block" (click)="goConnexion()">Connexion</button>
                     <br>
+                    <p [hidden]="!erreurLogin()" style="color: red;">Il y a une erreur dans le login ou le mot de passe.</p>
                 </form>
                 <button class="btn btn-primary text-center" style="position: absolute; bottom: 0%; left: 0%;" (click)="fermerDialog()">Fermer</button>
             </div>
@@ -81,6 +82,7 @@
                     <button (click)="goInscription()" [disabled]="!formeIns.form.valid" class="btn btn-primary btn-block">Inscription</button>
 
                     <br>
+                    <p [hidden]="!mailExiste()" style="color: red;">L'adresse email existe déjà.</p>
                 </form>
             </div>
 
