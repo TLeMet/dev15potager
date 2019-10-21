@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 // Pour utiliser des liens http :
 import { HttpClientModule } from '@angular/common/http';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -28,9 +29,9 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MatListModule } from '@angular/material/list';
+import { ModifprofilComponent } from './modifprofil/modifprofil.component';
+import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
-
-
 
 @NgModule({
   declarations: [
@@ -43,6 +44,8 @@ import { ModalrechercheComponent } from './modalrecherche/modalrecherche.compone
     NavbarAccueilComponent,
     FooterComponent,
     CalendarComponent,
+    ModifprofilComponent,
+    EspacePotagersComponent,
     ModalrechercheComponent,
 
   ],
