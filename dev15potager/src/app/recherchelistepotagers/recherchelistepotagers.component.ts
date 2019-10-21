@@ -46,13 +46,7 @@ constructor(private http: HttpClient, private dialog: MatDialog, private servi: 
   }
 
 
-  countUsersdeTerrain(t) {
-    this.http.get("/cnt.userofterrain/" + t.id).subscribe(response => {
-      this.compte = response;
-      console.log(response);
-    })
-    return this.compte;
-  }
+
 
 
 
