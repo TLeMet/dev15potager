@@ -27,11 +27,21 @@ import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
+<<<<<<< HEAD
 import {MatListModule} from '@angular/material/list';
+=======
+import { MatListModule} from '@angular/material/list';
+>>>>>>> d72f27ef4933e03f31ad595db0a6d0f678af3213
 import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
 import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
+<<<<<<< HEAD
+=======
+import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailterrain.component';
+
+
+>>>>>>> d72f27ef4933e03f31ad595db0a6d0f678af3213
 
 @NgModule({
   declarations: [
@@ -49,10 +59,11 @@ import { ModifprofilComponent } from './modifprofil/modifprofil.component';
     ModifprofilComponent,
     EspacePotagersComponent,
     ModalrechercheComponent,
+    ModaldetailterrainComponent,
 
   ],
 
-  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent],
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent],
 
   imports: [
     BrowserModule,

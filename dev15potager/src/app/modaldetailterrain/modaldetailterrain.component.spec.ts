@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterComponent } from './footer.component';
+import { ModaldetailterrainComponent } from './modaldetailterrain.component';
 
-describe('FooterComponent', () => {
-  let component: FooterComponent;
-  let fixture: ComponentFixture<FooterComponent>;
+describe('ModaldetailterrainComponent', () => {
+  let component: ModaldetailterrainComponent;
+  let fixture: ComponentFixture<ModaldetailterrainComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
+      declarations: [ ModaldetailterrainComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FooterComponent);
+    fixture = TestBed.createComponent(ModaldetailterrainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

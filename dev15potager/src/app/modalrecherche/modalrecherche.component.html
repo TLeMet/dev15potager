@@ -1,1 +1,29 @@
-<p>modalrecherche works!</p>
+<div class="container">
+    <div class="text-center">
+        <h3>Votre recherche</h3>
+    </div>
+    <br><br><br>
+
+    <table class="table">
+        <thead class="thead-dark text-center">
+            <tr>
+                <th>Nom terrains</th>
+                <th>Ville</th>
+                <th>Surface</th>
+                <th>Détails</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let u of data'>
+                <td > {{ u.nom }} </td>
+                <td> {{ u.ville }} </td>
+                <td> {{ u.surface }} </td>
+                <td><button (click)="ouvreDetail(u)" style="background-color:darkturquoise" button mat-mini-fab>
+                        <mat-icon>more_horiz</mat-icon>
+                    </button></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
