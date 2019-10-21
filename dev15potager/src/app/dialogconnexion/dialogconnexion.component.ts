@@ -24,7 +24,7 @@ export class DialogconnexionComponent implements OnInit {
  
 
 
-  constructor(private http : HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
+  constructor(private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
 
 
   fermerDialog(): void {
