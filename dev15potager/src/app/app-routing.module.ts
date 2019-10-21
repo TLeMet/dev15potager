@@ -5,7 +5,7 @@ import { RechercheComponent } from './recherche/recherche.component';
 
 const routes: Routes = [
   {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent},
-  {path: 'rechercheterrain', component: RechercheComponent},
+  {path: 'rechTerrain', component: RechercheComponent},
 
 ];
 

@@ -51,8 +51,10 @@
                 <ul class="navbar-nav">
                     <li>
                         <div style="float: right;">
-                            <input type="text" placeholder="Recherche" #rechTerr class="form-control text-center">
-                            <button class="btn" style="color: brown;" (click) = "chercheTerrain(rechTerr.value)" routerLink = "rechercheterrain" routerLinkActive="active" style="float: right;" >Rechercher</button>
+                            <input type="text" placeholder="Recherche" #nomT class="form-control text-center">
+                            <li class="nav-item">
+                            <button class="btn nav-link" style="color: brown;" (click) = "chercheTerrain(nomT.value)"  style="float: right;" routerLink = "rechTerrain" routerLinkActive="active">Rechercher</button>
+                        </li>
                         </div>
                     </li>
                     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;

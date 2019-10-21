@@ -34,7 +34,7 @@ export class RecherchelistepotagersComponent implements OnInit {
 
   ouvreConnexion() {
     const mydial2 = this.dialog.open(DialogconnexionComponent, {
-      height: '800px',
+      height: '680px',
       width: '1400px',
     });
   }

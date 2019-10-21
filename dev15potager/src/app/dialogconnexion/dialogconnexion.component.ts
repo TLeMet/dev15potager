@@ -15,6 +15,11 @@ export class DialogconnexionComponent implements OnInit {
   lapersonne: User = new User();
   personneCo: User = new User();
   userConnecte;
+  usertous;
+  mailtous;
+
+  login_attempt;
+ 
 
 
   constructor(private http : HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
@@ -27,41 +32,64 @@ export class DialogconnexionComponent implements OnInit {
 
   goConnexion(){
     console.log("LOG1");
-    this.http.get('http://localhost:8086/users/mail/' + this.personneCo.mail).subscribe(response => {
+    this.login_attempt = {
+      "mail": '' + this.personneCo.mail,
+         "pw": '' + this.personneCo.pw
+    };
+    console.log(this.login_attempt);  // ça marche
+
+    const co = this.http.post('http://localhost:8086/login', this.login_attempt ).toPromise();
+
+    co.then(
+    (response => {
+      console.log("On est entrés dans la fonction");
       this.userConnecte = response;
       console.log("LOG2 :" + response);
-    })
-
-    if(this.userConnecte!=null){
-      if(this.userConnecte.pw === this.personneCo.pw){
-        this.route.navigate(['/perso.component.html']);
-
+      
+      
+      if(this.userConnecte!=null){  // On vérifie que userConnecte n'est pas null.
+        //if(this.userConnecte.pw == this.personneCo.pw){    // On vérifie qu'il y a concordance de mdp.
+          console.log("On va naviguer vers /perso.component.html");
+          this.route.navigate(['/perso.component.html']);
       }
       else{
-      console.log("La comparaison de mots de passes n'est pas bonne.");
-
+        console.log("Ouh là là userConnecte est null");
       }
-    }
-    else{
-      console.log("Ouh là là userConnecte est null");
-    }
+    })
+    )
+
+
   }
 
 
-  
+
   goInscription(){
-    this.http.post('http://localhost:8086/users', this.lapersonne).subscribe(data  => {
-
-    }, err => {
-      console.log(err);
+    // Depuis 'usertous', on crée une liste des mails dans 'mailtous'.
+    for(var varmail in this.usertous){ 
+      this.mailtous[varmail] = this.usertous[varmail];
     }
-  );
 
-    this.route.navigate(['/perso.component.html']);
+    if(!this.mailtous.includes(this.lapersonne.mail)){
+      this.http.post('http://localhost:8086/users', this.lapersonne).subscribe(data  => {
+    
+      }, err => {
+        console.log(err);
+      });
+  
+      this.route.navigate(['/rechTerrain']);
+    }
+
   }
 
 
   ngOnInit() {
+    //'usertous' est la liste de tous les users existants.
+    this.http.get('http://localhost:8086/users').subscribe(response => {
+      this.usertous = response;
+      console.log(response);
+    })
   }
+
+
 
 }
