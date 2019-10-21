@@ -35,7 +35,7 @@ export class DialogdetailspotagerComponent implements OnInit {
     this.titre = this.t.nom;
     this.adresse = this.t.adresse
     this.description = this.t.description
-    this.nomproprio = this.t.proprietaire.nom + this.t.proprietaire.prenom
+    this.nomproprio = this.t.proprietaire.nom + " " + this.t.proprietaire.prenom
   
 
   }

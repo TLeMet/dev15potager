@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 // Pour utiliser des liens http :
 import { HttpClientModule } from '@angular/common/http';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -29,6 +30,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import {MatListModule} from '@angular/material/list';
+import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 
 
 @NgModule({
@@ -43,6 +45,7 @@ import {MatListModule} from '@angular/material/list';
     FooterComponent,
     CalendarComponent,
     RechercheComponent,
+    ModifprofilComponent,
 
   
   ],

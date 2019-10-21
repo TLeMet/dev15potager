@@ -22,8 +22,8 @@ export class RecherchelistepotagersComponent implements OnInit {
 
 
 
-  ouvreDetailsPotager(u) {
-    this.servi.terrain = u;
+  ouvreDetailsPotager(t) {
+    this.servi.terrain = t;
     console.log("Terrain : " + this.servi.terrain.id);
     const mydial = this.dialog.open(DialogdetailspotagerComponent, {
       height: '800px',
