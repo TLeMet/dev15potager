@@ -11,10 +11,12 @@ import { User } from '../model/User';
 })
 export class DialogconnexionComponent implements OnInit {
 
-
+  lemailexiste = 0;
+  erreurlogin = 0;
   lapersonne: User = new User();
   personneCo: User = new User();
   userConnecte;
+  userInscrit;
   usertous;
   mailtous;
 
@@ -27,6 +29,23 @@ export class DialogconnexionComponent implements OnInit {
 
   fermerDialog(): void {
     this.dialogRef.close();
+  }
+  mailExiste(){
+    if(this.lemailexiste == 1){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  erreurLogin(){
+    if(this.erreurlogin == 1){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
 
@@ -41,22 +60,24 @@ export class DialogconnexionComponent implements OnInit {
     const co = this.http.post('http://localhost:8086/login', this.login_attempt ).toPromise();
 
     co.then(
-    (response => {
+    response => {
       console.log("On est entrés dans la fonction");
       this.userConnecte = response;
       console.log("LOG2 :" + response);
       
       
       if(this.userConnecte!=null){  // On vérifie que userConnecte n'est pas null.
-        //if(this.userConnecte.pw == this.personneCo.pw){    // On vérifie qu'il y a concordance de mdp.
-          console.log("On va naviguer vers /perso.component.html");
-          this.route.navigate(['/perso.component.html']);
+      this.erreurlogin = 0;
+          console.log("On va naviguer vers une autre page.");
+          this.route.navigate(['/rechTerrain']);
       }
       else{
-        console.log("Ouh là là userConnecte est null");
+        console.log("userConnecte est null.");
+        this.erreurlogin = 1;
+        // ici vérifier si l'adresse email entrée existe pour un message d'information.
       }
     })
-    )
+    
 
 
   }
@@ -65,19 +86,38 @@ export class DialogconnexionComponent implements OnInit {
 
   goInscription(){
     // Depuis 'usertous', on crée une liste des mails dans 'mailtous'.
-    for(var varmail in this.usertous){ 
-      this.mailtous[varmail] = this.usertous[varmail];
-    }
+    console.log("Dans goInscription");
 
-    if(!this.mailtous.includes(this.lapersonne.mail)){
-      this.http.post('http://localhost:8086/users', this.lapersonne).subscribe(data  => {
-    
-      }, err => {
-        console.log(err);
+    const ins = this.http.get('http://localhost:8086/users/mail/' + this.lapersonne.mail).toPromise();
+
+    ins.then(
+    (response => {
+      console.log("On est entrés dans la fonction");
+      this.userInscrit = response;
+
+      if(this.userInscrit == null){
+        this.lemailexiste = 0;
+        console.log("Le user n'existe pas, on va le créer.");
+
+        const ins2 = this.http.post('http://localhost:8086/users', this.lapersonne).toPromise();
+        
+        ins2.then(
+          response2 => {
+            console.log("On va naviguer vers une autre page.");
+            this.route.navigate(['/rechTerrain']);
+          }, err => {
+          console.log("Erreur : " + err);
       });
-  
-      this.route.navigate(['/rechTerrain']);
-    }
+
+      }
+      else{
+      console.log("L'adresse email existe déjà.");
+      this.lemailexiste = 1;
+      }
+
+    })
+    )
+
 
   }
 
