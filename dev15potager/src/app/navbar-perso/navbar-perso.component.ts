@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ServiceRechercheterrainService } from '../service-rechercheterrain.service'
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { RechercheComponent } from '../recherche/recherche.component';
 
 @Component({
   selector: 'app-navbar-perso',
@@ -9,22 +11,27 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NavbarPersoComponent implements OnInit {
 
-  constructor(private servi : ServiceRechercheterrainService, private http : HttpClient) { }
+  constructor(private servi: ServiceRechercheterrainService, private http: HttpClient, private route: Router) { }
 data;
-  chercheTerrain(nomT){
+  chercheTerrain(nomT) {
     this.servi.rechTerr = nomT;
     console.log(this.servi.rechTerr);
-    console.log(nomT);
-    this.http.get('http://localhost:8086/terrains/nom/'+ this.servi.rechTerr).subscribe(response => {
-      this.data = response;     
+    this.http.get('http://localhost:8086/terrains/nom/' + this.servi.rechTerr).subscribe(response => {
+      this.data = response;
       console.log(response);
-      console.log(this.data);
-     
-  })}
+      console.log('navbar' + this.data);
 
- 
+      this.servi.myDataT = response;
+      this.route.navigate(['/rechTerrain']);
+
+      }
+      );
+    }
+
 
   ngOnInit() {
+
+    console.log('je suis recharger nav');
   }
 
 }
