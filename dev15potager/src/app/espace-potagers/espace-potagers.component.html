@@ -1,9 +1,36 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <h2>Messagerie</h2>           
+            <h2>Info jardin</h2>      
+            <ul>
+                <li></li>
+            </ul>
+            <hr>
+            <h2>Gestion proprio</h2>
+            <!-- Cacher si le gars n'est pas proprio -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Date</th>
+                        <th>Consulter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><button mat-mini-fab aria-label="Example icon-button with a heart icon" (click)="">
+                                <mat-icon>search</mat-icon>
+                        </button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col-sm-6">
+            <h2>Messagerie</h2>
             <app-calendar></app-calendar>
         </div>
     </div>

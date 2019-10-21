@@ -19,7 +19,7 @@ export class RecherchelistepotagersComponent implements OnInit {
   terrain;
   compte;
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private servi : ServiceTerrainService) { }
+constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServiceTerrainService) { }
 
 
 

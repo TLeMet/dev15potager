@@ -51,10 +51,10 @@
                 <ul class="navbar-nav">
                     <li>
                         <div style="float: right;">
-                            <input type="text" placeholder="Recherche" #nomT class="form-control text-center">
-                            <li class="nav-item">
-                            <button class="btn nav-link" style="color: brown;" (click) = "chercheTerrain(nomT.value)"  style="float: right;">Rechercher</button>
-                        </li>
+                            <mat-form-field>
+                                <input matInput [(ngModel)]="name" placeholder="Rechercher">
+                              </mat-form-field> &nbsp;&nbsp;
+                                <button mat-raised-button (click)="ouvreRecherche()">Recherche</button>
                         </div>
                     </li>
                     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;

@@ -1,8 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ServiceRechercheterrainService } from '../service-rechercheterrain.service'
+import { ServiceRechercheterrainService } from '../service-rechercheterrain.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { RechercheComponent } from '../recherche/recherche.component';
+import { MatDialog } from '@angular/material';
+import { ModalrechercheComponent } from '../modalrecherche/modalrecherche.component';
 
 @Component({
   selector: 'app-navbar-perso',
@@ -11,8 +12,9 @@ import { RechercheComponent } from '../recherche/recherche.component';
 })
 export class NavbarPersoComponent implements OnInit {
 
-  constructor(private servi: ServiceRechercheterrainService, private http: HttpClient, private route: Router) { }
+  constructor(private servi: ServiceRechercheterrainService, private http: HttpClient, private route: Router, private dialog: MatDialog) { }
 data;
+
   chercheTerrain(nomT) {
     this.servi.rechTerr = nomT;
     console.log(this.servi.rechTerr);
@@ -28,10 +30,16 @@ data;
       );
     }
 
+    ouvreRecherche() {
+      const mydial2 = this.dialog.open(ModalrechercheComponent, {
+        height: '680px',
+        width: '1400px',
+      });
+    }
+
 
   ngOnInit() {
 
-    console.log('je suis recharger nav');
   }
 
 }
