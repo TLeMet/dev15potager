@@ -28,7 +28,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
 import { RechercheComponent } from './recherche/recherche.component';
-
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -72,6 +72,7 @@ import { RechercheComponent } from './recherche/recherche.component';
       provide: DateAdapter,
       useFactory: adapterFactory
     }),   
+    MatListModule,
 
   ],
   providers: [],
