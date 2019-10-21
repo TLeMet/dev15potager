@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { DialogconnexionComponent } from '../dialogconnexion/dialogconnexion.component';
 
 @Component({
   selector: 'app-navbar-accueil',
@@ -7,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarAccueilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
+
+  ouvreConnexion() {
+    const mydial2 = this.dialog.open(DialogconnexionComponent, {
+      height: '680px',
+      width: '1400px',
+    });
+  }
+
+
 
   ngOnInit() {
   }
