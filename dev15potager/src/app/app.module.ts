@@ -29,12 +29,9 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import {MatListModule} from '@angular/material/list';
-<<<<<<< HEAD
 import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
 import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
-=======
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
->>>>>>> cc5137f974d4c456439507f401738df099bd878d
 
 
 @NgModule({
@@ -49,12 +46,9 @@ import { ModalrechercheComponent } from './modalrecherche/modalrecherche.compone
     FooterComponent,
     CalendarComponent,
     RechercheComponent,
-<<<<<<< HEAD
     EspacePotagersComponent,
 DialogdetaildemandeComponent,
-=======
     ModalrechercheComponent,
->>>>>>> cc5137f974d4c456439507f401738df099bd878d
 
   
   ],
