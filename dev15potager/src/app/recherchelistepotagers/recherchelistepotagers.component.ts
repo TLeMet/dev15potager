@@ -17,6 +17,7 @@ export class RecherchelistepotagersComponent implements OnInit {
   data;
   nbUsers;
   terrain;
+  compte;
 
   constructor(private http: HttpClient, private dialog: MatDialog, private servi : ServiceTerrainService) { }
 
@@ -43,6 +44,16 @@ export class RecherchelistepotagersComponent implements OnInit {
     this.nbUsers = users.count();
     return "caca" + this.nbUsers;
   }
+
+
+  countUsersdeTerrain(t) {
+    this.http.get("/cnt.userofterrain/" + t.id).subscribe(response => {
+      this.compte = response;
+      console.log(response);
+    })
+    return this.compte;
+  }
+
 
 
   ngOnInit() {

@@ -31,7 +31,7 @@
                         <td>{{ t.nom }}</td>
                         <td>{{ t.adresse }}, {{ t.ville }}</td>
                         <td>{{ t.surface }} m²</td>
-                        <td> countUsers({{ t.userOfTerrain }}) / {{ t.maxUser }}</td>
+                        <td> {{ countUsersdeTerrain(t) }} / {{ t.maxUser }}</td>
                         <td>{{ t.horaires }}</td>
                         <td><button class="btn btn-primary" (click)="ouvreDetailsPotager(t)">Détails</button></td>
                     </tr>

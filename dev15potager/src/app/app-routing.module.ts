@@ -7,8 +7,7 @@ import { AppComponent } from './app.component';
 import { PersoComponent } from './perso/perso.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {path: 'accueil', component: AppComponent},  
+  
   {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent},
   {path: 'rechTerrain', component: RechercheComponent},
   {path: 'modifProfil', component: ModifprofilComponent},
