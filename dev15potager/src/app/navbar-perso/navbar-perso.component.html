@@ -52,9 +52,9 @@
                     <li>
                         <div style="float: right;">
                             <mat-form-field>
-                                <input matInput [(ngModel)]="name" placeholder="Rechercher">
+                                <input matInput #rechT placeholder="Rechercher">
                               </mat-form-field> &nbsp;&nbsp;
-                                <button mat-raised-button (click)="ouvreRecherche()">Recherche</button>
+                                <button mat-raised-button (click)="ouvreRecherche(rechT.value)">Recherche</button>
                         </div>
                     </li>
                     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
