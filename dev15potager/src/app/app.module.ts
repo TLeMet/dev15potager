@@ -33,6 +33,7 @@ import { EspacePotagersComponent } from './espace-potagers/espace-potagers.compo
 import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
+import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailterrain.component';
 
 
 
@@ -52,10 +53,11 @@ import { ModifprofilComponent } from './modifprofil/modifprofil.component';
     ModifprofilComponent,
     EspacePotagersComponent,
     ModalrechercheComponent,
+    ModaldetailterrainComponent,
 
   ],
 
-  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent],
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent],
 
   imports: [
     BrowserModule,
