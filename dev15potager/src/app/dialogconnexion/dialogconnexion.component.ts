@@ -18,6 +18,9 @@ export class DialogconnexionComponent implements OnInit {
   usertous;
   mailtous;
 
+  login_attempt;
+ 
+
 
   constructor(private http : HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
 
@@ -29,32 +32,33 @@ export class DialogconnexionComponent implements OnInit {
 
   goConnexion(){
     console.log("LOG1");
-    
-    this.http.get('http://localhost:8086/users/mail/' + this.personneCo.mail).subscribe(response => {
+    this.login_attempt = {
+      "mail": '' + this.personneCo.mail,
+         "pw": '' + this.personneCo.pw
+    };
+    console.log(this.login_attempt);  // ça marche
+
+    const co = this.http.post('http://localhost:8086/login', this.login_attempt ).toPromise();
+
+    co.then(
+    (response => {
+      console.log("On est entrés dans la fonction");
       this.userConnecte = response;
       console.log("LOG2 :" + response);
-    })
-
-    
-    
-    // Attention, le code continue alors que le précédent subscribe n'est pas fini.
-
-
-    var mdpinput = <HTMLInputElement>document.getElementById("lemdpinput");
-
-    if(this.userConnecte!=null){  // On vérifie que userConnecte n'est pas null.
-      //if(this.userConnecte.pw == this.personneCo.pw){    // On vérifie qu'il y a concordance de mdp.
-      if(this.userConnecte.pw == mdpinput.value.toString()){
-
-        this.route.navigate(['/perso.component.html']);
+      
+      
+      if(this.userConnecte!=null){  // On vérifie que userConnecte n'est pas null.
+        //if(this.userConnecte.pw == this.personneCo.pw){    // On vérifie qu'il y a concordance de mdp.
+          console.log("On va naviguer vers /perso.component.html");
+          this.route.navigate(['/perso.component.html']);
       }
       else{
-      console.log("La comparaison de mots de passes n'est pas bonne.");
+        console.log("Ouh là là userConnecte est null");
       }
-    }
-    else{
-      console.log("Ouh là là userConnecte est null");
-    }
+    })
+    )
+
+
   }
 
 
@@ -72,7 +76,7 @@ export class DialogconnexionComponent implements OnInit {
         console.log(err);
       });
   
-      this.route.navigate(['/perso.component.html']);
+      this.route.navigate(['/rechTerrain']);
     }
 
   }
