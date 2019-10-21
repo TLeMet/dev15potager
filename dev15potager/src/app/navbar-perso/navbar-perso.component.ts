@@ -18,6 +18,7 @@ data;
     this.http.get('http://localhost:8086/terrains/nom/'+ this.servi.rechTerr).subscribe(response => {
       this.data = response;     
       console.log(response);
+      console.log(this.data);
      
   })}
 

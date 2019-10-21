@@ -13,19 +13,15 @@ export class RechercheComponent implements OnInit {
   constructor(private http : HttpClient, private servi : ServiceRechercheterrainService) { }
 
   terrainTrouve = this.servi.rechTerr;
-  data : Terrain = new Terrain()
-  nomt = this.data.nom;
+  data;
   ngOnInit() {
-    this.http.get('http://localhost:8086/terrains/nom/'+ this.terrainTrouve).subscribe(data => {
-      
-      console.log(this.servi.rechTerr)
+    this.http.get('http://localhost:8086/terrains/nom/'+ this.terrainTrouve).subscribe(response => {
+      this.data=response;
+      console.log(this.servi.rechTerr);
       console.log(this.terrainTrouve);
-      console.log(data);
+      console.log(response);
+      console.log("data" + this.data + "data");
      
+  })}
 
-  })
-
-  
-
-}
 }
