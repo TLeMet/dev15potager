@@ -22,14 +22,14 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
 import { FooterComponent } from './footer/footer.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
-import { RechercheComponent } from './recherche/recherche.component';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
+
 
 
 @NgModule({
@@ -43,14 +43,12 @@ import { ModalrechercheComponent } from './modalrecherche/modalrecherche.compone
     NavbarAccueilComponent,
     FooterComponent,
     CalendarComponent,
-    RechercheComponent,
     ModalrechercheComponent,
 
-  
   ],
-  
-  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent],
-  
+
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -73,7 +71,7 @@ import { ModalrechercheComponent } from './modalrecherche/modalrecherche.compone
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    }),   
+    }),
     MatListModule,
 
   ],
