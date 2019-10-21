@@ -39,6 +39,7 @@ export class DialogconnexionComponent implements OnInit {
     }
   }
 
+
   erreurLogin(){
     if(this.erreurlogin == 1){
       return true;
@@ -49,38 +50,43 @@ export class DialogconnexionComponent implements OnInit {
   }
 
 
+
   goConnexion(){
     console.log("LOG1");
     this.login_attempt = {
       "mail": '' + this.personneCo.mail,
          "pw": '' + this.personneCo.pw
     };
-    console.log(this.login_attempt);  // ça marche
 
-    const co = this.http.post('http://localhost:8086/login', this.login_attempt ).toPromise();
+    try {
+      const co = this.http.post('http://localhost:8086/login', this.login_attempt ).toPromise();
+      console.log("toPromise réalisé.");
 
-    co.then(
-    response => {
-      console.log("On est entrés dans la fonction");
-      this.userConnecte = response;
-      console.log("LOG2 :" + response);
-      
-      
-      if(this.userConnecte!=null){  // On vérifie que userConnecte n'est pas null.
-      this.erreurlogin = 0;
-          console.log("On va naviguer vers une autre page.");
-          this.route.navigate(['/rechTerrain']);
-      }
-      else{
-        console.log("userConnecte est null.");
-        this.erreurlogin = 1;
-        // ici vérifier si l'adresse email entrée existe pour un message d'information.
-      }
-    })
-    
-
-
+      co.then(
+      response => {
+        console.log("On est entrés dans la fonction");
+        this.userConnecte = response;
+        console.log("LOG2 :" + response);
+        
+        
+        if(this.userConnecte!=null){  // On vérifie que userConnecte n'est pas null.
+        this.erreurlogin = 0;
+            console.log("On va naviguer vers une autre page.");
+            this.route.navigate(['/rechTerrain']);
+        }
+        else{
+          console.log("userConnecte est null.");
+          this.erreurlogin = 1;
+          // ici vérifier si l'adresse email entrée existe pour un message d'information.
+        }
+      })
+    }
+    catch (e){
+      console.log("userConnecte est null.");
+      this.erreurlogin = 1;
+    }
   }
+
 
 
 
@@ -114,10 +120,8 @@ export class DialogconnexionComponent implements OnInit {
       console.log("L'adresse email existe déjà.");
       this.lemailexiste = 1;
       }
-
     })
     )
-
 
   }
 

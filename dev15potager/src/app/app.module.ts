@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 // Pour utiliser des liens http :
 import { HttpClientModule } from '@angular/common/http';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,17 +23,24 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
 import { FooterComponent } from './footer/footer.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
+<<<<<<< HEAD
 import { RechercheComponent } from './recherche/recherche.component';
 import {MatListModule} from '@angular/material/list';
 import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
 import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
 
+=======
+import { MatListModule } from '@angular/material/list';
+import { ModifprofilComponent } from './modifprofil/modifprofil.component';
+import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
+import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
+>>>>>>> 662d5162351891c590768d3e1dd810a55837793a
 
 @NgModule({
   declarations: [
@@ -45,16 +53,20 @@ import { ModalrechercheComponent } from './modalrecherche/modalrecherche.compone
     NavbarAccueilComponent,
     FooterComponent,
     CalendarComponent,
+<<<<<<< HEAD
     RechercheComponent,
     EspacePotagersComponent,
 DialogdetaildemandeComponent,
+=======
+    ModifprofilComponent,
+    EspacePotagersComponent,
+>>>>>>> 662d5162351891c590768d3e1dd810a55837793a
     ModalrechercheComponent,
 
-  
   ],
-  
-  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent],
-  
+
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -77,7 +89,7 @@ DialogdetaildemandeComponent,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    }),   
+    }),
     MatListModule,
 
   ],

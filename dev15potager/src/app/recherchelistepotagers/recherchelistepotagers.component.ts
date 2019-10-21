@@ -18,12 +18,12 @@ export class RecherchelistepotagersComponent implements OnInit {
   nbUsers;
   terrain;
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private servi : ServiceTerrainService) { }
+constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServiceTerrainService) { }
 
 
 
-  ouvreDetailsPotager(u) {
-    this.servi.terrain = u;
+  ouvreDetailsPotager(t) {
+    this.servi.terrain = t;
     console.log("Terrain : " + this.servi.terrain.id);
     const mydial = this.dialog.open(DialogdetailspotagerComponent, {
       height: '800px',
