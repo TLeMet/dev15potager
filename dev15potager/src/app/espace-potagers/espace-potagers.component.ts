@@ -14,8 +14,8 @@ export class EspacePotagersComponent implements OnInit {
   constructor(private http: HttpClient, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8086/terrains').subscribe(response => {
-
+    // mettre le terrain
+    this.http.get('http://localhost:8086/terrains/' + 1).subscribe(response => {
       this.data = response;
 
       console.log(response);
