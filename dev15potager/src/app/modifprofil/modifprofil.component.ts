@@ -10,7 +10,7 @@ import { ServiceinfouserService } from '../serviceinfouser.service';
 })
 export class ModifprofilComponent implements OnInit {
 
-  personneModif;
+  personneModif = new User;
 
   constructor(private http : HttpClient, private servi : ServiceinfouserService) { }
 
@@ -35,7 +35,8 @@ export class ModifprofilComponent implements OnInit {
 
   ngOnInit() {
     // On va chercher le user stocké dans le service user.
-    this.personneModif = this.servi.user;
+    // this.personneModif = this.servi.user;
+    this.personneModif.age = JSON.parse(localStorage.getItem('userConnecte')).age;
   }
 
 }
