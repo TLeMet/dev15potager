@@ -28,10 +28,18 @@ import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
+<<<<<<< HEAD
+import {MatListModule} from '@angular/material/list';
+import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
+import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
+import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
+import { ModifprofilComponent } from './modifprofil/modifprofil.component';
+=======
 import { MatListModule } from '@angular/material/list';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
+>>>>>>> 3c2fffd06a027f10a3836256fe02fb009e94410e
 
 @NgModule({
   declarations: [
@@ -44,6 +52,11 @@ import { ModalrechercheComponent } from './modalrecherche/modalrecherche.compone
     NavbarAccueilComponent,
     FooterComponent,
     CalendarComponent,
+<<<<<<< HEAD
+    EspacePotagersComponent,
+    DialogdetaildemandeComponent,
+=======
+>>>>>>> 3c2fffd06a027f10a3836256fe02fb009e94410e
     ModifprofilComponent,
     EspacePotagersComponent,
     ModalrechercheComponent,

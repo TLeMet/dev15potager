@@ -72,6 +72,9 @@ export class DialogconnexionComponent implements OnInit {
         if(this.userConnecte!=null){  // On vérifie que userConnecte n'est pas null.
         this.erreurlogin = 0;
             console.log("On va naviguer vers une autre page.");
+
+            localStorage.setItem('userConnecte', JSON.stringify(
+                        {age : this.userConnecte.age}));
             this.route.navigate(['/rechTerrain']);
         }
         else{
