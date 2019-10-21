@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceRechercheterrainService {
 
+  myDataT;
   constructor() { }
-  rechTerr : String;
+  rechTerr: string;
+
 }

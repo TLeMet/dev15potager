@@ -32,6 +32,10 @@ import { RechercheComponent } from './recherche/recherche.component';
 import {MatListModule} from '@angular/material/list';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 
+import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
+import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
+
+
 
 @NgModule({
   declarations: [
@@ -46,6 +50,8 @@ import { ModifprofilComponent } from './modifprofil/modifprofil.component';
     CalendarComponent,
     RechercheComponent,
     ModifprofilComponent,
+    EspacePotagersComponent,
+    ModalrechercheComponent,
 
   
   ],

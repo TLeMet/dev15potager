@@ -4,6 +4,7 @@ import { RecherchelistepotagersComponent } from './recherchelistepotagers/recher
 import { RechercheComponent } from './recherche/recherche.component';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { AppComponent } from './app.component';
+import { PersoComponent } from './perso/perso.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -11,6 +12,8 @@ const routes: Routes = [
   {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent},
   {path: 'rechTerrain', component: RechercheComponent},
   {path: 'modifProfil', component: ModifprofilComponent},
+  {path: 'espacePerso', component: PersoComponent},
+
 
 ];
 
