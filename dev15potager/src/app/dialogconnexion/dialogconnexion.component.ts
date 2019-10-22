@@ -24,7 +24,7 @@ export class DialogconnexionComponent implements OnInit {
  
 
 
-  constructor(private http: HttpClient, private router: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
+  constructor(private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
 
 
   fermerDialog(): void {
@@ -74,7 +74,7 @@ export class DialogconnexionComponent implements OnInit {
 
             localStorage.setItem('userConnecte', JSON.stringify(
                         {age : this.userConnecte.age}));
-            this.router.navigate(['/espacePerso']);
+            this.route.navigate(['/espaceperso']);
             //window.location.reload();
             this.fermerDialog();
             
@@ -112,7 +112,7 @@ export class DialogconnexionComponent implements OnInit {
         ins2.then(
           response2 => {
             console.log("On va naviguer vers une autre page.");
-            this.router.navigate(['/espacePerso']);
+            this.route.navigate(['/espaceperso']);
           }, err => {
           console.log("Erreur : " + err);
       });

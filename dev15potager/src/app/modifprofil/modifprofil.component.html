@@ -1,4 +1,6 @@
+<app-navbar-perso></app-navbar-perso>
 
+<br><br>
 
 <div class="container" style="background-image: url('https://wallpapertag.com/wallpaper/full/f/0/c/658141-amazing-white-roses-background-2560x1440.jpg');" >
     <br>
@@ -42,6 +44,6 @@
             <button [disabled]="!formModifProfil.form.valid" (click)="saveModifProfil()" class="btn btn-primary btn-block">Enregistrer modifications</button>
             <br>
         </form>
-        <button class="btn btn-primary text-center">Revenir</button>
+        <button class="btn btn-primary text-center" routerLink="/espaceperso" >Revenir</button>
     </div>
 </div>

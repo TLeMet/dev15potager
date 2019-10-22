@@ -1,0 +1,48 @@
+.image {
+    
+    background-size: cover;
+    width: 100%;
+    position:absolute;
+	top: 150px;
+    }
+
+.example-card {
+    max-width: 400px;
+}
+    
+.gras {
+    font-weight: bold;
+}
+
+.titre {
+    color : #27ac39;
+    font : 250% georgia, palatino, serif;
+    font-weight: bold;
+}
+
+.texteim1{
+    color : white;
+    font : 300% georgia, palatino, serif;
+    font-weight: bold;
+}
+
+.texteim2 {
+    color : white;
+    font :  200% georgia, palatino, serif;
+}
+
+#colonne1 {
+    float : left;
+}
+#fleche1 {
+    float : left;
+}
+#colonne2 {
+    float : center;
+}
+#fleche2 {
+    float : right;
+}
+#colonne3 {
+    float : right;
+}

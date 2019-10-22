@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../model/User';
 import { HttpClient } from '@angular/common/http';
 import { ServiceinfouserService } from '../serviceinfouser.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'modifprofil',
+  selector: 'espaceperso/modifprofil',
   templateUrl: './modifprofil.component.html',
   styleUrls: ['./modifprofil.component.css']
 })
@@ -12,7 +13,7 @@ export class ModifprofilComponent implements OnInit {
 
   personneModif = new User;
 
-  constructor(private http : HttpClient, private servi : ServiceinfouserService) { }
+  constructor(private http : HttpClient, private route: Router, private servi : ServiceinfouserService) { }
 
 
 
@@ -24,6 +25,7 @@ export class ModifprofilComponent implements OnInit {
     (response => {
       console.log("On est entrés dans la fonction");
       //this.personneModif = response;
+      this.route.navigate(['/espaceperso']);
     })
     )
 
