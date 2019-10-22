@@ -5,6 +5,7 @@ import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { PersoComponent } from './perso/perso.component';
 import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
 
 const routes: Routes = [
   
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path: 'espaceperso', component: PersoComponent},
   {path: 'demandeAd', component: DialogdetaildemandeComponent},
   {path: 'accueil', component: AccueilComponent},
+  {path: 'espacepotager', component: EspacePotagersComponent},
+  
 
 
 ];
