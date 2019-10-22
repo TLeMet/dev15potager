@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
 
+
+
 @Component({
   selector: 'app-modaldetailterrain',
   templateUrl: './modaldetailterrain.component.html',
@@ -28,6 +30,16 @@ export class ModaldetailterrainComponent implements OnInit {
 
   closeDialog() {
   this.dialogRef.close('Pizza!');
+  }
+
+  envoieMessage(message) {
+    this.http.put('http://localhost:8086/insertDemande/1/' + this.detail.id , message).subscribe(
+      data => {
+
+      }, err => {
+        console.log(err);
+      }
+    );
   }
 
   ngOnInit() {

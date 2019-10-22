@@ -8,13 +8,11 @@
     top: 50%;
 }
 
-.pad1 {
-    padding: 0 50% 0 0;
-}
 
-.example-icon {
-    padding: 0 10%;
-  }
+.pad1 {
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
   .example-container {
     display: flex;
@@ -24,3 +22,16 @@
   .example-container > * {
     width: 100%;
   }
+
+  .button1 {
+    position: absolute;
+    top: 50%;
+}
+
+.example-icon {
+    padding: 0 10%;
+  }
+
+.colortext {
+  color: #fff;
+}

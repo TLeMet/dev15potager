@@ -4,13 +4,15 @@ import { RecherchelistepotagersComponent } from './recherchelistepotagers/recher
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { PersoComponent } from './perso/perso.component';
 import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 const routes: Routes = [
   
   {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent},
-  {path: 'modifProfil', component: ModifprofilComponent},
-  {path: 'espacePerso', component: PersoComponent},
+  {path: 'espaceperso/modifprofil', component: ModifprofilComponent},
+  {path: 'espaceperso', component: PersoComponent},
   {path: 'demandeAd', component: DialogdetaildemandeComponent},
+  {path: 'accueil', component: AccueilComponent},
 
 
 ];

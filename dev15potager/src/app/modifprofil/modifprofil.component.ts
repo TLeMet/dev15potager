@@ -2,28 +2,42 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../model/User';
 import { HttpClient } from '@angular/common/http';
 import { ServiceinfouserService } from '../serviceinfouser.service';
+import { Router } from '@angular/router';
+import { SessionuserService } from '../sessionuser.service';
 
 @Component({
-  selector: 'modifprofil',
+  selector: 'espaceperso/modifprofil',
   templateUrl: './modifprofil.component.html',
   styleUrls: ['./modifprofil.component.css']
 })
 export class ModifprofilComponent implements OnInit {
 
-  personneModif = new User;
+  userConnecte;
+  regexTel = new RegExp('0(6|7)\d\d\d\d\d\d\d');
 
-  constructor(private http : HttpClient, private servi : ServiceinfouserService) { }
+  constructor(private http : HttpClient, private route: Router, private servi : ServiceinfouserService, private servisession: SessionuserService) { }
 
-
-
+  /*
+  checkValidTel() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (this.regexTel.test(this.userConnecte.tel)) {
+            resolve({ emailIsTaken: true })
+        } else {resolve(null)}
+      }, 2000)
+    },)
+  }
+  */
+  
   saveModifProfil() {
 
-    const ins = this.http.put('http://localhost:8086/users/' + this.personneModif.id, this.personneModif).toPromise();
+    const ins = this.http.put('http://localhost:8086/users/' + this.userConnecte.id, this.userConnecte).toPromise();
 
     ins.then(
     (response => {
       console.log("On est entrés dans la fonction");
       //this.personneModif = response;
+      this.route.navigate(['/espaceperso']);
     })
     )
 
@@ -34,9 +48,8 @@ export class ModifprofilComponent implements OnInit {
 
 
   ngOnInit() {
-    // On va chercher le user stocké dans le service user.
-    // this.personneModif = this.servi.user;
-    this.personneModif.age = JSON.parse(localStorage.getItem('userConnecte')).age;
+    this.userConnecte = this.servisession.userConnecte;
+
   }
 
 }

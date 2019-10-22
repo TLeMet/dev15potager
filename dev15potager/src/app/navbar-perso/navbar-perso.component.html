@@ -1,102 +1,103 @@
 <div>
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fdfdfd;">
-        <button type="button" class="navbar-brand btn-primary-outline">
-            <a class="navbar-brand" href="#">PotaPotes</a>
-        </button>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#"><strong>Espace perso</strong> </a>
-                </li>
-                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <strong>Jardins rejoints</strong>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <strong>Jardins créés</strong>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-
-            </ul>
-            <div style="float: right;">
-                <ul class="navbar-nav">
-                    <li>
-                        <div style="float: right;">
-                            <mat-form-field>
-                                <input matInput #rechT placeholder="Rechercher">
-                              </mat-form-field> &nbsp;&nbsp;
-                                <button mat-raised-button (click)="ouvreRecherche(rechT.value)">Recherche</button>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fdfdfd;">
+            <button type="button" class="navbar-brand btn-primary-outline">
+                <a class="navbar-brand" href="#">PotaPotes</a>
+            </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><strong>Espace perso</strong> </a>
+                    </li>
+                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong>Jardins rejoints</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-                    <div style="position: relative; float: right;">
-                        <li>
-
-
-
-                            <button class="btn btn-default dropdown-toggle" type="button" id="menuProfil"
-                                data-toggle="dropdown" style="float: right;">
-                                <a href="">
-                                    <mat-icon>face</mat-icon>
-                                </a>
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menuProfil">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">&nbsp; &nbsp; Modifier
-                                        son profil</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">&nbsp; &nbsp; Mes
-                                        messages</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">&nbsp; &nbsp; Se
-                                        déconnecter</a></li>
-                                <li role="presentation" class="divider"></li>
-
-                            </ul>
-
-
-                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-
-                            <a href="" style="float: right; margin-top: 9px;">
-                                <mat-icon>mail</mat-icon>
-                            </a>
-
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                        </li>
-                    </div>
+                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong>Jardins créés</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+    
                 </ul>
+                <div style="float: right;">
+                    <ul class="navbar-nav">
+                        <li>
+                            <div style="float: right;">
+                                <mat-form-field>
+                                    <input matInput #rechT placeholder="Rechercher">
+                                  </mat-form-field> &nbsp;&nbsp;
+                                    <button mat-raised-button (click)="ouvreRecherche(rechT.value)">Recherche</button>
+                            </div>
+                        </li>
+                        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                        <div style="position: relative; float: right;">
+                            <li>
+    
+    
+    
+                                <button class="btn btn-default dropdown-toggle" type="button" id="menuProfil"
+                                    data-toggle="dropdown" style="float: right;">
+                                    <a href="">
+                                        <mat-icon>face</mat-icon>
+                                    </a>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="menuProfil">
+                                    <li role="presentation">
+                                        <a routerLink="/espaceperso/modifprofil" role="menuitem" tabindex="-1" href="#">&nbsp; &nbsp; Modifier son profil</a>
+                                    </li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">&nbsp; &nbsp; Mes
+                                            messages</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">&nbsp; &nbsp; Se
+                                            déconnecter</a></li>
+                                    <li role="presentation" class="divider"></li>
+    
+                                </ul>
+    
+    
+                                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+    
+                                <a href="" style="float: right; margin-top: 9px;">
+                                    <mat-icon>mail</mat-icon>
+                                </a>
+    
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                            </li>
+                        </div>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</div>
-
-
-
+        </nav>
+    </div>
+    
+    
+    
+    

@@ -33,6 +33,8 @@ import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetail
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailterrain.component';
+import { ModalmodifterrainComponent } from './modalmodifterrain/modalmodifterrain.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 
 @NgModule({
@@ -52,10 +54,12 @@ import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailter
     EspacePotagersComponent,
     ModalrechercheComponent,
     ModaldetailterrainComponent,
+    ModalmodifterrainComponent,
+    AccueilComponent,
 
   ],
 
-  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent],
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent],
 
   imports: [
     BrowserModule,

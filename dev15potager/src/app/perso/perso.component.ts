@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { SessionuserService } from '../sessionuser.service';
 
 @Component({
-  selector: 'app-perso',
+  selector: 'espaceperso',
   templateUrl: './perso.component.html',
   styleUrls: ['./perso.component.css'],
   
@@ -10,12 +11,16 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class PersoComponent implements OnInit {
+  data;
   datarejoints;
   dataproprio;
+  userConnecte;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private servisession: SessionuserService) { }
 
   ngOnInit() {
+    this.userConnecte = this.servisession.userConnecte;
+
     // Il faudra mettre l'id du gars connecté
     this.http.get('http://localhost:8086/terrainofuser/' + 1).subscribe(response => {
       this.datarejoints = response;
