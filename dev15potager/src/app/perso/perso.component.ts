@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SessionuserService } from '../sessionuser.service';
+import { StockageterrainService } from '../stockageterrain.service';
 import { Router, RouterEvent, RouterModule, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { StockageterrainService } from '../stockageterrain.service';
 
 @Component({
   selector: 'espaceperso',
   templateUrl: './perso.component.html',
   styleUrls: ['./perso.component.css'],
-  
+
 })
 
 
@@ -20,10 +20,12 @@ export class PersoComponent implements OnInit {
   userConnecte;
   t;
 
+  // tslint:disable-next-line: max-line-length
   constructor(private http: HttpClient, private servisession: SessionuserService, private route: Router, private stockageterrain: StockageterrainService) { }
 
+
   ngOnInit() {
-    
+
     this.userConnecte = this.servisession.userConnecte;
 
     this.http.get('http://localhost:8086/terrainofuser/' + this.userConnecte.id).subscribe(response => {
@@ -33,8 +35,7 @@ export class PersoComponent implements OnInit {
     this.http.get('http://localhost:8086/terrainsprop/' + this.userConnecte.id).subscribe(response => {
       this.dataproprio = response;
       console.log(response);
-    })
-    
+    });
   }
 
   ouvreJardin(t){
