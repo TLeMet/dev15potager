@@ -6,7 +6,32 @@
 
         </div>
         <div class="col-sm-5">
-
+            <h2>Vos potagers :</h2>
+            <table class="table">
+                <col width="150">
+                <col width="200">
+                <col width="130">
+                <col width="100">
+                <col width="200">
+                <col width="100">
+                <thead class="thead-dark text-center">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Lieu</th>
+                        <th>Surface</th>
+                        <th>Accéder</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- C'est dans le tr que je mets la boucle car c'est lui que je veux faire générer plusieurs fois. -->
+                    <tr *ngFor="let t of data">
+                        <td>{{ t.nom }}</td>
+                        <td>{{ t.adresse }}, {{ t.ville }}</td>
+                        <td>{{ t.surface }} m²</td>
+                        <td><button class="btn btn-primary" (click)="ouvreJardin(t)">Accéder</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="col-sm-5">
             <app-calendar></app-calendar>  

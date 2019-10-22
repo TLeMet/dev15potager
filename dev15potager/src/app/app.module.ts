@@ -22,13 +22,17 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NavbarAccueilComponent } from './navbar-accueil/navbar-accueil.component';
 import { FooterComponent } from './footer/footer.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarComponent } from './calendar/calendar.component';
-import { RechercheComponent } from './recherche/recherche.component';
-
+import { MatListModule} from '@angular/material/list';
+import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
+import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
+import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
+import { ModifprofilComponent } from './modifprofil/modifprofil.component';
+import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailterrain.component';
 
 
 @NgModule({
@@ -42,13 +46,17 @@ import { RechercheComponent } from './recherche/recherche.component';
     NavbarAccueilComponent,
     FooterComponent,
     CalendarComponent,
-    RechercheComponent,
+    EspacePotagersComponent,
+    DialogdetaildemandeComponent,
+    ModifprofilComponent,
+    EspacePotagersComponent,
+    ModalrechercheComponent,
+    ModaldetailterrainComponent,
 
-  
   ],
-  
-  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent],
-  
+
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -71,7 +79,8 @@ import { RechercheComponent } from './recherche/recherche.component';
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
-    }),   
+    }),
+    MatListModule,
 
   ],
   providers: [],

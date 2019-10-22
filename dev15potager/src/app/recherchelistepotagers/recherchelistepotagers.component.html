@@ -27,23 +27,23 @@
 
                 <tbody>
                     <!-- C'est dans le tr que je mets la boucle car c'est lui que je veux faire générer plusieurs fois. -->
-                    <tr *ngFor="let u of data">
-                        <td>{{ u.nom }}</td>
-                        <td>{{ u.adresse }}, {{ u.ville }}</td>
-                        <td>{{ u.surface }} m²</td>
-                        <td> countUsers({{ u.userOfTerrain }}) / {{ u.maxUser }}</td>
-                        <td>{{ u.horaires }}</td>
-                        <td><button class="btn btn-primary" (click)="ouvreDetailsPotager()">Détails</button></td>
+                    <tr *ngFor="let t of data">
+                        <td>{{ t.nom }}</td>
+                        <td>{{ t.adresse }}, {{ t.ville }}</td>
+                        <td>{{ t.surface }} m²</td>
+                        <td> / {{ t.maxUser }}</td>
+                        <td>{{ t.horaires }}</td>
+                        <td><button class="btn btn-primary" (click)="ouvreDetailsPotager(t)">Détails</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="col-sm-2">
-            <td><button class="btn btn-primary" (click)="ouvreDetailsPotager()">Détails</button></td>
-            <!--Il faut envoyer un id ou comme ça -->
-
-            <td><button class="btn btn-primary" (click)="ouvreConnexion()">Connexion</button></td>
             
         </div>
     </div>
+
+    <br><br>
+
+
 </div>

@@ -51,8 +51,10 @@
                 <ul class="navbar-nav">
                     <li>
                         <div style="float: right;">
-                            <input type="text" placeholder="Recherche" #rechTerr class="form-control text-center">
-                            <button class="btn" style="color: brown;" (click) = "chercheTerrain(rechTerr.value)" routerLink = "rechercheterrain" routerLinkActive="active" style="float: right;" >Rechercher</button>
+                            <mat-form-field>
+                                <input matInput #rechT placeholder="Rechercher">
+                              </mat-form-field> &nbsp;&nbsp;
+                                <button mat-raised-button (click)="ouvreRecherche(rechT.value)">Recherche</button>
                         </div>
                     </li>
                     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
@@ -95,5 +97,6 @@
         </div>
     </nav>
 </div>
+
 
 

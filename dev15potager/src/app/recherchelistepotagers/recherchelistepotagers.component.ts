@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { DialogdetailspotagerComponent } from '../dialogdetailspotager/dialogdetailspotager.component';
 import { DialogconnexionComponent } from '../dialogconnexion/dialogconnexion.component';
+import { Terrain } from '../model/Terrain';
+import { ServiceTerrainService } from '../service-terrain.service'
 
 
 @Component({
@@ -14,29 +16,33 @@ export class RecherchelistepotagersComponent implements OnInit {
 
   data;
   nbUsers;
+  terrain;
+  compte;
 
-  constructor(private http: HttpClient, private dialog: MatDialog) { }
+constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServiceTerrainService) { }
 
 
 
-  ouvreDetailsPotager() {
+  ouvreDetailsPotager(t) {
+    this.servi.terrain = t;
+    console.log("Terrain : " + this.servi.terrain.id);
     const mydial = this.dialog.open(DialogdetailspotagerComponent, {
       height: '800px',
       width: '800px',
     });
+
   }
 
-  ouvreConnexion() {
-    const mydial2 = this.dialog.open(DialogconnexionComponent, {
-      height: '680px',
-      width: '1400px',
-    });
-  }
+
 
   countUsers(users) {
     this.nbUsers = users.count();
     return "caca" + this.nbUsers;
   }
+
+
+
+
 
 
   ngOnInit() {
