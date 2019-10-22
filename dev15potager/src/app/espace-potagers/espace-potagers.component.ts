@@ -41,6 +41,7 @@ export class EspacePotagersComponent implements OnInit {
     this.servi.message = d.message;
     this.servi.dateDemande = d.dateDemande;
     this.servi.user = d.user;
+  }
 
   openConsulter(){
     const mydial2 = this.dialog.open(DialogdetaildemandeComponent, {
