@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ServiceinfouserService } from '../serviceinfouser.service';
 import { Router } from '@angular/router';
 import { SessionuserService } from '../sessionuser.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'espaceperso/modifprofil',
@@ -15,8 +16,8 @@ import { SessionuserService } from '../sessionuser.service';
 export class ModifprofilComponent implements OnInit {
 
   userConnecte;
-  regexTel = new RegExp('(0|\\+33|0033)[1-9][0-9]{8}');
-  regexPw = new RegExp('(?=.{8,})');
+  regexTel = new RegExp('(0|\+33|0033)[1-9][0-9]{8}');
+  regexPw = new RegExp('^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$');
 
   constructor(private http : HttpClient, private route: Router, private servi : ServiceinfouserService, private servisession: SessionuserService) { }
 
@@ -47,6 +48,7 @@ export class ModifprofilComponent implements OnInit {
       //this.route.navigate(['/espaceperso']);
     })
     )
+    this.servisession.userConnecte = this.userConnecte;
     this.ngOnInit();
   }
 
