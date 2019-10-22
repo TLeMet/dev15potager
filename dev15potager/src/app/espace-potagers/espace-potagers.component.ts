@@ -20,21 +20,24 @@ export class EspacePotagersComponent implements OnInit {
   constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
   userConnecte;
   potagerConnecte;
+ 
 
   ngOnInit() {
 
+    console.log("On rentre dans la fonction");
+    console.log("Avec terrain : " + this.stockageterrain.terrain.id);
+    console.log("Sans terrain : " + this.stockageterrain.id);
     this.userConnecte = this.servisession.userConnecte;
-
     // mettre le terrain
     this.http.get('http://localhost:8086/terrains/' + this.stockageterrain.terrain.id).subscribe(response => {
       this.datapotager = response;
       //console.log(response);
     })
-    this.http.get('http://localhost:8086/acceptedofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
+    this.http.get('http://localhost:8086/acceptedofterrain/' + this.stockageterrain.id).subscribe(response => {
       this.datamembres = response;
       //console.log(response);
     })
-    this.http.get('http://localhost:8086/requestofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
+    this.http.get('http://localhost:8086/requestofterrain/' + this.stockageterrain.id).subscribe(response => {
       this.datademandes = response;
       //console.log(response);
     })
