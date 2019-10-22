@@ -18,7 +18,7 @@ export class PersoComponent implements OnInit {
   datarejoints;
   dataproprio;
   userConnecte;
-  t;
+  
 
   // tslint:disable-next-line: max-line-length
   constructor(private http: HttpClient, private servisession: SessionuserService, private route: Router, private stockageterrain: StockageterrainService) { }
@@ -39,8 +39,10 @@ export class PersoComponent implements OnInit {
   }
 
   ouvreJardin(t){
-    this.stockageterrain.terrain = this.t.terrain;
+    this.stockageterrain.terrain = t.terrain;
+    console.log(this.stockageterrain.terrain);
     this.route.navigate(['/espacepotager']);
+    console.log("On est sensé partir");
   }
 
 
