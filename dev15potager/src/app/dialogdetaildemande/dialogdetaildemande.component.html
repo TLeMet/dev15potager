@@ -1,1 +1,32 @@
-<p>Ici le modal qui nous affiche el détail d'une demande avec des bouttons pour accepter ou supprimer</p>
+<mat-card class="example-card" fxLayoutAlign="start start">
+    <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title><strong>Demande d'adhésion à votre jardin</strong></mat-card-title>
+        <mat-card-subtitle>{{ nomuser }} + " " + {{prenomuser}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="container">
+
+    <mat-card-content>
+        
+        <p>
+            <strong>Téléphone : </strong> {{ teluser }}
+        </p>
+        <p>
+            <strong>Mail :</strong> {{ mailuser }}
+        </p>
+        <p>
+            <strong>Date de la demande :</strong> {{ dateuser }}
+        </p>
+        <p>
+            <strong>Message : </strong> {{ messageuser }}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click) = "acceptDemand()">Accepter la demande</button>
+        <button mat-button (click) = "refuseDemand()">Refuser la demande</button>
+        <button mat-button (click) = "closeDialog()" >Retour</button>
+    </mat-card-actions>
+</div>
+
+
+</mat-card>
