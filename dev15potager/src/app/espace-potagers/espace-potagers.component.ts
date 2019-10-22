@@ -45,7 +45,8 @@ export class EspacePotagersComponent implements OnInit {
       height: '700px',
       width: '500px',
     });
-    
+  }
+  
   exclureUser(to_kick){
     //console.log(this.datapotager.id);
     //console.log("user id to kick " + to_kick.id);
