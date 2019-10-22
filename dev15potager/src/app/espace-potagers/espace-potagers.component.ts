@@ -4,7 +4,11 @@ import { MatDialog } from '@angular/material';
 import { DialogdetaildemandeComponent } from '../dialogdetaildemande/dialogdetaildemande.component';
 import { ServicedemandeService } from '../servicedemande.service';
 import { ModalmodifterrainComponent } from '../modalmodifterrain/modalmodifterrain.component';
+<<<<<<< HEAD
 import { StockageterrainService } from '../stockageterrain.service';
+=======
+import { SessionuserService } from '../sessionuser.service';
+>>>>>>> 15e08bc125209583b413e5dd4edb07e392ee71e6
 
 @Component({
   selector: 'app-espace-potagers',
@@ -15,9 +19,20 @@ export class EspacePotagersComponent implements OnInit {
   datapotager;
   datamembres;
   datademandes;
+<<<<<<< HEAD
   
   constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService) { }
+=======
+  userConnecte;
+  potagerConnecte;
+
+  constructor(private http: HttpClient, private dialog: MatDialog, private servisession: SessionuserService, private servi: ServicedemandeService) { }
+
+>>>>>>> 15e08bc125209583b413e5dd4edb07e392ee71e6
   ngOnInit() {
+
+    this.userConnecte = this.servisession.userConnecte;
+
     // mettre le terrain
     this.http.get('http://localhost:8086/terrains/' + this.stockageterrain.terrain.id).subscribe(response => {
       this.datapotager = response;
@@ -53,7 +68,7 @@ export class EspacePotagersComponent implements OnInit {
 
   modifDetailTerrain(){
     const mydial2 = this.dialog.open(ModalmodifterrainComponent, {
-      height: '700px',
+      height: '830px',
       width: '500px',
     });
   }
