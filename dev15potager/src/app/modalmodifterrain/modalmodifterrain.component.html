@@ -4,46 +4,54 @@
     </div>
     <br>
 
-    <p>Propriétaire : </p>
+    <p>Propriétaire : {{userConnecte.prenom}} {{userConnecte.nom}}</p>
     <hr>
-    <p>Nom terrrain</p>
-    <input type="text" class="text-center" name="nom" [(ngModel)]="datapotager.nom">
-    <br><br>
-    <div class="row"> 
-        <div class="col-sm-6">
-            <p>Adresse</p>
-            <input type="text" class="text-center" name="adresse" [(ngModel)]="datapotager.adresse">
+    <form>
+        <div class="form-group">
+            <p>Nom terrain</p>
+            <input type="text" class="form-control text-center" name="nom" [(ngModel)]="datapotager.nom">
         </div>
-        <div class="col-sm-6">
-            <p>Ville</p>
-            <input type="text" class="text-center" name="ville" [(ngModel)]="datapotager.ville">
+        <div class="row"> 
+            <div class="col-sm-6 form-group">
+                <p>Adresse</p>
+                <input type="text" class="form-control text-center" name="adresse" [(ngModel)]="datapotager.adresse">
+            </div>
+            <div class="col-sm-6 form-group">
+                <p>Ville</p>
+                <input type="text" class="form-control text-center" name="ville" [(ngModel)]="datapotager.ville">
+            </div>
+        </div> 
+        <div class="form-group">
+            <p>Surface (m²)</p>
+            <input type="text" class="form-control text-center" name="surface" [(ngModel)]="datapotager.surface">
         </div>
-    </div> 
-    <br>
-    <p>Surface (m²)</p>
-    <input type="text" class="text-center" name="surface" [(ngModel)]="datapotager.surface">
-    <br><br>
-    <p>Max utilisateurs</p>
-    <input type="number" class="text-center" name="maxUser" [(ngModel)]="datapotager.maxUser">
-    <br><br>
-    <div class="row"> 
-        <div class="col-sm-6">
-            <p>Horaire ouverture</p>
-            <input type="text" class="text-center" name="hOuverture" [(ngModel)]="datapotager.hOuverture">
+        <div class="form-group">
+            <p>Max utilisateurs</p>
+            <input type="number" class="form-control text-center" name="maxUser" [(ngModel)]="datapotager.maxUser">
         </div>
-        <div class="col-sm-6">
-            <p>Horaire fermeture</p>
-            <input type="text" class="text-center"name="hFermeture" [(ngModel)]="datapotager.hFermeture"> 
+        <div class="form-group">
+            <p>Description</p>
+            <textarea class="form-control round-0" name="description" rows=4 [(ngModel)]="datapotager.description"></textarea>
         </div>
-    </div> 
-    <!--Rajouter changement de photo si le temps-->
-    <hr>  
-    <div class="row"> 
-        <div class="col-sm-6">
-            <button (click)="validModif()" class="btn btn-primary btn-block">Valider</button>
-        </div>
-        <div class="col-sm-6">
-            <button class="btn btn-danger btn-block">Supprimer terrain</button>
-        </div>
-    </div> 
+        <div class="row"> 
+            <div class="col-sm-6">
+                <p>Horaire ouverture</p>
+                <input type="text" class="text-center" name="hOuverture" [(ngModel)]="datapotager.hOuverture">
+            </div>
+            <div class="col-sm-6">
+                <p>Horaire fermeture</p>
+                <input type="text" class="text-center"name="hFermeture" [(ngModel)]="datapotager.hFermeture"> 
+            </div>
+        </div> 
+        <!--Rajouter changement de photo si le temps-->
+        <hr>  
+        <div class="row"> 
+            <div class="col-sm-6">
+                <button (click)="validModif()" class="btn btn-primary btn-block">Valider</button>
+            </div>
+            <div class="col-sm-6">
+                <button class="btn btn-danger btn-block">Supprimer terrain</button>
+            </div>
+        </div> 
+    </form>
 </div>

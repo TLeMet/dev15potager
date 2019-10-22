@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material';
 import { DialogdetaildemandeComponent } from '../dialogdetaildemande/dialogdetaildemande.component';
 import { ServicedemandeService } from '../servicedemande.service';
 import { ModalmodifterrainComponent } from '../modalmodifterrain/modalmodifterrain.component';
+import { SessionuserService } from '../sessionuser.service';
 
 @Component({
   selector: 'app-espace-potagers',
@@ -14,9 +15,15 @@ export class EspacePotagersComponent implements OnInit {
   datapotager;
   datamembres;
   datademandes;
-  
-  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService) { }
+  userConnecte;
+  potagerConnecte;
+
+  constructor(private http: HttpClient, private dialog: MatDialog, private servisession: SessionuserService, private servi: ServicedemandeService) { }
+
   ngOnInit() {
+
+    this.userConnecte = this.servisession.userConnecte;
+
     // mettre le terrain
     this.http.get('http://localhost:8086/terrains/' + 1).subscribe(response => {
       this.datapotager = response;
@@ -52,7 +59,7 @@ export class EspacePotagersComponent implements OnInit {
 
   modifDetailTerrain(){
     const mydial2 = this.dialog.open(ModalmodifterrainComponent, {
-      height: '700px',
+      height: '830px',
       width: '500px',
     });
   }
