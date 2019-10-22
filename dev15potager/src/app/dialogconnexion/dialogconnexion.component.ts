@@ -111,7 +111,7 @@ export class DialogconnexionComponent implements OnInit {
         ins2.then(
           response2 => {
             console.log("On va naviguer vers une autre page.");
-            this.servi.userConnecte = this.userConnexion;
+            this.servi.userConnecte = this.userInscrit;
             this.route.navigate(['/espaceperso']);
             this.fermerDialog();
           }, err => {
