@@ -9,8 +9,8 @@ import { AccueilComponent } from './accueil/accueil.component';
 const routes: Routes = [
   
   {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent},
-  {path: 'modifProfil', component: ModifprofilComponent},
-  {path: 'espacePerso', component: PersoComponent},
+  {path: 'espaceperso/modifprofil', component: ModifprofilComponent},
+  {path: 'espaceperso', component: PersoComponent},
   {path: 'demandeAd', component: DialogdetaildemandeComponent},
   {path: 'accueil', component: AccueilComponent},
 
