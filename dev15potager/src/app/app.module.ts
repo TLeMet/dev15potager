@@ -35,7 +35,6 @@ import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailterrain.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -33,12 +33,7 @@ constructor(private http: HttpClient, private dialog: MatDialog, private servi: 
 
   }
 
-  ouvreConnexion() {
-    const mydial2 = this.dialog.open(DialogconnexionComponent, {
-      height: '680px',
-      width: '1400px',
-    });
-  }
+
 
   countUsers(users) {
     this.nbUsers = users.count();
