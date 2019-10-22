@@ -4,7 +4,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 // Pour utiliser des liens http :
 import { HttpClientModule } from '@angular/common/http';
-
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -34,7 +33,6 @@ import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetail
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailterrain.component';
-
 
 
 @NgModule({
