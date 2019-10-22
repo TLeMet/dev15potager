@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-perso',
+  selector: 'espaceperso',
   templateUrl: './perso.component.html',
   styleUrls: ['./perso.component.css'],
   
@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class PersoComponent implements OnInit {
+  data;
   datarejoints;
   dataproprio;
 
