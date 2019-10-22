@@ -33,6 +33,7 @@ import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetail
 import { ModalrechercheComponent } from './modalrecherche/modalrecherche.component';
 import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailterrain.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailter
     EspacePotagersComponent,
     ModalrechercheComponent,
     ModaldetailterrainComponent,
+    AccueilComponent,
 
   ],
 
