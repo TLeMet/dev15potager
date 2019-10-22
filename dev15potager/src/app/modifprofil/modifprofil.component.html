@@ -11,32 +11,32 @@
 
             <div class="form-group">
                 <input type="text" class="form-control text-center" placeholder="Nom" #nomActionCo="ngModel" required
-                    name="lea" [(ngModel)]="personneModif.nom">
+                    name="lea" [(ngModel)]="userConnecte.nom">
             </div>
             <br>
             <div class="form-group">
                 <input type="text" class="form-control text-center" placeholder="Prénom" required
-                    name="leb" [(ngModel)]="personneModif.prenom" id="leb">
+                    name="leb" [(ngModel)]="userConnecte.prenom" id="leb">
             </div>
             <br>    
             <div class="form-group">
                 <input type="mail" class="form-control text-center" placeholder="Mail" required
-                    name="lec" [(ngModel)]="personneModif.mail" id="lec">
+                    name="lec" [(ngModel)]="userConnecte.mail" id="lec">
             </div>
             <br>
             <div class="form-group">
                 <input type="password" class="form-control text-center" placeholder="Mot de passe" required
-                    name="led" [(ngModel)]="personneModif.pw" id="led">
+                    name="led" [(ngModel)]="userConnecte.pw" id="led">
             </div>
             <br>
             <div class="form-group">
-                <input type="number" class="form-control text-center" placeholder="Numéro de téléphone" required
-                    name="lee" [(ngModel)]="personneModif.tel" id="lee">
+                <input type="text" class="form-control text-center" placeholder="Numéro de téléphone" required
+                    name="lee" [(ngModel)]="userConnecte.tel" id="lee">
             </div>
             <br>
             <div class="form-group">
                 <input type="number" class="form-control text-center" placeholder="Âge" required
-                    name="lef" [(ngModel)]="personneModif.age" id="lef">
+                    name="lef" [(ngModel)]="userConnecte.age" id="lef">
             </div>
 
             <br><br>
