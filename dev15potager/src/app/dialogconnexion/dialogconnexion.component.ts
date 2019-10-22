@@ -3,6 +3,7 @@ import { MatDialogRef } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
+import { SessionuserService } from '../sessionuser.service';
 
 @Component({
   selector: 'dialogconnexion',
@@ -15,7 +16,7 @@ export class DialogconnexionComponent implements OnInit {
   erreurlogin = 0;
   lapersonne: User = new User();
   personneCo: User = new User();
-  userConnecte;
+  userConnexion;
   userInscrit;
   usertous;
   mailtous;
@@ -24,7 +25,7 @@ export class DialogconnexionComponent implements OnInit {
  
 
 
-  constructor(private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
+  constructor(private servi: SessionuserService, private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
 
 
   fermerDialog(): void {
@@ -64,21 +65,21 @@ export class DialogconnexionComponent implements OnInit {
       co.then(
       response => {
         console.log("On est entrés dans la fonction");
-        this.userConnecte = response;
+        this.userConnexion = response;
         console.log("LOG2 :" + response);
         
         
-        if(this.userConnecte!=null){  // On vérifie que userConnecte n'est pas null.
+        if(this.userConnexion!=null){  // On vérifie que userConnexion n'est pas null.
         this.erreurlogin = 0;
             console.log("On va naviguer vers une autre page.");
+            this.servi.userConnecte = this.userConnexion;
+            this.route.navigate(['/espaceperso']);
+            this.fermerDialog();
 
-            localStorage.setItem('userConnecte', JSON.stringify(
-                        {age : this.userConnecte.age}));
-            this.route.navigate(['/modifProfil']);
             
         }
         else{
-          console.log("userConnecte est null.");
+          console.log("userConnexion est null.");
           this.erreurlogin = 1;
           // ici vérifier si l'adresse email entrée existe pour un message d'information.
         }
@@ -110,7 +111,9 @@ export class DialogconnexionComponent implements OnInit {
         ins2.then(
           response2 => {
             console.log("On va naviguer vers une autre page.");
-            this.route.navigate(['/modifProfil']);
+            this.servi.userConnecte = this.userConnexion;
+            this.route.navigate(['/espaceperso']);
+            this.fermerDialog();
           }, err => {
           console.log("Erreur : " + err);
       });

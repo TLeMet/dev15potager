@@ -26,10 +26,10 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Nom</th>
-                        <th>Prenom</th>
-                        <th>Téléphone</th>
-                        <th>Mail</th>
+                        <th class="text-center">Nom</th>
+                        <th class="text-center">Prenom</th>
+                        <th class="text-center">Mail</th>
+                        <th class="text-center">Téléphone</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +38,7 @@
                         <td>{{m.user.prenom}}</td>
                         <td>{{m.user.mail}}</td>
                         <td>{{m.user.tel}}</td>
+                        <td><button class="btn btn-primary" (click)= exclureUser(m.user)>Exclure</button></td>  
                     </tr>
                 </tbody>
             </table>
