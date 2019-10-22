@@ -73,8 +73,8 @@ export class DialogconnexionComponent implements OnInit {
         this.erreurlogin = 0;
             console.log("On va naviguer vers une autre page.");
             this.servisession.userConnecte = this.userConnexion;
-            this.route.navigate(['/espaceperso']);
             this.fermerDialog();
+            this.route.navigate(['/espaceperso']);
 
             
         }
