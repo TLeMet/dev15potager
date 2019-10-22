@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SessionuserService } from '../sessionuser.service';
+import { Router, RouterEvent, RouterModule, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'espaceperso',
@@ -16,9 +18,10 @@ export class PersoComponent implements OnInit {
   dataproprio;
   userConnecte;
 
-  constructor(private http: HttpClient, private servisession: SessionuserService) { }
+  constructor(private http: HttpClient, private route: Router,  private servisession: SessionuserService) { }
 
   ngOnInit() {
+    
     this.userConnecte = this.servisession.userConnecte;
 
     // Il faudra mettre l'id du gars connecté
