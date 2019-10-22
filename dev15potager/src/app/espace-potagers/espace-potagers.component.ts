@@ -12,11 +12,12 @@ import { SessionuserService } from '../sessionuser.service';
   styleUrls: ['./espace-potagers.component.css']
 })
 export class EspacePotagersComponent implements OnInit {
+
   datapotager;
   datamembres;
   datademandes;
   userConnecte;
-  potagerConnecte;
+  potagerActif;
 
   constructor(private http: HttpClient, private dialog: MatDialog, private servisession: SessionuserService, private servi: ServicedemandeService) { }
 
@@ -27,11 +28,11 @@ export class EspacePotagersComponent implements OnInit {
     // mettre le terrain
     this.http.get('http://localhost:8086/terrains/' + 1).subscribe(response => {
       this.datapotager = response;
-      //console.log(response);
+      console.log(this.datapotager);
     })
     this.http.get('http://localhost:8086/acceptedofterrain/' + 1).subscribe(response => {
       this.datamembres = response;
-      //console.log(response);
+      console.log(response);
     })
     this.http.get('http://localhost:8086/requestofterrain/' + 1).subscribe(response => {
       this.datademandes = response;

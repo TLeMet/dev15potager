@@ -15,6 +15,7 @@ export class ModalmodifterrainComponent implements OnInit {
 
   datapotager;
   userConnecte;
+  terrainActif;
 
   ngOnInit() {
 
@@ -24,6 +25,25 @@ export class ModalmodifterrainComponent implements OnInit {
     this.datapotager = response;
     console.log(response);
     });
+  }
+
+  validModif(){
+
+    this.http.put('http://localhost:8086//terrains/' + this.terrainActif.id, this.terrainActif).subscribe(data => {
+  
+      }, err => {console.log(err);}
+      );
+    /* 
+    var new_nom = (<HTMLInputElement>document.getElementById("nom")).value;
+    var new_adresse = (<HTMLInputElement>document.getElementById("adresse")).value;
+    var new_ville = (<HTMLInputElement>document.getElementById("ville")).value;
+    var new_surface = (<HTMLInputElement>document.getElementById("surface")).value;
+    var new_maxUser = (<HTMLInputElement>document.getElementById("maxUser")).value;
+    var new_description = (<HTMLInputElement>document.getElementById("description")).value;
+    var new_hOuverture = (<HTMLInputElement>document.getElementById("hOuverture")).value;
+    var new_hFermeture = (<HTMLInputElement>document.getElementById("hFermeture")).value;
+  */
+    
   }
   
 }
