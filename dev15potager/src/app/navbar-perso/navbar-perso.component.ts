@@ -19,7 +19,7 @@ data;
       this.servi.rechTerr = rechT;
       const mydial2 = this.dialog.open(ModalrechercheComponent, {
         height: '800px',
-        width: '1700px',
+        width: '1400px',
       });
     }
 

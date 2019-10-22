@@ -27,6 +27,10 @@ data;
   );
 }
 
+closeDialog() {
+  this.dialogRef.close();
+  }
+
 ouvreDetail(u) {
   this.servi.myDataT = u;
   const mydial2 = this.dialog.open(ModaldetailterrainComponent, {
