@@ -24,7 +24,7 @@ export class DialogconnexionComponent implements OnInit {
  
 
 
-  constructor(private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
+  constructor(private http: HttpClient, private router: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
 
 
   fermerDialog(): void {
@@ -58,7 +58,6 @@ export class DialogconnexionComponent implements OnInit {
          "pw": '' + this.personneCo.pw
     };
 
-    try {
       const co = this.http.post('http://localhost:8086/login', this.login_attempt ).toPromise();
       console.log("toPromise réalisé.");
 
@@ -75,7 +74,10 @@ export class DialogconnexionComponent implements OnInit {
 
             localStorage.setItem('userConnecte', JSON.stringify(
                         {age : this.userConnecte.age}));
-            this.route.navigate(['/rechTerrain']);
+            this.router.navigate(['/espacePerso']);
+            //window.location.reload();
+            this.fermerDialog();
+            
         }
         else{
           console.log("userConnecte est null.");
@@ -83,11 +85,8 @@ export class DialogconnexionComponent implements OnInit {
           // ici vérifier si l'adresse email entrée existe pour un message d'information.
         }
       })
-    }
-    catch (e){
-      console.log("userConnecte est null.");
-      this.erreurlogin = 1;
-    }
+
+
   }
 
 
@@ -113,7 +112,7 @@ export class DialogconnexionComponent implements OnInit {
         ins2.then(
           response2 => {
             console.log("On va naviguer vers une autre page.");
-            this.route.navigate(['/rechTerrain']);
+            this.router.navigate(['/espacePerso']);
           }, err => {
           console.log("Erreur : " + err);
       });

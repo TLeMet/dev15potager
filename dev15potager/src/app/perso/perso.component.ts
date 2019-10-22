@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-perso',
+  selector: 'espaceperso',
   templateUrl: './perso.component.html',
   styleUrls: ['./perso.component.css'],
   
@@ -10,13 +10,20 @@ import { HttpClient } from '@angular/common/http';
 
 
 export class PersoComponent implements OnInit {
-  data
+  data;
+  datarejoints;
+  dataproprio;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8086/terrains').subscribe(response => {
-      this.data = response;
+    // Il faudra mettre l'id du gars connecté
+    this.http.get('http://localhost:8086/terrainofuser/' + 1).subscribe(response => {
+      this.datarejoints = response;
+      console.log(response);
+    })
+    this.http.get('http://localhost:8086/terrainsprop/' + 1).subscribe(response => {
+      this.dataproprio = response;
       console.log(response);
     })
     

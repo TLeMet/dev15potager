@@ -9,17 +9,27 @@ import { DialogdetaildemandeComponent } from '../dialogdetaildemande/dialogdetai
   styleUrls: ['./espace-potagers.component.css']
 })
 export class EspacePotagersComponent implements OnInit {
-  data;
+  datapotager;
+  datamembres;
+  datademandes;
   
   constructor(private http: HttpClient, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8086/terrains').subscribe(response => {
-
-      this.data = response;
-
+    // mettre le terrain
+    this.http.get('http://localhost:8086/terrains/' + 1).subscribe(response => {
+      this.datapotager = response;
       console.log(response);
     })
+    this.http.get('http://localhost:8086/userofterrain/' + 1).subscribe(response => {
+      this.datamembres = response;
+      console.log(response);
+    })
+    this.http.get('http://localhost:8086/requestofterrain/' + 1).subscribe(response => {
+      this.datademandes = response;
+      console.log(response);
+    })
+
   }
   openConsulter(){
     const mydial2 = this.dialog.open(DialogdetaildemandeComponent, {
