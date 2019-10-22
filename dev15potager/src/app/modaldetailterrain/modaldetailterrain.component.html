@@ -20,16 +20,16 @@
     </mat-card-content>
 </div>
 <div class="col-sm-6">
-        <mat-form-field [style.fontSize]="fontSize.value" style="border: black;">
+        <mat-form-field >
                 <mat-label>Présentez-vous !</mat-label>
-                <textarea matInput
+                <textarea matInput #message
                           cdkTextareaAutosize
                           #autosize="cdkTextareaAutosize"
-                          cdkAutosizeMinRows="1"
+                          cdkAutosizeMinRows="5"
                           cdkAutosizeMaxRows="5"></textarea>
               </mat-form-field>
     <mat-card-actions>
-        <button mat-button>Rejoindre</button>
+        <button mat-button (click) = "envoieMessage(message.value)">Rejoindre</button>
         <button mat-button (click) = "closeDialog()" >Retour</button>
     </mat-card-actions>
 </div>
