@@ -3,6 +3,7 @@ import { User } from './User';
 export class Terrain{
     id: number;
     nom: String;
+    surface: String;
     gps: String;
     adresse: String;
     ville: String;
@@ -15,9 +16,8 @@ export class Terrain{
     public get getId() : number {
         return this.id;
     }
-
+*/
     public set setId(id : number) {
         this.id = id;
     }
-    */
 }

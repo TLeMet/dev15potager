@@ -32,17 +32,24 @@ export class PersoComponent implements OnInit {
       this.datarejoints = response;
       console.log(response);
     })
+    //Changer la requête ici parce que c'est pas bon
     this.http.get('http://localhost:8086/terrainsprop/' + this.userConnecte.id).subscribe(response => {
       this.dataproprio = response;
       console.log(response);
     });
   }
 
-  ouvreJardin(t){
+  ouvreJardinUser(t){
     this.stockageterrain.terrain = t.terrain;
     console.log(this.stockageterrain.terrain);
     this.route.navigate(['/espacepotager']);
     console.log("On est sensé partir");
+  }
+
+  ouvreJardinProp(t){
+    
+    this.route.navigate(['/espacepotager']);
+
   }
 
 
