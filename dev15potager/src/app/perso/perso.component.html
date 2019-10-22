@@ -27,7 +27,7 @@
                         <td>{{ r.terrain.nom }}</td>
                         <td>{{ r.terrain.adresse }} {{ r.terrain.ville }}</td>
                         <td>{{ r.terrain.surface }} </td>
-                        <td><button class="btn btn-primary" (click)="ouvreJardin(t)">Accéder</button></td>
+                        <td><button class="btn btn-primary" (click)="ouvreJardin(r)">Accéder</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -53,7 +53,7 @@
                         <td>{{ v.nom }}</td>
                         <td>{{ v.adresse }}, {{ v.ville }}</td>
                         <td>{{ v.surface }} m²</td>
-                        <td><button class="btn btn-primary" (click)="ouvreJardin(t)">Accéder</button></td>
+                        <td><button class="btn btn-primary" (click)="ouvreJardin(v)">Accéder</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -65,10 +65,6 @@
 
           </div>
        <br><br><br><br><br><br><br><br>
-        
-    
-    
-       
     
     </div>
     <app-espace-potagers></app-espace-potagers>

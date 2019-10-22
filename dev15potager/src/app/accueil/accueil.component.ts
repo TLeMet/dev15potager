@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionuserService } from '../sessionuser.service';
 
 @Component({
   selector: 'accueil',
@@ -7,10 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  userConnecte;
+  isConnected = 0;
+
+  constructor(private servisession: SessionuserService) { }
+
+  estConnecte(){
+    if(this.isConnected == 1){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
   ngOnInit() {
     console.log("ngOnInit de accueil");
+    this.userConnecte = this.servisession.userConnecte;
+    if(this.userConnecte!=null){
+      this.isConnected = 1;
+    }
+    else{
+      this.isConnected = 0;
+    }
   }
 
 }

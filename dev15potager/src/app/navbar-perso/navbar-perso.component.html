@@ -1,27 +1,27 @@
 <div>
 
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fdfdfd;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #42c253;">
             <button type="button" class="navbar-brand btn-primary-outline">
-                <a class="navbar-brand" href="#">PotaPotes</a>
+                <a class="navbar-brand" routerLink="/accueil" href="#" style="color: #fff;">Mon Petit Potager</a>
             </button>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-    
+            <span class="espace"></span>    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"><strong>Espace perso</strong> </a>
+                        <a class="nav-link" routerLink="/espaceperso"><strong>Espace perso</strong> </a>
                     </li>
-                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                    <span class="espace"></span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><strong>Créer un jardin</strong> </a>
+                    </li>
+                    <span class="espace"></span>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
                             <strong>Jardins rejoints</strong>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -31,11 +31,10 @@
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
-                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                    <span class="espace"></span>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
                             <strong>Jardins créés</strong>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -52,12 +51,12 @@
                         <li>
                             <div style="float: right;">
                                 <mat-form-field>
-                                    <input matInput #rechT placeholder="Rechercher">
-                                  </mat-form-field> &nbsp;&nbsp;
+                                    <input matInput #rechT placeholder="Rechercher" style="color: #fff;">
+                                  </mat-form-field> <span class="espace"></span>
                                     <button mat-raised-button (click)="ouvreRecherche(rechT.value)">Recherche</button>
                             </div>
                         </li>
-                        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                        <span class="espace"></span>
                         <div style="position: relative; float: right;">
                             <li>
     
@@ -65,8 +64,8 @@
     
                                 <button class="btn btn-default dropdown-toggle" type="button" id="menuProfil"
                                     data-toggle="dropdown" style="float: right;">
-                                    <a href="">
-                                        <mat-icon>face</mat-icon>
+                                    <a href="" style="color: rgb(255, 255, 255);">
+                                        <mat-icon>account_circle</mat-icon>
                                     </a>
                                     <span class="caret"></span>
                                 </button>
@@ -83,9 +82,9 @@
                                 </ul>
     
     
-                                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                                <span class="espace"></span>
     
-                                <a href="" style="float: right; margin-top: 9px;">
+                                <a href="" style="float: right; margin-top: 9px;color: rgb(255, 255, 255);">
                                     <mat-icon>mail</mat-icon>
                                 </a>
     

@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material';
 import { DialogdetaildemandeComponent } from '../dialogdetaildemande/dialogdetaildemande.component';
 import { ServicedemandeService } from '../servicedemande.service';
 import { ModalmodifterrainComponent } from '../modalmodifterrain/modalmodifterrain.component';
+import { StockageterrainService } from '../stockageterrain.service';
 import { SessionuserService } from '../sessionuser.service';
 
 @Component({
@@ -16,25 +17,28 @@ export class EspacePotagersComponent implements OnInit {
   datapotager;
   datamembres;
   datademandes;
+  
+  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
   userConnecte;
-  potagerActif;
-
-  constructor(private http: HttpClient, private dialog: MatDialog, private servisession: SessionuserService, private servi: ServicedemandeService) { }
+  potagerConnecte;
+ 
 
   ngOnInit() {
 
+    console.log("On rentre dans la fonction");
+    console.log("Avec terrain : " + this.stockageterrain.terrain.id);
+    console.log("Sans terrain : " + this.stockageterrain.id);
     this.userConnecte = this.servisession.userConnecte;
-
     // mettre le terrain
-    this.http.get('http://localhost:8086/terrains/' + 1).subscribe(response => {
+    this.http.get('http://localhost:8086/terrains/' + this.stockageterrain.terrain.id).subscribe(response => {
       this.datapotager = response;
       console.log(this.datapotager);
     })
-    this.http.get('http://localhost:8086/acceptedofterrain/' + 1).subscribe(response => {
+    this.http.get('http://localhost:8086/acceptedofterrain/' + this.stockageterrain.id).subscribe(response => {
       this.datamembres = response;
       console.log(response);
     })
-    this.http.get('http://localhost:8086/requestofterrain/' + 1).subscribe(response => {
+    this.http.get('http://localhost:8086/requestofterrain/' + this.stockageterrain.id).subscribe(response => {
       this.datademandes = response;
       //console.log(response);
     })
