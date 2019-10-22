@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material';
 import { DialogdetaildemandeComponent } from '../dialogdetaildemande/dialogdetaildemande.component';
 import { ServicedemandeService } from '../servicedemande.service';
 import { ModalmodifterrainComponent } from '../modalmodifterrain/modalmodifterrain.component';
+import { StockageterrainService } from '../stockageterrain.service';
 import { SessionuserService } from '../sessionuser.service';
 
 @Component({
@@ -15,25 +16,25 @@ export class EspacePotagersComponent implements OnInit {
   datapotager;
   datamembres;
   datademandes;
+  
+  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
   userConnecte;
   potagerConnecte;
-
-  constructor(private http: HttpClient, private dialog: MatDialog, private servisession: SessionuserService, private servi: ServicedemandeService) { }
 
   ngOnInit() {
 
     this.userConnecte = this.servisession.userConnecte;
 
     // mettre le terrain
-    this.http.get('http://localhost:8086/terrains/' + 1).subscribe(response => {
+    this.http.get('http://localhost:8086/terrains/' + this.stockageterrain.terrain.id).subscribe(response => {
       this.datapotager = response;
       //console.log(response);
     })
-    this.http.get('http://localhost:8086/acceptedofterrain/' + 1).subscribe(response => {
+    this.http.get('http://localhost:8086/acceptedofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
       this.datamembres = response;
       //console.log(response);
     })
-    this.http.get('http://localhost:8086/requestofterrain/' + 1).subscribe(response => {
+    this.http.get('http://localhost:8086/requestofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
       this.datademandes = response;
       //console.log(response);
     })

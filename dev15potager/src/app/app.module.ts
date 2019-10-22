@@ -35,6 +35,7 @@ import { ModifprofilComponent } from './modifprofil/modifprofil.component';
 import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailterrain.component';
 import { ModalmodifterrainComponent } from './modalmodifterrain/modalmodifterrain.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { CreerjardinComponent } from './creerjardin/creerjardin.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     ModaldetailterrainComponent,
     ModalmodifterrainComponent,
     AccueilComponent,
+    CreerjardinComponent,
 
   ],
 

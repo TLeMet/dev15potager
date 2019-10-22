@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SessionuserService } from '../sessionuser.service';
+import { StockageterrainService } from '../stockageterrain.service';
+import { Router, RouterEvent, RouterModule, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'espaceperso',
@@ -15,25 +18,29 @@ export class PersoComponent implements OnInit {
   datarejoints;
   dataproprio;
   userConnecte;
+  t;
 
-  constructor(private http: HttpClient, private servisession: SessionuserService) { }
+  // tslint:disable-next-line: max-line-length
+  constructor(private http: HttpClient, private servisession: SessionuserService, private route: Router, private stockageterrain: StockageterrainService) { }
+
 
   ngOnInit() {
+
     this.userConnecte = this.servisession.userConnecte;
 
-    // Il faudra mettre l'id du gars connecté
-    this.http.get('http://localhost:8086/terrainofuser/' + 1).subscribe(response => {
+    this.http.get('http://localhost:8086/terrainofuser/' + this.servisession.id).subscribe(response => {
       this.datarejoints = response;
       console.log(response);
     })
-    this.http.get('http://localhost:8086/terrainsprop/' + 1).subscribe(response => {
+    this.http.get('http://localhost:8086/terrainsprop/' + this.servisession.id).subscribe(response => {
       this.dataproprio = response;
       console.log(response);
     });
   }
 
   ouvreJardin(t){
-  //Aller à la page du jardin dédiée
+    this.stockageterrain.terrain = this.t.terrain;
+    this.route.navigate(['/espacepotager']);
   }
 
 
