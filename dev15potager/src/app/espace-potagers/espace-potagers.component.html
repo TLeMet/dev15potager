@@ -3,8 +3,43 @@
         <div class="col-sm-6">
             <h2>Info jardin</h2>      
             <ul>
-                <li></li>
+                <li>{{datapotager.nom}}</li>
+                <li>{{datapotager.adresse}}</li>
+                <li>{{datapotager.ville}}</li>
+                <li>{{datapotager.surface}}</li>
+                <li>{{datapotager.description}}</li>
+                <li>{{datapotager.proprietaire.nom}} {{datapotager.proprietaire.nom}}</li>
+                <li>{{datapotager.proprietaire.tel}}</li>
+                <li>{{datapotager.proprietaire.mail}}</li>
             </ul>
+
+
+
+
+
+            <hr>
+            <h2>Membres</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Téléphone</th>
+                        <th>Mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let m of datamembres">
+                        <td>{{m.user.nom}}</td>
+                        <td>{{m.user.prenom}}</td>
+                        <td>{{m.user.mail}}</td>
+                        <td>{{m.user.tel}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
             <hr>
             <h2>Gestion proprio</h2>
             <!-- Cacher si le gars n'est pas proprio -->
@@ -13,15 +48,15 @@
                     <tr>
                         <th>Nom</th>
                         <th>Prenom</th>
-                        <th>Date</th>
+                        <th>Date de la demande</th>
                         <th>Consulter</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let u of data">
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let d of datademandes">
+                        <td>{{d[0]}}</td>
+                        <td>{{d[1]}}</td>
+                        <td>{{d[2]}}</td>
                         <td><button mat-mini-fab aria-label="Example icon-button with a heart icon" (Click) = openConsulter()>
                                 <mat-icon>search</mat-icon>
                         </button></td>
@@ -29,6 +64,10 @@
                 </tbody>
             </table>
         </div>
+
+
+
+
         <div class="col-sm-6">
             <h2>Messagerie</h2>
             <app-calendar></app-calendar>
