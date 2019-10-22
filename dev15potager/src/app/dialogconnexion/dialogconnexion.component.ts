@@ -25,7 +25,7 @@ export class DialogconnexionComponent implements OnInit {
  
 
 
-  constructor(private servi: SessionuserService, private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
+  constructor(private servisession: SessionuserService, private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
 
 
   fermerDialog(): void {
@@ -72,7 +72,7 @@ export class DialogconnexionComponent implements OnInit {
         if(this.userConnexion!=null){  // On vérifie que userConnexion n'est pas null.
         this.erreurlogin = 0;
             console.log("On va naviguer vers une autre page.");
-            this.servi.userConnecte = this.userConnexion;
+            this.servisession.userConnecte = this.userConnexion;
             this.route.navigate(['/espaceperso']);
             this.fermerDialog();
 
@@ -104,14 +104,15 @@ export class DialogconnexionComponent implements OnInit {
 
       if(this.userInscrit == null){
         this.lemailexiste = 0;
-        console.log("Le user n'existe pas, on va le créer.");
+        console.log("Le userInscrit n'existe pas, on va le créer.");
 
         const ins2 = this.http.post('http://localhost:8086/users', this.lapersonne).toPromise();
         
         ins2.then(
           response2 => {
             console.log("On va naviguer vers une autre page.");
-            this.servi.userConnecte = this.userConnexion;
+            this.userInscrit = response2;
+            this.servisession.userConnecte = this.userInscrit;
             this.route.navigate(['/espaceperso']);
             this.fermerDialog();
           }, err => {

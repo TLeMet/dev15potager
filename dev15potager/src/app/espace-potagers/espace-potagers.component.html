@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
+<<<<<<< HEAD
             <h2>Info jardin</h2>     
             <table>
                 <thead>
@@ -29,6 +30,27 @@
                     </tr>
                 </tbody>
             </table>
+=======
+            <h2>Info jardin</h2>      
+            <ul>
+                <li>{{datapotager.nom}}</li>
+                <li>{{datapotager.adresse}}</li>
+                <li>{{datapotager.ville}}</li>
+                <li>{{datapotager.surface}}</li>
+                <li>{{datapotager.description}}</li>
+                <li>{{datapotager.proprietaire.nom}} {{datapotager.proprietaire.prenom}}</li>
+                <li>{{datapotager.proprietaire.tel}}</li>
+                <li>{{datapotager.proprietaire.mail}}</li>
+                <li><button (click)="modifDetailTerrain()" style="background-color:darkturquoise" button mat-mini-fab>
+                    <mat-icon>edit</mat-icon>
+                </button>
+                </li>
+            </ul>
+
+
+
+
+>>>>>>> 230866a79fbea61c9ff05d891cb104362a2a7066
 
             <hr>
             <h2>Membres</h2>
@@ -62,16 +84,18 @@
                     <tr>
                         <th>Nom</th>
                         <th>Prenom</th>
+                        <th>Téléphone</th>
                         <th>Date de la demande</th>
                         <th>Consulter</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let d of datademandes">
-                        <td>{{d[0]}}</td>
-                        <td>{{d[1]}}</td>
-                        <td>{{d[2]}}</td>
-                        <td><button mat-mini-fab aria-label="Example icon-button with a heart icon" (Click) = openConsulter()>
+                        <td>{{d.user.nom}}</td>
+                        <td>{{d.user.prenom}}</td>
+                        <td>{{d.user.tel}}</td>
+                        <td>{{d.dateDemande}}</td>
+                        <td><button mat-mini-fab aria-label="Example icon-button with a heart icon" (click) = openDemande(d)>
                                 <mat-icon>search</mat-icon>
                         </button></td>
                     </tr>

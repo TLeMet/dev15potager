@@ -26,24 +26,24 @@
             <br>
             <div class="form-group">
                 <input type="password" class="form-control text-center" placeholder="Nouveau Mot de passe" required
-                    name="led" id="led">
+                    name="new_pw" id="new_pw">
             </div>
             <br>
             <div class="form-group">
                 <input type="password" class="form-control text-center" placeholder="Confirmez le nouveau Mot de passe" required
-                    name="ledd" id="ledd">
+                    name="new_pw2" id="new_pw2">
             </div>
             <br>
             <div class="form-group">
                 <p>Téléphone :</p>
                 <input type="text" class="form-control text-center" placeholder="Numéro de téléphone" required
-                    name="lee" [(ngModel)]="userConnecte.tel" id="lee">
+                    name="new_tel" [(ngModel)]="userConnecte.tel" id="new_tel">
             </div>
             <br>
             <div class="form-group">
                 <p>Âge :</p>
                 <input type="number" class="form-control text-center" placeholder="Âge" required
-                    name="lef" [(ngModel)]="userConnecte.age" id="lef">
+                    name="new_age" [(ngModel)]="userConnecte.age" id="new_age">
             </div>
 
             <br><br>
@@ -53,4 +53,4 @@
         </form>
         <button class="btn btn-primary text-center" routerLink="/espaceperso" >Revenir</button>
     </div>
-</div>
+</div> 
