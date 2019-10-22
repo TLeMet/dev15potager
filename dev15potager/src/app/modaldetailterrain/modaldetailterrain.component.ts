@@ -2,11 +2,15 @@ import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
 import { ServiceRechercheterrainService } from '../service-rechercheterrain.service';
-import { ServiceinfouserService } from '../serviceinfouser.service';
+import { ServiceTerrainService } from '../service-terrain.service';
 import { MatDialog } from '@angular/material';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
 import { Message } from '../model/Message';
+import { SessionuserService } from '../sessionuser.service';
+import { Terrain } from '../model/Terrain';
+import { User } from '../model/User';
+
 
 @Component({
   selector: 'app-modaldetailterrain',
@@ -16,11 +20,13 @@ import { Message } from '../model/Message';
 export class ModaldetailterrainComponent implements OnInit {
 
   // tslint:disable-next-line: max-line-length
-  constructor(private servi: ServiceRechercheterrainService, private http: HttpClient, private dialogRef: MatDialogRef<ModaldetailterrainComponent>, private dialog: MatDialog, private _ngZone: NgZone, private servi2: ServiceinfouserService) { }
+  constructor(private servi: ServiceRechercheterrainService, private http: HttpClient, private dialogRef: MatDialogRef<ModaldetailterrainComponent>, private dialog: MatDialog, private _ngZone: NgZone, private servi2: SessionuserService, private servi3: ServiceTerrainService) { }
 
   detail = this.servi.myDataT;
-  idConnect = this.servi2.user;
+  idConnect = this.servi2.userConnecte;
   message: Message = new Message();
+  terrain: Terrain = new Terrain();
+  idConnect2: User = new User();
 
   @ViewChild('autosize', {static: false}) autosize: CdkTextareaAutosize;
 
@@ -35,11 +41,10 @@ export class ModaldetailterrainComponent implements OnInit {
   }
 
   envoieMessage(text) {
-    console.log(this.idConnect.id);
-    console.log(this.detail.id);
-    this.message.idUser = this.idConnect.id;
-    this.message.idTerrain = this.detail.id;
+    this.message.idUser = this.idConnect2;
+    this.message.idTerrain = this.terrain;
     this.message.message = text;
+    console.log(this.message);
     this.http.post('http://localhost:8086/insertDemande/' + this.idConnect.id + '/' + this.detail.id , this.message).subscribe(
       data => {
 

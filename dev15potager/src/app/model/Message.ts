@@ -1,6 +1,10 @@
+import { User } from './User';
+import { Terrain } from './Terrain';
+
 export class Message {
-    idUser: number;
-    idTerrain: number;
+
+    idUser: User;
+    idTerrain: Terrain;
     message: string;
 
     constructor() {}
