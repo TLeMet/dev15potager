@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material';
 import { DialogdetaildemandeComponent } from '../dialogdetaildemande/dialogdetaildemande.component';
+import { ModalmodifterrainComponent } from '../modalmodifterrain/modalmodifterrain.component';
 
 @Component({
   selector: 'app-espace-potagers',
@@ -38,4 +39,10 @@ export class EspacePotagersComponent implements OnInit {
     });
   }
 
+  modifDetailTerrain(){
+    const mydial2 = this.dialog.open(ModalmodifterrainComponent, {
+      height: '700px',
+      width: '500px',
+    });
+  }
 }
