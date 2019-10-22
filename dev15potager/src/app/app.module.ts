@@ -54,6 +54,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     EspacePotagersComponent,
     ModalrechercheComponent,
     ModaldetailterrainComponent,
+    ModalmodifterrainComponent,
     AccueilComponent,
 
   ],
