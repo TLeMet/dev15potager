@@ -11,6 +11,10 @@
                 <li>{{datapotager.proprietaire.nom}} {{datapotager.proprietaire.nom}}</li>
                 <li>{{datapotager.proprietaire.tel}}</li>
                 <li>{{datapotager.proprietaire.mail}}</li>
+                <li><button (click)="modifDetailTerrain()" style="background-color:darkturquoise" button mat-mini-fab>
+                    <mat-icon>edit</mat-icon>
+                </button>
+                </li>
             </ul>
 
 
@@ -34,7 +38,7 @@
                         <td>{{m.user.prenom}}</td>
                         <td>{{m.user.mail}}</td>
                         <td>{{m.user.tel}}</td>
-                        <td><button class="btn btn-primary" (click)= exclureUser(m.user)>Exclure {{m.user.id}} du {{datapotager.id}}</button></td>  
+                        <td><button class="btn btn-primary" (click)= exclureUser(m.user)>Exclure</button></td>  
                     </tr>
                 </tbody>
             </table>

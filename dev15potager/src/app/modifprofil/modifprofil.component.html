@@ -10,33 +10,40 @@
         <form #formModifProfil="ngForm" style="width: 50%; margin: auto;">
 
             <div class="form-group">
-                <input type="text" class="form-control text-center" placeholder="Nom" #nomActionCo="ngModel" required
-                    name="lea" [(ngModel)]="personneModif.nom">
+                <p>Nom :</p>
+                <p>{{userConnecte.nom}}</p>
             </div>
             <br>
             <div class="form-group">
-                <input type="text" class="form-control text-center" placeholder="Prénom" required
-                    name="leb" [(ngModel)]="personneModif.prenom" id="leb">
+                <p>Prénom :</p>
+                <p>{{userConnecte.prenom}}</p>
             </div>
             <br>    
             <div class="form-group">
-                <input type="mail" class="form-control text-center" placeholder="Mail" required
-                    name="lec" [(ngModel)]="personneModif.mail" id="lec">
+                <p>Adresse e-mail :</p>
+                <p>{{userConnecte.mail}}</p>
             </div>
             <br>
             <div class="form-group">
-                <input type="password" class="form-control text-center" placeholder="Mot de passe" required
-                    name="led" [(ngModel)]="personneModif.pw" id="led">
+                <input type="password" class="form-control text-center" placeholder="Nouveau Mot de passe" required
+                    name="led" id="led">
             </div>
             <br>
             <div class="form-group">
-                <input type="number" class="form-control text-center" placeholder="Numéro de téléphone" required
-                    name="lee" [(ngModel)]="personneModif.tel" id="lee">
+                <input type="password" class="form-control text-center" placeholder="Confirmez le nouveau Mot de passe" required
+                    name="ledd" id="ledd">
             </div>
             <br>
             <div class="form-group">
+                <p>Téléphone :</p>
+                <input type="text" class="form-control text-center" placeholder="Numéro de téléphone" required
+                    name="lee" [(ngModel)]="userConnecte.tel" id="lee">
+            </div>
+            <br>
+            <div class="form-group">
+                <p>Âge :</p>
                 <input type="number" class="form-control text-center" placeholder="Âge" required
-                    name="lef" [(ngModel)]="personneModif.age" id="lef">
+                    name="lef" [(ngModel)]="userConnecte.age" id="lef">
             </div>
 
             <br><br>
