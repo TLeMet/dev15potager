@@ -20,5 +20,4 @@ export class Terrain{
         this.id = id;
     }
     */
-
 }
