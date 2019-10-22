@@ -28,11 +28,11 @@ export class PersoComponent implements OnInit {
 
     this.userConnecte = this.servisession.userConnecte;
 
-    this.http.get('http://localhost:8086/terrainofuser/' + this.servisession.id).subscribe(response => {
+    this.http.get('http://localhost:8086/terrainofuser/' + this.userConnecte.id).subscribe(response => {
       this.datarejoints = response;
       console.log(response);
     })
-    this.http.get('http://localhost:8086/terrainsprop/' + this.servisession.id).subscribe(response => {
+    this.http.get('http://localhost:8086/terrainsprop/' + this.userConnecte.id).subscribe(response => {
       this.dataproprio = response;
       console.log(response);
     });
