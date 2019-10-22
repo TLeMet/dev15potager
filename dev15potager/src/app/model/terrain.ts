@@ -6,6 +6,7 @@ export class Terrain{
     gps: String;
     adresse: String;
     ville: String;
+    surface : number;
     maxUser: number;
     description: String;
     proprietaire: User;
