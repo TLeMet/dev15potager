@@ -24,8 +24,8 @@ export class AccueilComponent implements OnInit {
 
   ngOnInit() {
     console.log("ngOnInit de accueil");
-    this.userConnecte = this.servisession.userConnecte;
-    if(this.userConnecte!=null){
+    
+    if(JSON.parse(localStorage.getItem("userConnecte")) != null){
       this.isConnected = 1;
     }
     else{

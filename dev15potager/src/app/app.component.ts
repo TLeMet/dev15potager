@@ -12,8 +12,8 @@ export class AppComponent implements OnInit {
   constructor(private route: Router) {}
 
 
-  ngOnInit() {
-    console.log("ngOnInit de app-component");
-    this.route.navigate(['/accueil']);
-  }
+ ngOnInit() {
+  //  console.log("ngOnInit de app-component");
+  //    this.route.navigate(['/accueil']);
+ }
 }

@@ -12,6 +12,7 @@ import { SessionuserService } from '../sessionuser.service';
 })
 export class DialogconnexionComponent implements OnInit {
 
+
   lemailexiste = 0;
   erreurlogin = 0;
   lapersonne: User = new User();
@@ -20,6 +21,7 @@ export class DialogconnexionComponent implements OnInit {
   userInscrit;
   usertous;
   mailtous;
+  testa;
 
   login_attempt;
  
@@ -74,7 +76,16 @@ export class DialogconnexionComponent implements OnInit {
         if(this.userConnexion!=null){  // On vérifie que userConnexion n'est pas null.
         this.erreurlogin = 0;
             console.log("On va naviguer vers une autre page.");
-            this.servisession.userConnecte = this.userConnexion;
+            this.servisession.userConnecte = this.userConnexion; // SUPPRIMER
+
+            // On stocke le user actuel dans le localStorage userConnecte.
+            localStorage.setItem('userConnecte', JSON.stringify(this.userConnexion));
+            
+            // On peut ensuite l'appeler de cette façon :
+            console.log("localstorage stocké prenom: " + JSON.parse(localStorage.getItem("userConnecte")).prenom);
+            // Quand on se déconnecte, ceci renvoie null : "JSON.parse(localStorage.getItem("userConnecte"))".
+
+
             this.fermerDialog();
             this.route.navigate(['/espaceperso']);
 
@@ -114,7 +125,9 @@ export class DialogconnexionComponent implements OnInit {
           response2 => {
             console.log("On va naviguer vers une autre page.");
             this.userInscrit = response2;
-            this.servisession.userConnecte = this.userInscrit;
+            this.servisession.userConnecte = this.userInscrit;  // SUPPRIMER
+            
+            localStorage.setItem('userConnecte', JSON.stringify(this.userInscrit));
             this.route.navigate(['/espaceperso']);
             this.fermerDialog();
           }, err => {

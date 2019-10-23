@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-creerjardin',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./creerjardin.component.css']
 })
 export class CreerjardinComponent implements OnInit {
+  options: FormGroup;
 
-  constructor() { }
+  constructor(fb: FormBuilder) {
+    this.options = fb.group({
+      floatLabel: 'auto',
+    });
+   }
 
   ngOnInit() {
   }
