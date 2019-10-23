@@ -13,18 +13,18 @@
                         <th class="text-center">Ville</th>
                         <th class="text-center">Surface</th>
                         <th class="text-center">Description</th>
-                        <th class="text-center">Modifier</th>
+                        <th class="text-center" *ngIf="visible">Modifier</th>
                     </tr>
                 </thead>
                 
                 <tbody>
                     <tr>
-                        <td>{{datapotager.nom}}</td>
-                        <td>{{datapotager.adresse}}</td>
-                        <td>{{datapotager.ville}}</td>
-                        <td>{{datapotager.surface}} m²</td>
-                        <td>{{datapotager.description}}</td>
-                        <td>
+                        <td>{{potagerActif.nom}}</td>
+                        <td>{{potagerActif.adresse}}</td>
+                        <td>{{potagerActif.ville}}</td>
+                        <td>{{potagerActif.surface}} m²</td>
+                        <td>{{potagerActif.description}}</td>
+                        <td *ngIf="visible">
                             <button (click)="modifDetailTerrain()" style="background-color:darkturquoise" button mat-mini-fab>
                             <mat-icon>edit</mat-icon>
                             </button>
@@ -59,31 +59,33 @@
 
 
             <hr>
-            <h2>Gestion proprio</h2>
+            <div *ngIf="visible">
+            <h2>Demandes d'adhésion au jardin</h2>
             <!-- Cacher si le gars n'est pas proprio -->
             
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Prenom</th>
-                        <th>Téléphone</th>
-                        <th>Date de la demande</th>
-                        <th>Consulter</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let d of datademandes">
-                        <td>{{d.user.nom}}</td>
-                        <td>{{d.user.prenom}}</td>
-                        <td>{{d.user.tel}}</td>
-                        <td>{{d.dateDemande}}</td>
-                        <td><button mat-mini-fab aria-label="Example icon-button with a heart icon" (click) = openDemande(d)>
-                                <mat-icon>search</mat-icon>
-                        </button></td>
-                    </tr>
-                </tbody>
-            </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Téléphone</th>
+                            <th>Date de la demande</th>
+                            <th>Consulter</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let d of datademandes">
+                            <td>{{d.user.nom}}</td>
+                            <td>{{d.user.prenom}}</td>
+                            <td>{{d.user.tel}}</td>
+                            <td>{{d.dateDemande}}</td>
+                            <td><button mat-mini-fab aria-label="Example icon-button with a heart icon" (click) = openDemande(d)>
+                                    <mat-icon>search</mat-icon>
+                            </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
 
