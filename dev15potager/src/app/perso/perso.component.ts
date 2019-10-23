@@ -26,8 +26,13 @@ export class PersoComponent implements OnInit {
 
   ngOnInit() {
 
-    this.userConnecte = this.servisession.userConnecte;
+    this.userConnecte = this.servisession.userConnecte;   // SUPPRIMER
 
+    if(JSON.parse(localStorage.getItem("userConnecte")) == null){
+      this.route.navigate(['/accueil']);
+    }
+    else{
+    
     this.http.get('http://localhost:8086/terrainofuser/' + this.userConnecte.id).subscribe(response => {
       this.datarejoints = response;
       console.log(response);
@@ -37,6 +42,7 @@ export class PersoComponent implements OnInit {
       this.dataproprio = response;
       console.log(response);
     });
+  }
   }
 
   ouvreJardinUser(t){
@@ -51,6 +57,6 @@ export class PersoComponent implements OnInit {
     this.route.navigate(['/espacepotager']);
 
   }
-
+  
 
 }
