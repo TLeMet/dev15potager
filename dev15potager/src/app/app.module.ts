@@ -40,7 +40,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule, MatSelectModule } from '@angular/material';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-import { StorageServiceModule } from "ngx-webstorage-service";
 import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.component';
 
 
@@ -72,7 +71,6 @@ import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.c
   entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent, ModalmodifprofilComponent],
 
   imports: [
-    StorageServiceModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

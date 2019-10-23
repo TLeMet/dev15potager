@@ -20,6 +20,7 @@ import { Component, OnInit,ChangeDetectionStrategy,
     CalendarEventTimesChangedEvent,
     CalendarView
   } from 'angular-calendar';
+import { Router } from '@angular/router';
   
   const colors: any = {
     red: {
@@ -118,7 +119,7 @@ export class CalendarComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) { }
+  constructor(private modal: NgbModal, private route: Router) { }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -189,6 +190,9 @@ export class CalendarComponent implements OnInit {
 
 
   ngOnInit() {
+    if (JSON.parse(localStorage.getItem('userConnecte')) == null) {
+      this.route.navigate(['/accueil']);
+    }
   }
 
 }
