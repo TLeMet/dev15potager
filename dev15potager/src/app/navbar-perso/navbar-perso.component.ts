@@ -25,8 +25,9 @@ data;
   }
 
   deconnexion() {
-    this.servisession.userConnecte = null;
-    this.route.navigate(["/accueil"]);
+    this.servisession.userConnecte = null;  // SUPPRIMER
+    localStorage.removeItem('userConnecte');
+    location.reload();
   }
 
 

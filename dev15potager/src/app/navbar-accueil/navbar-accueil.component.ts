@@ -19,6 +19,14 @@ export class NavbarAccueilComponent implements OnInit {
   }
 
 
+  ouvreInscription() {
+    const mydial3 = this.dialog.open(DialogconnexionComponent, {
+      height: '680px',
+      width: '1400px',
+    });
+  }
+
+
 
   ngOnInit() {
   }
