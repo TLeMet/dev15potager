@@ -6,8 +6,8 @@ import { Router } from '@angular/router';
 import { SessionuserService } from '../sessionuser.service';
 import { NgClass } from '@angular/common';
 import { ModalmodifprofilComponent } from '../modalmodifprofil/modalmodifprofil.component';
-import { MatDialog } from '@angular/material';
 import { MatDialogRef } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'espaceperso/modifprofil',
@@ -25,7 +25,7 @@ export class ModifprofilComponent implements OnInit {
   constructor(private http : HttpClient, private route: Router, private servi : ServiceinfouserService, private servisession: SessionuserService, private dialogRef: MatDialogRef<ModalmodifprofilComponent>, private dialog: MatDialog) { }
 
   
-  saveModifProfil() {
+  saveModifProfil() { 
 
     var new_pw = (<HTMLInputElement>document.getElementById("new_pw")).value;
     var new_pw2 = (<HTMLInputElement>document.getElementById("new_pw2")).value;
