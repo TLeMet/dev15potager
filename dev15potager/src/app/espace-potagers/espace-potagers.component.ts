@@ -21,10 +21,12 @@ export class EspacePotagersComponent implements OnInit {
   constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
   userConnecte;
   potagerActif;
- 
+  visible=false;
 
   ngOnInit() {
 
+    this.testProprio();
+    
     this.potagerActif = this.stockageterrain.terrain;
 
     this.userConnecte = this.servisession.userConnecte;
@@ -72,5 +74,17 @@ export class EspacePotagersComponent implements OnInit {
     this.http.delete('http://localhost:8086/del.userofterrain/'+to_kick.id+'/'+this.datapotager.id).subscribe();
     //console.log(this.datamembres);
     this.ngOnInit();
+  }
+
+  testProprio(){
+    if (this.servisession.userConnecte.id == this.stockageterrain.terrain.proprietaire.id){
+      this.visible=true
+      
+    }
+    /*
+    console.log(this.servisession.userConnecte.id)
+    console.log("proprio testé")
+    console.log(this.visible)
+    */
   }
 }
