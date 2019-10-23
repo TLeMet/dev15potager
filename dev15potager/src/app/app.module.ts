@@ -39,7 +39,7 @@ import { CreerjardinComponent } from './creerjardin/creerjardin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule, MatSelectModule } from '@angular/material';
-import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+//import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.component';
 
 
@@ -98,7 +98,7 @@ import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.c
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
-    NgxMaterialTimepickerModule,
+    //NgxMaterialTimepickerModule,
 
   ],
   providers: [],
