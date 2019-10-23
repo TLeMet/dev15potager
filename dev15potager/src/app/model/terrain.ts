@@ -1,13 +1,13 @@
 import { User } from './User';
 
-export class Terrain {
+export class Terrain{
     id: number;
-    nom: string;
-    gps: string;
-    adresse: string;
-    ville: string;
+    nom: String;
+    gps: String;
+    adresse: String;
+    ville: String;
     maxUser: number;
-    description: string;
+    description: String;
     proprietaire: User;
 
     constructor() {}
