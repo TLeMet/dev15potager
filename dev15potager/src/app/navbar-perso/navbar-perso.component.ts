@@ -27,7 +27,7 @@ data;
   deconnexion() {
     this.servisession.userConnecte = null;  // SUPPRIMER
     localStorage.removeItem('userConnecte');
-    location.reload();
+    this.route.navigate(['/accueil']);
   }
 
 
