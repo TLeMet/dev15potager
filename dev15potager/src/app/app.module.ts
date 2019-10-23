@@ -36,6 +36,7 @@ import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailter
 import { ModalmodifterrainComponent } from './modalmodifterrain/modalmodifterrain.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CreerjardinComponent } from './creerjardin/creerjardin.component';
+import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.component';
 
 
 @NgModule({
@@ -58,10 +59,11 @@ import { CreerjardinComponent } from './creerjardin/creerjardin.component';
     ModalmodifterrainComponent,
     AccueilComponent,
     CreerjardinComponent,
+    ModalmodifprofilComponent,
 
   ],
 
-  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent],
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent, ModalmodifprofilComponent],
 
   imports: [
     BrowserModule,
