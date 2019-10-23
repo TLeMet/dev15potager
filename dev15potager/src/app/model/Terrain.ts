@@ -1,4 +1,5 @@
 import { User } from './User';
+import { Type } from './Type';
 
 export class Terrain{
     id: number;
@@ -9,6 +10,10 @@ export class Terrain{
     maxUser: number;
     description: String;
     proprietaire: User;
+    surface: number;
+    hOuverture: String;
+    hFermeture: String;
+    type: Type;
 
     constructor() {}
 /*
