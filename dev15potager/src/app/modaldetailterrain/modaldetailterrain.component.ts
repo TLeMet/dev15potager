@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { ServiceRechercheterrainService } from '../service-rechercheterrain.service';
 import { ServiceTerrainService } from '../service-terrain.service';
 import { MatDialog } from '@angular/material';
-import {CdkTextareaAutosize} from '@angular/cdk/text-field';
-import {take} from 'rxjs/operators';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
+import { take } from 'rxjs/operators';
 import { Message } from '../model/Message';
 import { SessionuserService } from '../sessionuser.service';
 import { Terrain } from '../model/Terrain';
@@ -28,24 +28,35 @@ export class ModaldetailterrainComponent implements OnInit {
   terrain: Terrain = new Terrain();
   idConnect2: User = new User();
 
-  @ViewChild('autosize', {static: false}) autosize: CdkTextareaAutosize;
+  @ViewChild('autosize', { static: false }) autosize: CdkTextareaAutosize;
 
   triggerResize() {
     // Wait for changes to be applied, then trigger textarea resize.
     this._ngZone.onStable.pipe(take(1))
-        .subscribe(() => this.autosize.resizeToFitContent(true));
+      .subscribe(() => this.autosize.resizeToFitContent(true));
   }
 
   closeDialog() {
-  this.dialogRef.close();
+    this.dialogRef.close();
   }
 
   envoieMessage(text) {
     this.message.idUser = this.idConnect2;
     this.message.idTerrain = this.terrain;
     this.message.message = text;
+    console.log(this.message.idUser);
+    console.log(this.message.idTerrain);
     console.log(this.message);
-    this.http.post('http://localhost:8086/insertDemande/' + this.idConnect.id + '/' + this.detail.id , this.message).subscribe(
+
+    const mypost: JSON = <JSON><unknown>{
+      "user": { },
+      "terrain": {
+      },
+      "message": this.message.message
+    }
+
+
+    this.http.post('http://localhost:8086/insertDemande/' + this.idConnect.id + '/' + this.detail.id, mypost).subscribe(
       data => {
 
       }, err => {

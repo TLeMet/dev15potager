@@ -47,7 +47,7 @@ export class PersoComponent implements OnInit {
   }
 
   ouvreJardinProp(t){
-    
+    this.stockageterrain.terrain = t;
     this.route.navigate(['/espacepotager']);
 
   }
