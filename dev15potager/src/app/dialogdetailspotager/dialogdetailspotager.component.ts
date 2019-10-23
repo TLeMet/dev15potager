@@ -15,13 +15,13 @@ import { ServiceTerrainService } from '../service-terrain.service';
 export class DialogdetailspotagerComponent implements OnInit {
 
   data;
-  t: Terrain = new Terrain;
+  t: Terrain = new Terrain();
   idterrain;
   titre;
   adresse;
   nomproprio;
   image;
-  description
+  description;
 
   constructor(private http: HttpClient, private dialog: MatDialog, private servi : ServiceTerrainService) { }
 
@@ -30,17 +30,17 @@ export class DialogdetailspotagerComponent implements OnInit {
     //Demander session back ou front
     //demander menu déroulant angular
     this.t = this.servi.terrain;
-    console.log("Terrain : " +  this.t.id);
+    console.log('Terrain : ' +  this.t.id);
 
     this.titre = this.t.nom;
-    this.adresse = this.t.adresse
-    this.description = this.t.description
-    this.nomproprio = this.t.proprietaire.nom + " " + this.t.proprietaire.prenom
-  
+    this.adresse = this.t.adresse;
+    this.description = this.t.description;
+    this.nomproprio = this.t.proprietaire.nom + ' ' + this.t.proprietaire.prenom;
+
 
   }
 
-  testco(){
+  testco() {
 
   }
 }
