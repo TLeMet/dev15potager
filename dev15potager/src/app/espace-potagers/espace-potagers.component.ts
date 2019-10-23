@@ -20,10 +20,12 @@ export class EspacePotagersComponent implements OnInit {
   
   constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
   userConnecte;
-  potagerConnecte;
+  potagerActif;
  
 
   ngOnInit() {
+
+    this.potagerActif = this.stockageterrain.terrain;
 
     this.userConnecte = this.servisession.userConnecte;
     // mettre le terrain
