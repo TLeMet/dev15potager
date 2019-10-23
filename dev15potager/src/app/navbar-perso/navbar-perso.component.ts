@@ -15,6 +15,7 @@ export class NavbarPersoComponent implements OnInit {
 
   constructor(private servi: ServiceRechercheterrainService, private servisession: SessionuserService, private http: HttpClient, private route: Router, private dialog: MatDialog) { }
 data;
+prenomUserConnecte;
 
   ouvreRecherche(rechT) {
     this.servi.rechTerr = rechT;
@@ -33,6 +34,9 @@ data;
 
 
   ngOnInit() {
+    if(JSON.parse(localStorage.getItem("userConnecte")) != null) {
+      this.prenomUserConnecte = JSON.parse(localStorage.getItem("userConnecte")).prenom;
+    }
 
   }
 
