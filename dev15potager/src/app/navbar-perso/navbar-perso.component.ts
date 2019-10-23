@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { ModalrechercheComponent } from '../modalrecherche/modalrecherche.component';
+import { SessionuserService } from '../sessionuser.service';
 
 @Component({
   selector: 'app-navbar-perso',
@@ -12,16 +13,23 @@ import { ModalrechercheComponent } from '../modalrecherche/modalrecherche.compon
 })
 export class NavbarPersoComponent implements OnInit {
 
-  constructor(private servi: ServiceRechercheterrainService, private http: HttpClient, private route: Router, private dialog: MatDialog) { }
+  constructor(private servi: ServiceRechercheterrainService, private servisession: SessionuserService, private http: HttpClient, private route: Router, private dialog: MatDialog) { }
 data;
 
-    ouvreRecherche(rechT) {
-      this.servi.rechTerr = rechT;
-      const mydial2 = this.dialog.open(ModalrechercheComponent, {
-        height: '800px',
-        width: '1400px',
-      });
-    }
+  ouvreRecherche(rechT) {
+    this.servi.rechTerr = rechT;
+    const mydial2 = this.dialog.open(ModalrechercheComponent, {
+      height: '800px',
+      width: '1400px',
+    });
+  }
+
+  deconnexion() {
+    this.servisession.userConnecte = null;
+    this.route.navigate(["/accueil"]);
+  }
+
+
 
   ngOnInit() {
 
