@@ -61,6 +61,8 @@ export class DialogconnexionComponent implements OnInit {
 
       const co = this.http.post('http://localhost:8086/login', this.login_attempt ).toPromise();
       console.log("toPromise réalisé.");
+      console.log(co);
+
 
       co.then(
       response => {
