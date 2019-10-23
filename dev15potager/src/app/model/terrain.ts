@@ -1,5 +1,8 @@
 import { User } from './User';
+<<<<<<< HEAD
 import { Type } from './Type';
+=======
+>>>>>>> 5138e574f22a08a1a4c8282aba2b399253deb616
 
 export class Terrain{
     id: number;
