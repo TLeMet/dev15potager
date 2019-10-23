@@ -25,9 +25,6 @@ export class EspacePotagersComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log("On rentre dans la fonction");
-    console.log("Avec terrain : " + this.stockageterrain.terrain.id);
-    console.log("Sans terrain : " + this.stockageterrain.terrain.id);
     this.userConnecte = this.servisession.userConnecte;
     // mettre le terrain
     this.http.get('http://localhost:8086/terrains/' + this.stockageterrain.terrain.id).subscribe(response => {
