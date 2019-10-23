@@ -16,7 +16,7 @@ import { NgClass } from '@angular/common';
 export class ModifprofilComponent implements OnInit {
 
   userConnecte;
-  regexTel = new RegExp('(0|\+33|0033)[1-9][0-9]{8}');
+  regexTel = new RegExp('(0|\\+33|0033)[1-9][0-9]{8}');
   regexPw = new RegExp('^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$');
 
   constructor(private http : HttpClient, private route: Router, private servi : ServiceinfouserService, private servisession: SessionuserService) { }
