@@ -36,7 +36,6 @@ import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailter
 import { ModalmodifterrainComponent } from './modalmodifterrain/modalmodifterrain.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CreerjardinComponent } from './creerjardin/creerjardin.component';
-import { StorageServiceModule } from "ngx-webstorage-service";
 import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.component';
 
 
@@ -67,7 +66,7 @@ import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.c
   entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent, ModalmodifprofilComponent],
 
   imports: [
-    StorageServiceModule,
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
