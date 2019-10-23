@@ -1,12 +1,56 @@
-<div class = container>
+<app-navbar-perso></app-navbar-perso>
+<br><br>
+<div class=container>
     <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-            <h2 class="text-center">Ajouter votre potager !</h2>
-            <p>Bienvenu sur l'espace de création de votre potager. Vous allez ici pouvoir créer des potagers. Ensuite depuis l'espace de gestion de votre potager, 
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h2 class="text-center">Ajouter votre potager !</h2><br>
+            <p>Bienvenue sur l'espace de création de votre potager. Vous allez ici pouvoir créer des potagers. Ensuite,
+                depuis l'espace de gestion de votre potager,
                 vous pourrez accepter les demandes d'autres utilisateurs voulant rejoindre votre potager.
-            </p>           
+            </p>
         </div>
-        <div class="col-sm-3"></div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+<br><br><br>
+<div class=container>
+    <div class="row">
+        <div class="example-container col-sm-6">
+            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                <input matInput placeholder="Nom du potager" required>
+            </mat-form-field>
+            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                <input matInput placeholder="Ville du potager" required>
+            </mat-form-field>
+            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                <input matInput placeholder="Adresse du potager" required>
+            </mat-form-field>
+            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                <input matInput placeholder="Surface du potager (m²)" required type="number">
+            </mat-form-field>
+            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                <input matInput placeholder="Description du potager" required>
+            </mat-form-field>
+        </div>
+        <div class="example-container col-sm-6">
+            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                <input matInput [ngxTimepicker]="picker" placeholder="Heure d'ouverture" required>
+                <ngx-material-timepicker #picker></ngx-material-timepicker>
+            </mat-form-field>
+            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                    <input matInput [ngxTimepicker]="picker2" placeholder="Heure de fermeture" required>
+                    <ngx-material-timepicker #picker2></ngx-material-timepicker>
+            </mat-form-field>
+            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                <input matInput type="number" placeholder="Nombre d'utilisateurs max" #nbUser>
+            </mat-form-field>
+            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                <input matInput placeholder="gps" required type="number">
+            </mat-form-field>
+        </div>
+        <div class="col-sm-12">
+<h6 class="font-italic font-weight-light">* : champs obligatoire</h6>
+        </div>
     </div>
 </div>

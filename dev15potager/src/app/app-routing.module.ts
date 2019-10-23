@@ -6,16 +6,17 @@ import { PersoComponent } from './perso/perso.component';
 import { DialogdetaildemandeComponent } from './dialogdetaildemande/dialogdetaildemande.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
+import { CreerjardinComponent } from './creerjardin/creerjardin.component';
 
 const routes: Routes = [
-  
+
   {path: 'recherchelistepotagers', component: RecherchelistepotagersComponent},
   {path: 'espaceperso/modifprofil', component: ModifprofilComponent},
   {path: 'espaceperso', component: PersoComponent},
   {path: 'demandeAd', component: DialogdetaildemandeComponent},
   {path: 'accueil', component: AccueilComponent},
   {path: 'espacepotager', component: EspacePotagersComponent},
-  
+  {path: 'app-creerjardin', component: CreerjardinComponent},
 
 
 ];

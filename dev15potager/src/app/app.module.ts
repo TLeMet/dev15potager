@@ -36,7 +36,10 @@ import { ModaldetailterrainComponent } from './modaldetailterrain/modaldetailter
 import { ModalmodifterrainComponent } from './modalmodifterrain/modalmodifterrain.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { CreerjardinComponent } from './creerjardin/creerjardin.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule, MatSelectModule } from '@angular/material';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,7 @@ import { CreerjardinComponent } from './creerjardin/creerjardin.component';
 
   ],
 
+  // tslint:disable-next-line: max-line-length
   entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent],
 
   imports: [
@@ -87,6 +91,11 @@ import { CreerjardinComponent } from './creerjardin/creerjardin.component';
       useFactory: adapterFactory
     }),
     MatListModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSelectModule,
+    NgxMaterialTimepickerModule,
 
   ],
   providers: [],
