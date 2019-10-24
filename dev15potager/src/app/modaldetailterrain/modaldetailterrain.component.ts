@@ -2,12 +2,10 @@ import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
 import { ServiceRechercheterrainService } from '../service-rechercheterrain.service';
-import { ServiceTerrainService } from '../service-terrain.service';
 import { MatDialog } from '@angular/material';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { take } from 'rxjs/operators';
 import { Message } from '../model/Message';
-import { SessionuserService } from '../sessionuser.service';
 import { Terrain } from '../model/Terrain';
 import { User } from '../model/User';
 
@@ -50,8 +48,7 @@ export class ModaldetailterrainComponent implements OnInit {
 
     const mypost: JSON = <JSON><unknown>{
       "user": { },
-      "terrain": {
-      },
+      "terrain": { },
       "message": this.message.message
     }
 

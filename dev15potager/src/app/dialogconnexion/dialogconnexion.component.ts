@@ -43,7 +43,7 @@ export class DialogconnexionComponent implements OnInit {
   errors_to_pass;
 
   regexTel = new RegExp('(0|\\+33|0033)[1-9][0-9]{8}');
-  regexPw = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+  regexPw = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\.!@#\$%\^&\*])(?=.{8,})");
   regexMail = new RegExp('^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$');
 
 // tslint:disable-next-line: max-line-length
@@ -155,19 +155,19 @@ constructor(private servisession: SessionuserService, private http: HttpClient, 
         }
         
         if (do_register){
-          console.log("tentative d'inscription")
+          //console.log("tentative d'inscription")
           const ins2 = this.http.post('http://localhost:8086/users', this.lapersonne).toPromise();
           
           ins2.then(
             response2 => {
-              console.log("On va naviguer vers une autre page.");
+              //console.log("On va naviguer vers une autre page.");
               this.userInscrit = response2;
                            
               localStorage.setItem('userConnecte', JSON.stringify(this.userInscrit));
-              this.fermerDialog()
+              this.fermerDialog();
               this.route.navigate(['/espaceperso']);
             }, err => {
-            console.log("Erreur : " + err);
+            //console.log("Erreur : " + err);
           });
         } else {
           
@@ -198,7 +198,7 @@ constructor(private servisession: SessionuserService, private http: HttpClient, 
     //'usertous' est la liste de tous les users existants.
     this.http.get('http://localhost:8086/users').subscribe(response => {
       this.usertous = response;
-      console.log(response);
+      //console.log(response);
     })
   }
 

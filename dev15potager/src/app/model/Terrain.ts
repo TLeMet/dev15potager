@@ -19,4 +19,10 @@ export class Terrain {
 
 
     constructor() {}
+
+    public toString() {
+        return "id : " + this.id + " type : " + this.type + " proprietaire : " + this.proprietaire + " adresse : " + this.adresse + " description : " + this.description
+        + " gps : " + this.gps + " hOuverture : " + this.hOuverture + " hFermeture : " + this.hFermeture + " maxUser : " + this.maxUser + " nom : " + this.nom
+        + " surface : " + this.surface + " ville : " + this.ville;
+    }
 }

@@ -10,6 +10,7 @@ import { Conversation } from '../model/Conversation';
 import {formatDate} from '@angular/common';
 import { Router } from '@angular/router';
 
+import { ModalenvoieimageComponent } from '../modalenvoieimage/modalenvoieimage.component';
 
 @Component({
   selector: 'app-espace-potagers',
@@ -23,12 +24,13 @@ export class EspacePotagersComponent implements OnInit {
   datademandes;
   
   constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private route: Router, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
-  userConnecte;
+  //userConnecte;
   potagerActif;
-  visible=false;
+  visible = false;
   messages;
   images;
-  newMessage = new Conversation;
+  newMessage = new Conversation();
+  userConnecte = JSON.parse(localStorage.getItem('userConnecte'));
 
   ngOnInit() {
 
@@ -36,7 +38,7 @@ export class EspacePotagersComponent implements OnInit {
       this.route.navigate(['/accueil']);
     }
     else{
-      this.userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
+     
       this.testProprio();
       
       this.potagerActif = this.stockageterrain.terrain;
@@ -98,24 +100,37 @@ export class EspacePotagersComponent implements OnInit {
   }
 
   testProprio(){
-    if (this.servisession.userConnecte.id == this.stockageterrain.terrain.proprietaire.id){
-      this.visible=true
-      
+    console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.stockageterrain.terrain.proprietaire.id );
+    if (this.userConnecte.id == this.stockageterrain.terrain.proprietaire.id){
+      this.visible=true;
+
     }
   }
 
   
 
   posterMessage(){
+
     this.newMessage.auteur = this.userConnecte;
     this.newMessage.terrain = this.stockageterrain.terrain;
     this.newMessage.image = null;
-
+    
     const post = this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id +  '/'+ this.stockageterrain.terrain.id, this.newMessage).toPromise()
     post.then(d => {this.ngOnInit()})
     this.ngOnInit();
    
     this.newMessage = new Conversation();
+  }
+
+  RajoutCard(){
+    const mydial2 = this.dialog.open(ModalenvoieimageComponent, {
+      height: '700px',
+      width: '500px',
+    });
+
+    
+
+  
   }
 
 

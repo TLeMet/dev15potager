@@ -25,30 +25,30 @@
             </div>
             <br>
             <div class="form-group">
-                <input type="password" class="form-control text-center" placeholder="Nouveau Mot de passe" required
-                    name="new_pw" id="new_pw">
+                <input type="password" class="form-control text-center" placeholder="Nouveau Mot de passe" 
+                    name="new_pw" [(ngModel)]="userModif.pw">
             </div>
             <br>
             <div class="form-group">
-                <input type="password" class="form-control text-center" placeholder="Confirmez le nouveau Mot de passe" required
-                    name="new_pw2" id="new_pw2">
+                <input type="password" class="form-control text-center" placeholder="Confirmez le nouveau Mot de passe" 
+                    name="new_pw2" #pw2>
             </div>
             <br>
             <div class="form-group">
                 <p>Téléphone :</p>
-                <input type="text" class="form-control text-center" placeholder="Numéro de téléphone" required
-                    name="new_tel" [(ngModel)]="userConnecte.tel" id="new_tel">
+                <input type="text" class="form-control text-center" placeholder="Numéro de téléphone" 
+                    name="new_tel" [(ngModel)]="userModif.tel">
             </div>
             <br>
             <div class="form-group">
                 <p>Âge :</p>
-                <input type="number" class="form-control text-center" placeholder="Âge" required
-                    name="new_age" [(ngModel)]="userConnecte.age" id="new_age">
+                <input type="number" class="form-control text-center" placeholder="Âge" 
+                    name="new_age" [(ngModel)]="userModif.age">
             </div>
 
             <br><br>
 
-            <button [disabled]="!formModifProfil.form.valid" (click)="saveModifProfil()" class="btn btn-primary btn-block">Enregistrer modifications</button>
+            <button [disabled]="!formModifProfil.form.valid" (click)="saveModifProfil((pw2.value))" class="btn btn-primary btn-block">Enregistrer modifications</button>
             <br>
         </form>
         <button class="btn btn-primary text-center" routerLink="/espaceperso" >Revenir</button>

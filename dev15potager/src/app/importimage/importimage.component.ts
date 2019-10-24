@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Image } from '../model/Image';
 import { Router } from '@angular/router';
 import { Terrain } from '../model/Terrain';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-importimage',
@@ -17,8 +18,13 @@ export class ImportimageComponent implements OnInit {
   ter: Terrain = new Terrain();
   imgURL: any;
   ok;
+  visible = false;
 
-  constructor(private http: HttpClient, private route: Router) { }
+  trueFalse() {
+    this.visible = true;
+  }
+
+  constructor(private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<ImportimageComponent>) { }
 
   ngOnInit() {
   }
@@ -38,9 +44,9 @@ export class ImportimageComponent implements OnInit {
 
 
 
-  onUpload() {
+  onUpload(desc) {
 
-    this.import.name = "";
+    this.import.name = desc;
     this.import.image = window.btoa(this.ok);
     this.import.terrain = this.ter;
 
@@ -51,6 +57,10 @@ export class ImportimageComponent implements OnInit {
         console.log(res);
       },
       err => console.log(err));
+  }
+
+  closeDialog() {
+    this.dialogRef.close();
   }
 
 }
