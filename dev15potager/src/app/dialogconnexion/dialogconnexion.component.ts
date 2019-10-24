@@ -24,20 +24,20 @@ export class DialogconnexionComponent implements OnInit {
   testa;
 
   login_attempt;
- 
 
 
-  constructor(private servisession: SessionuserService, private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
+
+// tslint:disable-next-line: max-line-length
+constructor(private servisession: SessionuserService, private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<DialogconnexionComponent>) { }
 
 
   fermerDialog(): void {
     this.dialogRef.close();
   }
   mailExiste(){
-    if(this.lemailexiste == 1){
+    if (this.lemailexiste == 1) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }

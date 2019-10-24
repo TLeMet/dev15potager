@@ -20,10 +20,10 @@ import { User } from '../model/User';
 export class ModaldetailterrainComponent implements OnInit {
 
   // tslint:disable-next-line: max-line-length
-  constructor(private servi: ServiceRechercheterrainService, private http: HttpClient, private dialogRef: MatDialogRef<ModaldetailterrainComponent>, private dialog: MatDialog, private _ngZone: NgZone, private servi2: SessionuserService, private servi3: ServiceTerrainService) { }
+  constructor(private servi: ServiceRechercheterrainService, private http: HttpClient, private dialogRef: MatDialogRef<ModaldetailterrainComponent>, private dialog: MatDialog, private _ngZone: NgZone) { }
 
   detail = this.servi.myDataT;
-  idConnect = this.servi2.userConnecte;
+  idConnect = JSON.parse(localStorage.getItem('userConnecte'));
   message: Message = new Message();
   terrain: Terrain = new Terrain();
   idConnect2: User = new User();
