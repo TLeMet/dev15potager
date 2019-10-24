@@ -1,6 +1,25 @@
-<input
-  style="display: none"
-  type="file" (change)="onFileChanged($event)"
-  #fileInput>
-<button (click)="fileInput.click()">Select File</button>
-<button (click)="onUpload()">Upload!</button>
+<div class="container">
+    <div class="row">
+        <div></div>
+    <form #form (ngSubmit)="onUpload(des.value)">
+
+        <div class="text-center">
+            <img [src]="imgURL" height="100" *ngIf="imgURL">
+        </div>
+        <br>
+        <div class="text-center">
+            <input type="file" name="pic" (change)="onFileChanged($event)">
+        </div>
+        <br>
+        <input type="text" class="text-center" placeholder="Description" #desc>
+        <br><br><br>
+
+        <div class="text-center">
+            <button>Upload</button>
+        </div>
+
+
+
+    </form>
+</div>
+</div>

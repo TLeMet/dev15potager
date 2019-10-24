@@ -28,11 +28,11 @@ export class PersoComponent implements OnInit {
 
     this.userConnecte = this.servisession.userConnecte;   // SUPPRIMER
 
-    if(JSON.parse(localStorage.getItem("userConnecte")) == null){
+    if(JSON.parse(localStorage.getItem('userConnecte')) == null){
       this.route.navigate(['/accueil']);
     }
     else{
-    
+
     this.http.get('http://localhost:8086/terrainofuser/' + this.userConnecte.id).subscribe(response => {
       this.datarejoints = response;
       console.log(response);
