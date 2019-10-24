@@ -18,41 +18,44 @@
     <div class="row">
         <div class="example-container col-sm-6">
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Nom du potager" required>
+                <input matInput placeholder="Nom du potager" required #nomP>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Ville du potager" required>
+                <input matInput placeholder="Ville du potager" required #villeP>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Adresse du potager" required>
+                <input matInput placeholder="Adresse du potager" required #adrP> 
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Surface du potager (m²)" required type="number">
+                <input matInput placeholder="Surface du potager (m²)" required type="number" #surfP>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Description du potager" required>
+                <input matInput placeholder="Description du potager" required #desP>
             </mat-form-field>
         </div>
         
         <div class="example-container col-sm-6">
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput [ngxTimepicker]="picker" placeholder="Heure d'ouverture" required>
+                <input matInput [ngxTimepicker]="picker" placeholder="Heure d'ouverture" required #hOuvP>
                 <ngx-material-timepicker #picker></ngx-material-timepicker>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                    <input matInput [ngxTimepicker]="picker2" placeholder="Heure de fermeture" required>
+                    <input matInput [ngxTimepicker]="picker2" placeholder="Heure de fermeture" required #hFermP>
                     <ngx-material-timepicker #picker2></ngx-material-timepicker>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
                 <input matInput type="number" placeholder="Nombre d'utilisateurs max" #nbUser>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="gps" required type="number">
+                <input matInput placeholder="gps" required type="number" #gps>
             </mat-form-field>
         </div>
         
         <div class="col-sm-12">
 <h6 class="font-italic font-weight-light">* : champs obligatoire</h6>
         </div>
+    </div>
+    <div>
+        <button mat-button (click)="creationTerrrain(nomP.value,villeP.value,adrP.value,surfP.value,desP.value,hOuvP.value,hFermP.value,nbUser.value,gps.value)">Valider</button>
     </div>
 </div>
