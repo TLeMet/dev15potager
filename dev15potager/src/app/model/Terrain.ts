@@ -1,12 +1,11 @@
 import { User } from './User';
 import { Type } from './Type';
 
-
 export class Terrain {
 
     id: number;
     nom: string;
-    gps: string;
+    postal: string;
     adresse: string;
     ville: string;
     surface: number;
@@ -22,7 +21,7 @@ export class Terrain {
 
     public toString() {
         return "id : " + this.id + " type : " + this.type + " proprietaire : " + this.proprietaire + " adresse : " + this.adresse + " description : " + this.description
-        + " gps : " + this.gps + " hOuverture : " + this.hOuverture + " hFermeture : " + this.hFermeture + " maxUser : " + this.maxUser + " nom : " + this.nom
+        + " Code postal : " + this.postal + " hOuverture : " + this.hOuverture + " hFermeture : " + this.hFermeture + " maxUser : " + this.maxUser + " nom : " + this.nom
         + " surface : " + this.surface + " ville : " + this.ville;
     }
 }

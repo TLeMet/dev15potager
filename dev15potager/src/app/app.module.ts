@@ -46,6 +46,8 @@ import { ModalwronginscriptionComponent } from './modalwronginscription/modalwro
 import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component';
 import { ModalenvoieimageComponent } from './modalenvoieimage/modalenvoieimage.component';
 import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.component';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { ApimapsComponent } from './apimaps/apimaps.component';
 
 
 
@@ -75,6 +77,7 @@ import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.c
     QuitterjardinComponent,
     ModalenvoieimageComponent,
     DialogjardincreeComponent,
+    ApimapsComponent,
 
   ],
 
@@ -107,6 +110,9 @@ import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.c
       useFactory: adapterFactory
     }),
     MatListModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyANuXrEHBneMxQ5_AF1JDhvT9DjwcjTp1w'
+    }),
     ReactiveFormsModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -115,7 +121,7 @@ import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.c
 
 
   ],
-  providers: [],
+  providers: [GoogleMapsAPIWrapper],
   bootstrap: [AppComponent],
 
 })
