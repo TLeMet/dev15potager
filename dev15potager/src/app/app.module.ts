@@ -42,6 +42,7 @@ import { MatRadioModule, MatSelectModule } from '@angular/material';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.component';
 import { ImportimageComponent } from './importimage/importimage.component';
+import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component';
 
 
 
@@ -67,6 +68,7 @@ import { ImportimageComponent } from './importimage/importimage.component';
     CreerjardinComponent,
     ModalmodifprofilComponent,
     ImportimageComponent,
+    QuitterjardinComponent,
 
   ],
 
@@ -74,6 +76,7 @@ import { ImportimageComponent } from './importimage/importimage.component';
   entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent, ModalmodifprofilComponent],
 
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

@@ -13,7 +13,7 @@ export class NavbarAccueilComponent implements OnInit {
 
   ouvreConnexion() {
     const mydial2 = this.dialog.open(DialogconnexionComponent, {
-      height: '680px',
+      height: '760px',
       width: '1400px',
     });
   }
@@ -21,7 +21,7 @@ export class NavbarAccueilComponent implements OnInit {
 
   ouvreInscription() {
     const mydial3 = this.dialog.open(DialogconnexionComponent, {
-      height: '680px',
+      height: '760px',
       width: '1400px',
     });
   }

@@ -8,6 +8,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { EspacePotagersComponent } from './espace-potagers/espace-potagers.component';
 import { CreerjardinComponent } from './creerjardin/creerjardin.component';
 import { DialogconnexionComponent } from './dialogconnexion/dialogconnexion.component';
+import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component';
 
 const routes: Routes = [
   { path: "", redirectTo: '/accueil', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'espacepotager', component: EspacePotagersComponent},
   {path: 'app-creerjardin', component: CreerjardinComponent},
   {path: 'con', component: DialogconnexionComponent},
+  {path: 'quitterJardin', component: QuitterjardinComponent},
 
 
 

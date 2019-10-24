@@ -34,24 +34,22 @@ export class ModifprofilComponent implements OnInit {
     var new_age = +(<HTMLInputElement>document.getElementById("new_age")).value;
 
     var do_modif: boolean = false; 
-    var wrong_pw: boolean = false;
-    var wrong_tel: boolean = false;
-    var wrong_age: boolean = false;
+    var type_error: string;
 
     if (new_pw === new_pw2 && this.regexPw.test(new_pw)){
       this.userConnecte.pw = new_pw;
       do_modif = true;
-      wrong_pw = true;
+      type_error = "pw";
     }
     if (this.regexTel.test(new_tel)){
       this.userConnecte.tel = new_tel;
       do_modif = true;
-      wrong_tel = true;
+      type_error = "tel";
     }
     if (new_age>0 && new_age<150){
       this.userConnecte.age = new_age;
       do_modif = true;
-      wrong_age = true;
+      type_error = "age";
     }
 
     if (do_modif) {
