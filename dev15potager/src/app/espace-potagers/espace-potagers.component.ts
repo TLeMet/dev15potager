@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material';
 import { DialogdetaildemandeComponent } from '../dialogdetaildemande/dialogdetaildemande.component';
@@ -7,6 +7,9 @@ import { ModalmodifterrainComponent } from '../modalmodifterrain/modalmodifterra
 import { StockageterrainService } from '../stockageterrain.service';
 import { SessionuserService } from '../sessionuser.service';
 import { Conversation } from '../model/Conversation';
+import {formatDate} from '@angular/common';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-espace-potagers',
@@ -19,7 +22,7 @@ export class EspacePotagersComponent implements OnInit {
   datamembres;
   datademandes;
   
-  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
+  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private route: Router, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
   userConnecte;
   potagerActif;
   visible=false;
@@ -29,32 +32,38 @@ export class EspacePotagersComponent implements OnInit {
 
   ngOnInit() {
 
-    this.testProprio();
-    
-    this.potagerActif = this.stockageterrain.terrain;
+    if(JSON.parse(localStorage.getItem("userConnecte")) == null){
+      this.route.navigate(['/accueil']);
+    }
+    else{
+      this.userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
+      this.testProprio();
+      
+      this.potagerActif = this.stockageterrain.terrain;
 
-    this.userConnecte = this.servisession.userConnecte;
-    // mettre le terrain
-    this.http.get('http://localhost:8086/terrains/' + this.stockageterrain.terrain.id).subscribe(response => {
-      this.datapotager = response;
-      console.log(this.datapotager);
-    })
-    this.http.get('http://localhost:8086/acceptedofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
-      this.datamembres = response;
-      console.log(response);
-    })
-    this.http.get('http://localhost:8086/requestofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
-      this.datademandes = response;
-      //console.log(response);
-    })
-    this.http.get('http://localhost:8086/messageGroupe/' + this.stockageterrain.terrain.id).subscribe(response => {
-      this.messages = response;
-      console.log("liste des messages")
-      console.log(response)
-    })
-    this.http.get('http://localhost:8086/imageGroup/' + this.stockageterrain.terrain.id).subscribe(response => {
-      this.images = response;
-    })
+      this.userConnecte = this.servisession.userConnecte;
+      // mettre le terrain
+      this.http.get('http://localhost:8086/terrains/' + this.stockageterrain.terrain.id).subscribe(response => {
+        this.datapotager = response;
+        console.log(this.datapotager);
+      })
+      this.http.get('http://localhost:8086/acceptedofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
+        this.datamembres = response;
+        console.log(response);
+      })
+      this.http.get('http://localhost:8086/requestofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
+        this.datademandes = response;
+        //console.log(response);
+      })
+      this.http.get('http://localhost:8086/messageGroupe/' + this.stockageterrain.terrain.id).subscribe(response => {
+        this.messages = response;
+        console.log("liste des messages")
+        console.log(response)
+      })
+      this.http.get('http://localhost:8086/imageGroup/' + this.stockageterrain.terrain.id).subscribe(response => {
+        this.images = response;
+      })
+    }
   }
   
   openDemande(d){
@@ -95,15 +104,18 @@ export class EspacePotagersComponent implements OnInit {
     }
   }
 
+  
+
   posterMessage(){
     this.newMessage.auteur = this.userConnecte;
     this.newMessage.terrain = this.stockageterrain.terrain;
-    this.newMessage.date = new Date();
     this.newMessage.image = null;
 
     const post = this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id +  '/'+ this.stockageterrain.terrain.id, this.newMessage).toPromise()
     post.then(d => {this.ngOnInit()})
     this.ngOnInit();
+   
+    this.newMessage = new Conversation();
   }
 
 

@@ -8,7 +8,6 @@ export class Conversation {
     auteur: User;
     terrain: Terrain;
     message: string;
-    date: Date;
     image: any;
 
     constructor() {}
