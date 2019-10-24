@@ -81,7 +81,7 @@ export class PersoComponent implements OnInit {
   ouvreQuitter(t){
     this.stockageterrain.terrain = t.terrain;
     const mydial = this.dialog.open(QuitterjardinComponent, {
-      height: '400px',
+      height: '280px',
       width: '350px',
     });
   }
