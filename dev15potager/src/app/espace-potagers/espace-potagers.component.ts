@@ -21,7 +21,7 @@ export class EspacePotagersComponent implements OnInit {
   datamembres;
   datademandes;
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private route: Router, private servi: ServicedemandeService, private servisession: SessionuserService) { }
+  constructor(private http: HttpClient, private dialog: MatDialog, private route: Router, private servi: ServicedemandeService) { }
   //userConnecte;
   potagerActif = JSON.parse(localStorage.getItem("terrain"));
   visible = false;
@@ -33,14 +33,15 @@ export class EspacePotagersComponent implements OnInit {
 
   ngOnInit() {
 
+    console.log("ICI ICI :" + JSON.parse(localStorage.getItem("userConnecte")) );
+
     if(JSON.parse(localStorage.getItem("userConnecte")) == null){
       this.route.navigate(['/accueil']);
     }
     else{
+     
       this.testProprio();
 
-
-      //this.userConnecte = JSON.parse(localStorage.getItem('userConnecte'));
       // mettre le terrain
       this.http.get('http://localhost:8086/terrains/' + this.potagerActif.id).subscribe(response => {
         this.datapotager = response;
@@ -81,6 +82,7 @@ export class EspacePotagersComponent implements OnInit {
   }
 
   modifDetailTerrain(){
+    localStorage.setItem('terrainmodif', JSON.stringify(this.potagerActif));
     const mydial2 = this.dialog.open(ModalmodifterrainComponent, {
       height: '830px',
       width: '500px',

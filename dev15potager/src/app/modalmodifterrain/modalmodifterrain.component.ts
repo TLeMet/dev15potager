@@ -15,14 +15,12 @@ export class ModalmodifterrainComponent implements OnInit {
 
   constructor(private http: HttpClient, private dialogRef: MatDialogRef<ModalmodifterrainComponent>, private dialog: MatDialog ,private servisession: SessionuserService,  private stockageterrain: StockageterrainService, private route: Router) { }
 
-  userConnecte;
-  userTerrainActif;
+  userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
+
+  userTerrainActif = JSON.parse(localStorage.getItem("terrainmodif"));
   
 
   ngOnInit() {
-
-  this.userConnecte = this.servisession.userConnecte;
-  this.userTerrainActif = this.stockageterrain;
  
   }
   /*
@@ -35,7 +33,7 @@ export class ModalmodifterrainComponent implements OnInit {
   }*/
 
   validModif(){
-    this.http.put('http://localhost:8086//terrains/' + this.userTerrainActif.terrain.id, this.userTerrainActif.terrain).subscribe(response => {})
+    this.http.put('http://localhost:8086//terrains/' + this.userTerrainActif.id, this.userTerrainActif).subscribe(response => {})
     this.dialogRef.close();
   }
 }

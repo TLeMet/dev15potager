@@ -47,6 +47,7 @@ import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component'
 import { ModalenvoieimageComponent } from './modalenvoieimage/modalenvoieimage.component';
 import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.component';
 
+import { UTCDatePipe } from './pipe/UTCDatePipe';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.c
     QuitterjardinComponent,
     ModalenvoieimageComponent,
     DialogjardincreeComponent,
+    UTCDatePipe,
 
   ],
 
