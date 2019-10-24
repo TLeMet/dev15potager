@@ -63,6 +63,8 @@ export class ModaldetailterrainComponent implements OnInit {
         console.log(err);
       }
     );
+    this.closeDialog();
+    location.reload();
   }
 
   ngOnInit() {

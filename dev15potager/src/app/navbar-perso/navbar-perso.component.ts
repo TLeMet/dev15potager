@@ -26,9 +26,8 @@ prenomUserConnecte;
   }
 
   deconnexion() {
-    this.servisession.userConnecte = null;  // SUPPRIMER
     localStorage.removeItem('userConnecte');
-    this.route.navigate(['/accueil']);
+    location.reload();
   }
 
 
