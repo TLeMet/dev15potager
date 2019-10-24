@@ -15,7 +15,12 @@ export class NavbarPersoComponent implements OnInit {
 
   constructor(private servi: ServiceRechercheterrainService, private servisession: SessionuserService, private http: HttpClient, private route: Router, private dialog: MatDialog) { }
 data;
-prenomUserConnecte;
+userConnecte;
+userConnectePrenom;
+datarejoints;
+dataproprio;
+noPotager;
+noPotagerPossede;
 
   ouvreRecherche(rechT) {
     this.servi.rechTerr = rechT;
@@ -27,17 +32,62 @@ prenomUserConnecte;
 
   deconnexion() {
     localStorage.removeItem('userConnecte');
+    this.route.navigate(['/accueil']);
     location.reload();
+  }
+
+
+
+  aucunPotager() {
+    if(this.noPotager == 1){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  aucunPotagerPossede() {
+    if(this.noPotagerPossede == 1){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
 
 
   ngOnInit() {
     if(JSON.parse(localStorage.getItem("userConnecte")) != null) {
-      this.prenomUserConnecte = JSON.parse(localStorage.getItem("userConnecte")).prenom;
+      this.userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
+      this.userConnectePrenom = this.userConnecte.prenom;
+      
+      this.http.get('http://localhost:8086/terrainofuser/' + this.userConnecte.id).subscribe(response => {
+        this.datarejoints = response;
+        if(this.datarejoints!=null && this.datarejoints!=''){
+          this.noPotager = 0;
+        }
+        else{
+          this.noPotager = 1;
+        }
+        console.log(response);
+      })
+        // Retourne les terrains tenus par le propriétaire.
+        this.http.get('http://localhost:8086/terrainsprop/' + this.userConnecte.id).subscribe(response => {
+          this.dataproprio = response;
+          if(this.dataproprio!=null && this.dataproprio!=''){
+            this.noPotagerPossede = 0;
+          }
+          else{
+            this.noPotagerPossede = 1;
+          }
+          console.log(response);
+        });
     }
 
   }
+  
 
 }
 
