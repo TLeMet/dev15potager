@@ -198,7 +198,7 @@ constructor(private servisession: SessionuserService, private http: HttpClient, 
     //'usertous' est la liste de tous les users existants.
     this.http.get('http://localhost:8086/users').subscribe(response => {
       this.usertous = response;
-      //console.log(response);
+      console.log(response);
     })
   }
 

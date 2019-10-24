@@ -13,6 +13,7 @@ export class CreerjardinComponent implements OnInit {
 
   options: FormGroup;
   nouvTerrain: Terrain = new Terrain();
+  userConnecte;
 
   constructor(fb: FormBuilder, private route: Router, private http: HttpClient) {
     this.options = fb.group({
@@ -22,12 +23,18 @@ export class CreerjardinComponent implements OnInit {
 
 
   ngOnInit() {
+    if(JSON.parse(localStorage.getItem("userConnecte")) == null){
+      this.route.navigate(['/accueil']);
+    }
+    else{
+      this.userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
+    }
   }
 
   creationTerrain() {
     console.log("creationTerrain()");
 
-    this.nouvTerrain.proprietaire = JSON.parse(localStorage.getItem("userConnecte"));
+    this.nouvTerrain.proprietaire = this.userConnecte;
 
     const co = this.http.post('http://localhost:8086/terrains', this.nouvTerrain ).toPromise();
 
