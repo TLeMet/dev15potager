@@ -44,6 +44,7 @@ import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.c
 import { ImportimageComponent } from './importimage/importimage.component';
 import { ModalwronginscriptionComponent } from './modalwronginscription/modalwronginscription.component';
 import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component';
+import { ModalenvoieimageComponent } from './modalenvoieimage/modalenvoieimage.component';
 import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.component';
 
 
@@ -72,15 +73,17 @@ import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.c
     ImportimageComponent,
     ModalwronginscriptionComponent,
     QuitterjardinComponent,
+    ModalenvoieimageComponent,
     DialogjardincreeComponent,
 
   ],
 
   // tslint:disable-next-line: max-line-length
-  entryComponents: [DialogjardincreeComponent, DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent, ModalmodifprofilComponent, ModalwronginscriptionComponent],
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent, ModalmodifprofilComponent, ModalwronginscriptionComponent, ModalenvoieimageComponent, DialogjardincreeComponent],
+
 
   imports: [
-    
+
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

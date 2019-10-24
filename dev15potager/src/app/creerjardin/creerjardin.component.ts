@@ -12,7 +12,7 @@ import { DialogjardincreeComponent } from '../dialogjardincree/dialogjardincree.
   styleUrls: ['./creerjardin.component.css']
 })
 export class CreerjardinComponent implements OnInit {
-  
+
   options: FormGroup;
   nouvTerrain: Terrain = new Terrain();
   varhOuverture;
@@ -53,7 +53,7 @@ export class CreerjardinComponent implements OnInit {
     co.then(
     response => {
       console.log("On est entrés dans le then.");
-   
+
     })
     console.log("Fin de creationTerrain().");
 

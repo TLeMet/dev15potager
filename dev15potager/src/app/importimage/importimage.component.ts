@@ -38,9 +38,9 @@ export class ImportimageComponent implements OnInit {
 
 
 
-  onUpload() {
+  onUpload(desc) {
 
-    this.import.name = "";
+    this.import.name = desc;
     this.import.image = window.btoa(this.ok);
     this.import.terrain = this.ter;
 
