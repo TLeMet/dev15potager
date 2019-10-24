@@ -51,32 +51,37 @@
                     <br>
                     <div class="form-group">
                         <input type="text" class="form-control text-center" placeholder="Nom*" required
-                            name="lassiette" [(ngModel)]="lapersonne.nom">
+                            name="new_nom" [(ngModel)]="lapersonne.nom">
                     </div>
                     <br>
                     <div class="form-group">
                         <input type="text" class="form-control text-center" placeholder="Prénom*" required
-                            name="lafourchette" [(ngModel)]="lapersonne.prenom">
+                            name="new_prenom" [(ngModel)]="lapersonne.prenom">
                     </div>
                     <br>
                     <div class="form-group">
                         <input type="email" class="form-control text-center" placeholder="Mail*" required
-                            name="lacuillere" [(ngModel)]="lapersonne.mail">
+                            name="new_mail" [(ngModel)]="lapersonne.mail">
                     </div>
                     <br>
                     <div class="form-group">
                         <input type="password" class="form-control text-center" placeholder="Mot de passe*" required
-                            name="leverre" [(ngModel)]="lapersonne.pw">
+                            name="new_pw" [(ngModel)]="lapersonne.pw">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" class="form-control text-center" placeholder="Confirmer le Mot de passe*" required
+                            name="new_pw2" [(ngModel)]="lapersonne.pw">
                     </div>
                     <br>
                     <div class="form-group">
                         <input type="text" class="form-control text-center" placeholder="Numéro de téléphone"
-                            name="lesopalin" [(ngModel)]="lapersonne.tel">
+                            name="new_tel" [(ngModel)]="lapersonne.tel">
                     </div>
                     <br>
                     <div class="form-group">
                         <input type="number" class="form-control text-center" placeholder="Âge"
-                            name="latable" [(ngModel)]="lapersonne.age">
+                            name="new_age" [(ngModel)]="lapersonne.age">
                     </div>
                     <br>
                     <button (click)="goInscription()" [disabled]="!formeIns.form.valid" class="btn btn-primary btn-block">Inscription</button>
