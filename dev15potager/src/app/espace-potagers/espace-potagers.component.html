@@ -116,7 +116,7 @@
                 <table>
                     <tr *ngFor="let m of messages">
                         <td>
-                            <strong>{{m.auteur.prenom}}</strong> : {{m.message}} <br> <p style="font-size: x-small;">{{m.dateMessage | date:'dd/MM/y, h:mm'}}</p>
+                            <strong>{{m.auteur.prenom}}</strong> : {{m.message}} <br> <p style="font-size: x-small;">{{m.dateMessage | date:'dd/MM/y, H:mm'}}</p>
                         </td> 
                     </tr>
                 </table>
@@ -148,6 +148,11 @@
                     </li>
                 </ul>
                 <br>
+                <div class="scrollable">
+                        <div class="scrollable-content">
+
+                        </div>
+                      </div>
                 <button mat-raised-button (click)="RajoutCard()">
                     <mat-icon>add_circle</mat-icon>
                 </button>
