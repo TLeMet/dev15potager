@@ -13,16 +13,19 @@
                 </div>
                 <br>
                 <div class="text-center">
-                    <textarea type="text" class="text-center" placeholder="Description" #desc style="width: 100%;"></textarea>
+                    <textarea type="text" class="text-center" placeholder="Description" #desc
+                        style="width: 100%;"></textarea>
                 </div>
                 <br><br><br>
 
                 <div class="text-center">
-                    <button>Upload</button>
+                    <button (click)="trueFalse()">Upload</button>
                 </div>
-
-
-
+                <p *ngIf="visible" style="color: rgb(47, 255, 75);" class="text-center">Image bien envoyée !</p>
+                <br>
+                <div class="text-center">
+                    <button (click) = "closeDialog()">Retour</button>
+                </div>
             </form>
         </div>
     </div>
