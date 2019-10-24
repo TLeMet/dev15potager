@@ -22,6 +22,8 @@ export class EspacePotagersComponent implements OnInit {
   userConnecte;
   potagerActif;
   visible=false;
+  messages;
+  images;
 
   ngOnInit() {
 
@@ -42,6 +44,14 @@ export class EspacePotagersComponent implements OnInit {
     this.http.get('http://localhost:8086/requestofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
       this.datademandes = response;
       //console.log(response);
+    })
+    this.http.get('http://localhost:8086/messageGroupe/' + this.stockageterrain.terrain.id).subscribe(response => {
+      this.messages = response;
+      console.log("liste des messages")
+      console.log(response)
+    })
+    this.http.get('http://localhost:8086/imageGroup/' + this.stockageterrain.terrain.id).subscribe(response => {
+      this.images = response;
     })
   }
   
@@ -81,6 +91,7 @@ export class EspacePotagersComponent implements OnInit {
       this.visible=true
       
     }
+
     /*
     console.log(this.servisession.userConnecte.id)
     console.log("proprio testé")
