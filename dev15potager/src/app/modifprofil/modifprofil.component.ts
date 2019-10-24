@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/User';
 import { HttpClient } from '@angular/common/http';
@@ -18,7 +19,7 @@ import { MatDialog } from '@angular/material';
 
 export class ModifprofilComponent implements OnInit {
 
-  userConnecte;
+  userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
   regexTel = new RegExp('(0|\\+33|0033)[1-9][0-9]{8}');
   regexPw = new RegExp('^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$');
 
@@ -32,25 +33,23 @@ export class ModifprofilComponent implements OnInit {
     var new_tel = (<HTMLInputElement>document.getElementById("new_tel")).value;
     var new_age = +(<HTMLInputElement>document.getElementById("new_age")).value;
 
-    var do_modif: boolean = false;
-    var wrong_pw: boolean = false;
-    var wrong_tel: boolean = false;
-    var wrong_age: boolean = false;
+    var do_modif: boolean = false; 
+    var type_error: string;
 
     if (new_pw === new_pw2 && this.regexPw.test(new_pw)){
       this.userConnecte.pw = new_pw;
       do_modif = true;
-      wrong_pw = true;
+      type_error = "pw";
     }
     if (this.regexTel.test(new_tel)){
       this.userConnecte.tel = new_tel;
       do_modif = true;
-      wrong_tel = true;
+      type_error = "tel";
     }
     if (new_age>0 && new_age<150){
       this.userConnecte.age = new_age;
       do_modif = true;
-      wrong_age = true;
+      type_error = "age";
     }
 
     if (do_modif) {
@@ -68,16 +67,12 @@ export class ModifprofilComponent implements OnInit {
         width: '200px',
       });
     }
-    this.servisession.userConnecte = this.userConnecte;
+    localStorage.setItem('userConnecte', JSON.stringify(this.userConnecte));
     this.ngOnInit();
   }
 
-
-
-
   ngOnInit() {
-    this.userConnecte = this.servisession.userConnecte;
-
+    
   }
 
 }

@@ -4,8 +4,8 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-            <h2 class="text-center">Ajouter votre potager !</h2><br>
-            <p>Bienvenue sur l'espace de création de votre potager. Vous allez ici pouvoir créer des potagers. Ensuite,
+            <h2 class="text-center">Ajoutez votre potager !</h2><br>
+            <p class="text-center">Bienvenue sur l'espace de création de votre potager. Vous allez ici pouvoir créer des potagers. Ensuite,
                 depuis l'espace de gestion de votre potager,
                 vous pourrez accepter les demandes d'autres utilisateurs voulant rejoindre votre potager.
             </p>
@@ -15,44 +15,49 @@
 </div>
 <br><br><br>
 <div class=container>
+    <form #formCreerJardin="ngForm">
     <div class="row">
         <div class="example-container col-sm-6">
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Nom du potager" required>
+                <input matInput placeholder="Nom du potager" required [(ngModel)]="nouvTerrain.nom" #nomAction2="ngModel" name="aaa">
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Ville du potager" required>
+                <input matInput placeholder="Ville du potager" required [(ngModel)]="nouvTerrain.ville" name="bbb">
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Adresse du potager" required>
+                <input matInput placeholder="Adresse du potager" required [(ngModel)]="nouvTerrain.adresse" name="ccc"> 
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Surface du potager (m²)" required type="number">
+                <input matInput placeholder="Surface du potager (m²)" required type="number" [(ngModel)]="nouvTerrain.surface" name="ddd">
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Description du potager" required>
+                <textarea matInput placeholder="Description du potager" required [(ngModel)]="nouvTerrain.description" name="eee"></textarea>
             </mat-form-field>
         </div>
         
         <div class="example-container col-sm-6">
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput [ngxTimepicker]="picker" placeholder="Heure d'ouverture" required>
+                <input matInput [ngxTimepicker]="picker" placeholder="Heure d'ouverture" required [(ngModel)]="nouvTerrain.hOuverture" name="fff">
                 <ngx-material-timepicker #picker></ngx-material-timepicker>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                    <input matInput [ngxTimepicker]="picker2" placeholder="Heure de fermeture" required>
+                    <input matInput [ngxTimepicker]="picker2" placeholder="Heure de fermeture" required [(ngModel)]="nouvTerrain.hFermeture" name="ggg">
                     <ngx-material-timepicker #picker2></ngx-material-timepicker>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput type="number" placeholder="Nombre d'utilisateurs max" #nbUser>
+                <input matInput type="number" placeholder="Nombre d'utilisateurs max" [(ngModel)]="nouvTerrain.maxUser" name="hhh">
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="gps" required type="number">
+                <input matInput placeholder="Coordonnées GPS" type="number" required [(ngModel)]="nouvTerrain.gps" name="iii">
             </mat-form-field>
         </div>
         
         <div class="col-sm-12">
-<h6 class="font-italic font-weight-light">* : champs obligatoire</h6>
+            <h6 class="font-italic font-weight-light">* : champs obligatoire</h6>
         </div>
     </div>
+    <div>      
+        <button type="submit" (click)="creationTerrain()" mat-stroked-button color="primary">Valider</button>
+    </div>
+</form>
 </div>

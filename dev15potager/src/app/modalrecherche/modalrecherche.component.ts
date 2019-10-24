@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material';
 @Component({
   selector: 'app-modalrecherche',
   templateUrl: './modalrecherche.component.html',
-  styleUrls: ['./modalrecherche.component.css']
+  styleUrls: ['./modalrecherche.component.css'] 
 })
 export class ModalrechercheComponent implements OnInit {
 
