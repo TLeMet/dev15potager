@@ -70,8 +70,8 @@
                     </div>
                     <br>
                     <div class="form-group">
-                        <input type="password" class="form-control text-center" placeholder="Confirmer le Mot de passe*" required
-                            name="new_pw2" [(ngModel)]="lapersonne.pw">
+                        <input type="password" class="form-control text-center" placeholder="Confirmer le Mot de passe" required
+                            name="new_pw2" #pw2>
                     </div>
                     <br>
                     <div class="form-group">
@@ -84,10 +84,10 @@
                             name="new_age" [(ngModel)]="lapersonne.age">
                     </div>
                     <br>
-                    <button (click)="goInscription()" [disabled]="!formeIns.form.valid" class="btn btn-primary btn-block">Inscription</button>
+                    <button (click)="goInscription(pw2.value)" [disabled]="!formeIns.form.valid" class="btn btn-primary btn-block">Inscription</button>
 
                     <br>
-                    <p [hidden]="!mailExiste()" style="color: red;">L'adresse email existe déjà.</p>
+                    <p [hidden]="mailExiste()" style="color: red;">L'adresse email existe déjà.</p>
                 </form>
             </div>
 
