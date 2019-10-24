@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'demandeAd', component: DialogdetaildemandeComponent},
   {path: 'accueil', component: AccueilComponent},
   {path: 'espacepotager', component: EspacePotagersComponent},
-  {path: 'app-creerjardin', component: CreerjardinComponent},
+  {path: 'creerjardin', component: CreerjardinComponent},
   {path: 'con', component: DialogconnexionComponent},
   {path: 'quitterJardin', component: QuitterjardinComponent},
 

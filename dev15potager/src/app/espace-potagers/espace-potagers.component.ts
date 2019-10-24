@@ -93,17 +93,18 @@ export class EspacePotagersComponent implements OnInit {
       this.visible=true
       
     }
-
-    /*
-    console.log(this.servisession.userConnecte.id)
-    console.log("proprio testé")
-    console.log(this.visible)
-    */
   }
 
   posterMessage(){
-    this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id +  '/'+ this.stockageterrain.terrain.id, this.newMessage).subscribe(response => {
-    })
-    
+    this.newMessage.auteur = this.userConnecte;
+    this.newMessage.terrain = this.stockageterrain.terrain;
+    this.newMessage.date = new Date();
+    this.newMessage.image = null;
+
+    const post = this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id +  '/'+ this.stockageterrain.terrain.id, this.newMessage).toPromise()
+    post.then(d => {this.ngOnInit()})
+    this.ngOnInit();
   }
+
+
 }

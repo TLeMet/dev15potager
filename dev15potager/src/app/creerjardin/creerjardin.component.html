@@ -37,11 +37,11 @@
         
         <div class="example-container col-sm-6">
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput [ngxTimepicker]="picker" placeholder="Heure d'ouverture" required [(ngModel)]="nouvTerrain.hOuverture" name="h:M:s">
+                <input matInput [ngxTimepicker]="picker" [format]="24" placeholder="Heure d'ouverture" required [(ngModel)]="varhOuverture" name="h:M:s">
                 <ngx-material-timepicker #picker></ngx-material-timepicker>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                    <input matInput [ngxTimepicker]="picker2" placeholder="Heure de fermeture" required [(ngModel)]="nouvTerrain.hFermeture" name="h:M:s">
+                    <input matInput [ngxTimepicker]="picker2" [format]="24" placeholder="Heure de fermeture" required [(ngModel)]="varhFermeture" name="h:M:s">
                     <ngx-material-timepicker #picker2></ngx-material-timepicker>
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
@@ -56,8 +56,8 @@
             <h6 class="font-italic font-weight-light">* : champs obligatoire</h6>
         </div>
     </div>
-    <div>      
-        <button type="submit" (click)="creationTerrain()" mat-stroked-button color="primary">Valider</button>
+    <div class="text-center">      
+        <button type="submit" [disabled]="!formCreerJardin.form.valid" (click)="creationTerrain()" mat-stroked-button color="primary" style="width: 10%;">Créer</button>
     </div>
 </form>
 </div>
