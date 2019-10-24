@@ -87,7 +87,7 @@
                     <button (click)="goInscription(pw2.value)" [disabled]="!formeIns.form.valid" class="btn btn-primary btn-block">Inscription</button>
 
                     <br>
-                    <p [hidden]="mailExiste()" style="color: red;">L'adresse email existe déjà.</p>
+                    <p [hidden]="!mailExiste()" style="color: red;">L'adresse email existe déjà.</p>
                 </form>
             </div>
 
