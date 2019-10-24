@@ -1,0 +1,21 @@
+<mat-card class="example-card text-center" fxLayoutAlign="start start">
+    <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title><strong>Quitter le potager </strong></mat-card-title>
+        <mat-card-subtitle>{{terrain.nom}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="container">
+
+    <mat-card-content>
+        
+        <p>
+            <strong>Voulez vous quitter définitivement le potager ?</strong>
+        </p>
+
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button style="color: red" (click) = "quitterPotager()">Quitter</button>
+        <button mat-button (click) = "closeDialog()" >Retour</button>
+    </mat-card-actions>
+</div>
+</mat-card>
