@@ -187,7 +187,7 @@ constructor(private servisession: SessionuserService, private http: HttpClient, 
         width: 'auto',
         data: type_error,
       });
-      }
+      } 
     })
     )
 
