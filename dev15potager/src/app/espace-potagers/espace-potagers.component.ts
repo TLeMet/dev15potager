@@ -41,6 +41,7 @@ export class EspacePotagersComponent implements OnInit {
     else{
      
       this.testProprio();
+      this.potagerActif = JSON.parse(localStorage.getItem("terrain"));
 
       // mettre le terrain
       this.http.get('http://localhost:8086/terrains/' + this.potagerActif.id).subscribe(response => {
@@ -82,7 +83,7 @@ export class EspacePotagersComponent implements OnInit {
   }
 
   modifDetailTerrain(){
-    localStorage.setItem('terrainmodif', JSON.stringify(this.potagerActif));
+    localStorage.setItem('terrain', JSON.stringify(this.potagerActif));
     const mydial2 = this.dialog.open(ModalmodifterrainComponent, {
       height: '830px',
       width: '500px',
