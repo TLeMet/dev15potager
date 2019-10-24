@@ -11,9 +11,13 @@ export class AppComponent implements OnInit {
 
   constructor(private route: Router) {}
 
+  deconnexion() {
+    localStorage.setItem('userConnecte', null);
+    localStorage.removeItem('userConnecte');
+    this.route.navigate(['/accueil']);
+  }
 
  ngOnInit() {
-  //  console.log("ngOnInit de app-component");
-  //    this.route.navigate(['/accueil']);
+  this.deconnexion() 
  }
 }
