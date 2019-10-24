@@ -41,7 +41,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule, MatSelectModule } from '@angular/material';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.component';
-import { MatDialogRef } from '@angular/material';
+import { ImportimageComponent } from './importimage/importimage.component';
+
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { MatDialogRef } from '@angular/material';
     AccueilComponent,
     CreerjardinComponent,
     ModalmodifprofilComponent,
+    ImportimageComponent,
 
   ],
 
@@ -72,6 +74,7 @@ import { MatDialogRef } from '@angular/material';
   entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent, ModalmodifprofilComponent],
 
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -100,7 +103,7 @@ import { MatDialogRef } from '@angular/material';
     MatRadioModule,
     MatSelectModule,
     NgxMaterialTimepickerModule,
-    //MatDialogRef,
+
 
   ],
   providers: [],
