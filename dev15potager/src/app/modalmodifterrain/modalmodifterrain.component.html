@@ -9,38 +9,38 @@
     <form>
         <div class="form-group">
             <p>Nom terrain</p>
-            <input type="text" class="form-control text-center" name="nom" [(ngModel)]="userTerrainActif.terrain.nom">
+            <input type="text" class="form-control text-center" name="nom" [(ngModel)]="userTerrainActif.nom" #nomAction="ngModel">
         </div>
         <div class="row"> 
             <div class="col-sm-6 form-group">
                 <p>Adresse</p>
-                <input type="text" class="form-control text-center" name="adresse" [(ngModel)]="userTerrainActif.terrain.adresse">
+                <input type="text" class="form-control text-center" name="adresse" [(ngModel)]="userTerrainActif.adresse">
             </div>
             <div class="col-sm-6 form-group">
                 <p>Ville</p>
-                <input type="text" class="form-control text-center" name="ville" [(ngModel)]="userTerrainActif.terrain.ville">
+                <input type="text" class="form-control text-center" name="ville" [(ngModel)]="userTerrainActif.ville">
             </div>
         </div> 
         <div class="form-group">
             <p>Surface (m²)</p>
-            <input type="text" class="form-control text-center" name="surface" [(ngModel)]="userTerrainActif.terrain.surface">
+            <input type="text" class="form-control text-center" name="surface" [(ngModel)]="userTerrainActif.surface">
         </div>
         <div class="form-group">
             <p>Max utilisateurs</p>
-            <input type="number" class="form-control text-center" name="maxUser" [(ngModel)]="userTerrainActif.terrain.maxUser">
+            <input type="number" class="form-control text-center" name="maxUser" [(ngModel)]="userTerrainActif.maxUser">
         </div>
         <div class="form-group">
             <p>Description</p>
-            <textarea class="form-control round-0" name="description" rows=4 [(ngModel)]="userTerrainActif.terrain.description"></textarea>
+            <textarea class="form-control round-0" name="description" rows=4 [(ngModel)]="userTerrainActif.description"></textarea>
         </div>
         <div class="row"> 
             <div class="col-sm-6">
                 <p>Horaire ouverture</p>
-                <input type="text" class="text-center" name="hOuverture" [(ngModel)]="userTerrainActif.terrain.hOuverture">
+                <input type="text" class="text-center" name="hOuverture" [(ngModel)]="userTerrainActif.hOuverture">
             </div>
             <div class="col-sm-6">
                 <p>Horaire fermeture</p>
-                <input type="text" class="text-center"name="hFermeture" [(ngModel)]="userTerrainActif.terrain.hFermeture"> 
+                <input type="text" class="text-center"name="hFermeture" [(ngModel)]="userTerrainActif.hFermeture"> 
             </div>
         </div> 
         <!--Rajouter changement de photo si le temps-->
@@ -50,7 +50,7 @@
                 <button (click)="validModif()" class="btn btn-primary btn-block">Valider</button>
             </div>
             <div class="col-sm-6">
-                <button class="btn btn-danger btn-block">Supprimer terrain</button>
+                <button class="btn btn-danger btn-block" (click)="supprimerTerrain()">Supprimer terrain</button>
             </div>
         </div> 
     </form>

@@ -49,6 +49,7 @@ import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.c
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { ApimapsComponent } from './apimaps/apimaps.component';
 
+import { UTCDatePipe } from './pipe/UTCDatePipe';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { ApimapsComponent } from './apimaps/apimaps.component';
     ModalenvoieimageComponent,
     DialogjardincreeComponent,
     ApimapsComponent,
+    UTCDatePipe,
 
   ],
 
