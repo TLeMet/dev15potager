@@ -1,99 +1,115 @@
 <app-navbar-perso></app-navbar-perso>
 <br><br><br>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-            <h2>Info jardin</h2>     
-            <table>
-                <thead>
-                    <tr>
-                        <th class="text-center">Nom du potager</th>
-                        <th class="text-center">Adresse</th>
-                        <th class="text-center">Ville</th>
-                        <th class="text-center">Surface</th>
-                        <th class="text-center">Description</th>
-                        <th class="text-center" *ngIf="visible">Modifier</th>
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    <tr>
-                        <td>{{potagerActif.nom}}</td>
-                        <td>{{potagerActif.adresse}}</td>
-                        <td>{{potagerActif.ville}}</td>
-                        <td>{{potagerActif.surface}} m²</td>
-                        <td>{{potagerActif.description}}</td>
-                        <td *ngIf="visible">
-                            <button (click)="modifDetailTerrain()" style="background-color:darkturquoise" button mat-mini-fab>
-                            <mat-icon>edit</mat-icon>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-                
-            </table>
-
-            <hr>
-            <h2>Membres</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th class="text-center">Nom</th>
-                        <th class="text-center">Prenom</th>
-                        <th class="text-center">Mail</th>
-                        <th class="text-center">Téléphone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let m of datamembres">
-                        <td>{{m.user.nom}}</td>
-                        <td>{{m.user.prenom}}</td>
-                        <td>{{m.user.mail}}</td>
-                        <td>{{m.user.tel}}</td>
-                        <td><button class="btn btn-primary" (click)= exclureUser(m.user)>Exclure</button></td>  
-                    </tr>
-                </tbody>
-            </table>
-
-
-
-            <hr>
-            <div *ngIf="visible">
-            <h2>Demandes d'adhésion au jardin</h2>
-            <!-- Cacher si le gars n'est pas proprio -->
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-5">
+        <h2>Info jardin</h2>     
+        <table>
+            <col width="130px">
+            <col width="130px">
+            <col width="130px">
+            <col width="130px">
+            <col width="130px">
+            <col width="130px">
+            <thead>
+                <tr>
+                    <th >Nom du potager</th>
+                    <th >Adresse</th>
+                    <th >Ville</th>
+                    <th >Surface</th>
+                    <th >Description</th>
+                    <th *ngIf="visible" mat-button>Modifier</th>
+                </tr>
+            </thead>
             
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Prenom</th>
-                            <th>Téléphone</th>
-                            <th>Date de la demande</th>
-                            <th>Consulter</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let d of datademandes">
-                            <td>{{d.user.nom}}</td>
-                            <td>{{d.user.prenom}}</td>
-                            <td>{{d.user.tel}}</td>
-                            <td>{{d.dateDemande}}</td>
-                            <td><button mat-mini-fab aria-label="Example icon-button with a heart icon" (click) = openDemande(d)>
-                                    <mat-icon>search</mat-icon>
-                            </button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+            <tbody>
+                <tr>
+                    <td>{{potagerActif.nom}}</td>
+                    <td>{{potagerActif.adresse}}</td>
+                    <td>{{potagerActif.ville}}</td>
+                    <td>{{potagerActif.surface}} m²</td>
+                    <td>{{potagerActif.description}}</td>
+                    <td *ngIf="visible">
+                        <button (click)="modifDetailTerrain()" class="text-center" style="background-color:darkturquoise" button mat-mini-fab>
+                        <mat-icon>edit</mat-icon>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+        <hr>
+        <h2>Membres</h2>
+        <table>
+                <col width="170px">
+                <col width="170px">
+                <col width="170px">
+                <col width="170px">
+                <col width="170px">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Mail</th>
+                    <th>Téléphone</th>
+                    <th *ngIf="visible">Exclure</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let m of datamembres">
+                    <td>{{m.user.nom}}</td>
+                    <td>{{m.user.prenom}}</td>
+                    <td>{{m.user.mail}}</td>
+                    <td>{{m.user.tel}}</td>
+                    <td><button class="btn btn-primary" *ngIf="visible" (click)= exclureUser(m.user) style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
+                        <mat-icon>highlight_off</mat-icon>
+                    </button></td>  
+                </tr>
+            </tbody>
+        </table>
 
 
 
-
-        <div class="col-sm-6">
-            <h2>Messagerie</h2>
-            <app-calendar></app-calendar>
+        <hr>
+        <div *ngIf="visible">
+        <h2>Demandes d'adhésion au jardin</h2>
+        <!-- Cacher si le gars n'est pas proprio -->
+        
+            <table>
+                <col width="170px">
+                <col width="170px">
+                <col width="170px">
+                <col width="170px">
+                <col width="170px">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Téléphone</th>
+                        <th>Date de la demande</th>
+                        <th>Consulter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of datademandes">
+                        <td>{{d.user.nom}}</td>
+                        <td>{{d.user.prenom}}</td>
+                        <td>{{d.user.tel}}</td>
+                        <td>{{d.dateDemande}}</td>
+                        <td><button mat-mini-fab aria-label="Example icon-button with a heart icon" (click) = openDemande(d)>
+                                <mat-icon>search</mat-icon>
+                        </button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+    <div class="col-sm-5">
+        <h2>Messagerie</h2>
+        <app-calendar></app-calendar>
+    </div>
+    <div class="col-sm-1"></div>
 </div>
+

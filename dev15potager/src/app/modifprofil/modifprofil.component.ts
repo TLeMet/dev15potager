@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/User';
 import { HttpClient } from '@angular/common/http';
@@ -6,8 +7,8 @@ import { Router } from '@angular/router';
 import { SessionuserService } from '../sessionuser.service';
 import { NgClass } from '@angular/common';
 import { ModalmodifprofilComponent } from '../modalmodifprofil/modalmodifprofil.component';
-import { MatDialog } from '@angular/material';
 import { MatDialogRef } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'espaceperso/modifprofil',
@@ -18,21 +19,21 @@ import { MatDialogRef } from '@angular/material';
 
 export class ModifprofilComponent implements OnInit {
 
-  userConnecte;
+  userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
   regexTel = new RegExp('(0|\\+33|0033)[1-9][0-9]{8}');
   regexPw = new RegExp('^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$');
 
   constructor(private http : HttpClient, private route: Router, private servi : ServiceinfouserService, private servisession: SessionuserService, private dialogRef: MatDialogRef<ModalmodifprofilComponent>, private dialog: MatDialog) { }
 
   
-  saveModifProfil() {
+  saveModifProfil() { 
 
     var new_pw = (<HTMLInputElement>document.getElementById("new_pw")).value;
     var new_pw2 = (<HTMLInputElement>document.getElementById("new_pw2")).value;
     var new_tel = (<HTMLInputElement>document.getElementById("new_tel")).value;
     var new_age = +(<HTMLInputElement>document.getElementById("new_age")).value;
 
-    var do_modif: boolean = false;
+    var do_modif: boolean = false; 
     var wrong_pw: boolean = false;
     var wrong_tel: boolean = false;
     var wrong_age: boolean = false;
@@ -68,16 +69,12 @@ export class ModifprofilComponent implements OnInit {
         width: '200px',
       });
     }
-    this.servisession.userConnecte = this.userConnecte;
+    localStorage.setItem('userConnecte', JSON.stringify(this.userConnecte));
     this.ngOnInit();
   }
 
-
-
-
   ngOnInit() {
-    this.userConnecte = this.servisession.userConnecte;
-
+    
   }
 
 }
