@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Image } from '../model/Image';
+import { Router } from '@angular/router';
+import { Terrain } from '../model/Terrain';
 
 @Component({
   selector: 'app-importimage',
@@ -8,26 +11,49 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImportimageComponent implements OnInit {
 
-  constructor() { }
+  selectedFile: File = null;
+
+  import: Image = new Image();
+  ter: Terrain = new Terrain();
+  imgURL: any;
+  ok;
+
+  constructor(private http: HttpClient, private route: Router) { }
 
   ngOnInit() {
   }
 
-}
-export class MyFileUploadComponent {
-  selectedFile: File;
-
-  constructor(private http: HttpClient) { }
-
   onFileChanged(event) {
+    console.log(event);
     this.selectedFile = event.target.files[0];
+
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+
+    reader.onload = (event2) => {
+      this.imgURL = reader.result;
+      this.ok = reader.result;
+    };
   }
+
+
 
   onUpload() {
-    this.http.post('my-backend.com/file-upload', this.selectedFile)
+
+    this.import.name = "";
+    this.import.image = window.btoa(this.ok);
+    this.import.terrain = this.ter;
+
+    // tslint:disable-next-line: no-angle-bracket-type-assertion
+    this.http.post('http://localhost:8086/uploadGroupImage/1', this.import)
     .subscribe(
-      event => {
-        console.log(event);
-      });
+      res => {
+        console.log(res);
+      },
+      err => console.log(err));
   }
+
 }
+
+
+
