@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material';
 import { SessionuserService } from '../sessionuser.service';
 import { StockageterrainService } from '../stockageterrain.service';
 import { Router } from '@angular/router';
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-modalmodifterrain',
@@ -19,6 +20,7 @@ export class ModalmodifterrainComponent implements OnInit {
 
   userTerrainActif = JSON.parse(localStorage.getItem("terrain"));
   
+  visible = true;
 
   ngOnInit() {
     
@@ -37,5 +39,26 @@ export class ModalmodifterrainComponent implements OnInit {
     localStorage.setItem('terrain', JSON.stringify(this.userTerrainActif));
     this.dialogRef.close();
     location.reload();
+  }
+
+  supprimer(){
+    const del = this.http.delete('http://localhost:8086//terrains/' + this.userTerrainActif.id).toPromise();
+    del.then(d => {this.ngOnInit()})
+    this.dialogRef.close();
+    this.route.navigate(['/espaceperso']);
+  }
+
+  
+
+  switchVisible(){
+    console.log("On rentre dans le switch");
+    console.log(this.visible);
+    if (this.visible = true){
+      this.visible = false;
+    }
+    else{
+      this.visible = true
+    }
+    console.log(this.visible);
   }
 }
