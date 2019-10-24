@@ -46,6 +46,8 @@ import { ModalwronginscriptionComponent } from './modalwronginscription/modalwro
 import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component';
 import { ModalenvoieimageComponent } from './modalenvoieimage/modalenvoieimage.component';
 import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.component';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { ApimapsComponent } from './apimaps/apimaps.component';
 
 import { UTCDatePipe } from './pipe/UTCDatePipe';
 
@@ -76,6 +78,7 @@ import { UTCDatePipe } from './pipe/UTCDatePipe';
     QuitterjardinComponent,
     ModalenvoieimageComponent,
     DialogjardincreeComponent,
+    ApimapsComponent,
     UTCDatePipe,
 
   ],
@@ -109,6 +112,9 @@ import { UTCDatePipe } from './pipe/UTCDatePipe';
       useFactory: adapterFactory
     }),
     MatListModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyANuXrEHBneMxQ5_AF1JDhvT9DjwcjTp1w'
+    }),
     ReactiveFormsModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -117,7 +123,7 @@ import { UTCDatePipe } from './pipe/UTCDatePipe';
 
 
   ],
-  providers: [],
+  providers: [GoogleMapsAPIWrapper],
   bootstrap: [AppComponent],
 
 })

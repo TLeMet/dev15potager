@@ -21,6 +21,7 @@ datarejoints;
 dataproprio;
 noPotager: boolean;
 noPotagerPossede: boolean;
+link;
 
   ouvreRecherche(rechT) {
     this.servi.rechTerr = rechT;
@@ -44,6 +45,17 @@ noPotagerPossede: boolean;
 
   aucunPotagerPossede() {
     return this.noPotagerPossede;
+  }
+
+  navEspacePotager(v) {
+    localStorage.setItem('terrain', JSON.stringify(v));
+    if(!("http://localhost:4200/espacepotager" === window.location.href)) {
+      this.route.navigate(["/espacepotager"]);
+    }
+    else{
+      location.reload();
+    }
+    
   }
 
 

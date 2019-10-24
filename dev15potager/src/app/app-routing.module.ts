@@ -9,6 +9,7 @@ import { EspacePotagersComponent } from './espace-potagers/espace-potagers.compo
 import { CreerjardinComponent } from './creerjardin/creerjardin.component';
 import { DialogconnexionComponent } from './dialogconnexion/dialogconnexion.component';
 import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component';
+import { ApimapsComponent } from './apimaps/apimaps.component';
 
 const routes: Routes = [
   { path: "", redirectTo: '/accueil', pathMatch: 'full' },
@@ -22,9 +23,7 @@ const routes: Routes = [
   {path: 'creerjardin', component: CreerjardinComponent},
   {path: 'con', component: DialogconnexionComponent},
   {path: 'quitterJardin', component: QuitterjardinComponent},
-
-
-
+  {path: 'apimaps', component: ApimapsComponent},
 ];
 
 @NgModule({
