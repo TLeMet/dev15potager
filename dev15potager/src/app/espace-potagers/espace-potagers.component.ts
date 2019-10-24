@@ -21,12 +21,13 @@ export class EspacePotagersComponent implements OnInit {
   datademandes;
 
   constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
-  userConnecte;
+  //userConnecte;
   potagerActif;
   visible = false;
   messages;
   images;
   newMessage = new Conversation();
+  userConnecte = JSON.parse(localStorage.getItem('userConnecte'));
 
   ngOnInit() {
 
@@ -34,7 +35,7 @@ export class EspacePotagersComponent implements OnInit {
 
     this.potagerActif = this.stockageterrain.terrain;
 
-    this.userConnecte = this.servisession.userConnecte;
+    //this.userConnecte = JSON.parse(localStorage.getItem('userConnecte'));
     // mettre le terrain
     this.http.get('http://localhost:8086/terrains/' + this.stockageterrain.terrain.id).subscribe(response => {
       this.datapotager = response;
@@ -90,8 +91,9 @@ export class EspacePotagersComponent implements OnInit {
   }
 
   testProprio(){
-    if (this.servisession.userConnecte.id == this.stockageterrain.terrain.proprietaire.id){
-      this.visible=true
+    console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.stockageterrain.terrain.proprietaire.id );
+    if (this.userConnecte.id == this.stockageterrain.terrain.proprietaire.id){
+      this.visible=true;
 
     }
   }
