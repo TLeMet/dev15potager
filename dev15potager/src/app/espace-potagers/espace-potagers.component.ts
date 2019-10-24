@@ -21,7 +21,7 @@ export class EspacePotagersComponent implements OnInit {
   datamembres;
   datademandes;
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private route: Router, private servi: ServicedemandeService, private servisession: SessionuserService) { }
+  constructor(private http: HttpClient, private dialog: MatDialog, private route: Router, private servi: ServicedemandeService) { }
   //userConnecte;
   potagerActif = JSON.parse(localStorage.getItem("terrain"));
   visible = false;
@@ -81,6 +81,7 @@ export class EspacePotagersComponent implements OnInit {
   }
 
   modifDetailTerrain(){
+    localStorage.setItem('terrainmodif', JSON.stringify(this.potagerActif));
     const mydial2 = this.dialog.open(ModalmodifterrainComponent, {
       height: '830px',
       width: '500px',
