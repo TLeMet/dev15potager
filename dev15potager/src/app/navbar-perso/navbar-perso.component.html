@@ -32,7 +32,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <ul *ngFor="let v of datarejoints">
-                                    <a class="dropdown-item btn">{{ v.terrain.nom }}</a>
+                                    <a class="dropdown-item btn" (click)="navEspacePotager(v.terrain)">{{ v.terrain.nom }}</a>
                                 </ul>
                                 <p [hidden]="!aucunPotager()">Vous n'avez rejoint aucun potager.</p>
                             </div>
@@ -47,7 +47,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <ul *ngFor="let v of dataproprio">
-                                    <a class="dropdown-item btn">{{ v.nom }}</a>
+                                    <a class="dropdown-item btn" (click)="navEspacePotager(v)">{{ v.nom }}</a>
                                 </ul>
                                 <p [hidden]="!aucunPotagerPossede()">Vous ne possédez aucun potager.</p>
                             </div>
@@ -116,7 +116,7 @@
         </nav>
     </div>
 
-    <br><br><br><br><br>
+    <br><br><br>
     
     
     

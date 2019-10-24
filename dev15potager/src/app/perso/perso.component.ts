@@ -31,6 +31,7 @@ export class PersoComponent implements OnInit {
 
   ngOnInit() {
 
+
     if(JSON.parse(localStorage.getItem("userConnecte")) == null){
       this.route.navigate(['/accueil']);
     }
