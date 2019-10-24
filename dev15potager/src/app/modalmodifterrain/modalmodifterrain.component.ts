@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material';
 import { SessionuserService } from '../sessionuser.service';
 import { StockageterrainService } from '../stockageterrain.service';
 import { Router } from '@angular/router';
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-modalmodifterrain',
@@ -19,6 +20,7 @@ export class ModalmodifterrainComponent implements OnInit {
 
   userTerrainActif = JSON.parse(localStorage.getItem("terrain"));
   
+  visible = true;
 
   ngOnInit() {
     
@@ -37,5 +39,24 @@ export class ModalmodifterrainComponent implements OnInit {
     localStorage.setItem('terrain', JSON.stringify(this.userTerrainActif));
     this.dialogRef.close();
     location.reload();
+  }
+
+  supprimer(){
+    const del = this.http.delete('http://localhost:8086//terrains/' + this.userTerrainActif.id).toPromise();
+    del.then(d => {this.dialogRef.close();
+    this.route.navigate(['/espaceperso']);
+  })
+    
+    
+  }
+
+  
+
+  switchVisibleTrue(){
+    this.visible = true
+  }
+
+  switchVisibleFalse(){
+    this.visible = false
   }
 }

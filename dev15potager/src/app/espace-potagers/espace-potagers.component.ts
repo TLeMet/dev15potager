@@ -85,7 +85,7 @@ export class EspacePotagersComponent implements OnInit {
   modifDetailTerrain(){
     localStorage.setItem('terrain', JSON.stringify(this.potagerActif));
     const mydial2 = this.dialog.open(ModalmodifterrainComponent, {
-      height: '830px',
+      height: '870px',
       width: '500px',
     });
   }

@@ -45,12 +45,21 @@
         </div> 
         <!--Rajouter changement de photo si le temps-->
         <hr>  
-        <div class="row"> 
+        <div class="row" *ngIf="visible"> 
             <div class="col-sm-6">
                 <button (click)="validModif()" class="btn btn-primary btn-block">Valider</button>
             </div>
             <div class="col-sm-6">
-                <button class="btn btn-danger btn-block" (click)="supprimerTerrain()">Supprimer terrain</button>
+                <button class="btn btn-danger btn-block" (click)="switchVisibleFalse()">Supprimer terrain</button>
+            </div>
+        </div> 
+        <div class="row" *ngIf="!visible"> 
+            <p style="color: red" class="small text-center">ATTENTION! Si vous supprimez ce terrain, tous les utilisateurs associés seront aussi supprimés!</p>
+            <div class="col-sm-6">
+                <button class="btn btn-danger btn-block" (click)="supprimer()">Confirmer</button>
+            </div>
+            <div class="col-sm-6">
+                <button (click)="switchVisibleTrue()" class="btn btn-secondary btn-block">Annuler</button>
             </div>
         </div> 
     </form>
