@@ -42,7 +42,7 @@ import { MatRadioModule, MatSelectModule } from '@angular/material';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.component';
 import { ImportimageComponent } from './importimage/importimage.component';
-import { MatDialogRef } from '@angular/material';
+
 
 
 @NgModule({
@@ -103,7 +103,7 @@ import { MatDialogRef } from '@angular/material';
     MatRadioModule,
     MatSelectModule,
     NgxMaterialTimepickerModule,
-    MatDialogRef,
+
 
   ],
   providers: [],
