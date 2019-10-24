@@ -50,8 +50,7 @@ export class ModaldetailterrainComponent implements OnInit {
 
     const mypost: JSON = <JSON><unknown>{
       "user": { },
-      "terrain": {
-      },
+      "terrain": { },
       "message": this.message.message
     }
 

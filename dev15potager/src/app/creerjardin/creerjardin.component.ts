@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./creerjardin.component.css']
 })
 export class CreerjardinComponent implements OnInit {
-  
+
   options: FormGroup;
   nouvTerrain: Terrain = new Terrain();
 
@@ -35,9 +35,9 @@ export class CreerjardinComponent implements OnInit {
     co.then(
     response => {
       console.log("On est entrés dans le then.");
-   
+
     })
-    console.log("Jardin normalement créé.");    
+    console.log("Jardin normalement créé.");
   }
 
 }

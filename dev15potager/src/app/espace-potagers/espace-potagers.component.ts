@@ -7,6 +7,7 @@ import { ModalmodifterrainComponent } from '../modalmodifterrain/modalmodifterra
 import { StockageterrainService } from '../stockageterrain.service';
 import { SessionuserService } from '../sessionuser.service';
 import { Conversation } from '../model/Conversation';
+import { ModalenvoieimageComponent } from '../modalenvoieimage/modalenvoieimage.component';
 
 @Component({
   selector: 'app-espace-potagers',
@@ -18,19 +19,19 @@ export class EspacePotagersComponent implements OnInit {
   datapotager;
   datamembres;
   datademandes;
-  
+
   constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService) { }
   userConnecte;
   potagerActif;
-  visible=false;
+  visible = false;
   messages;
   images;
-  newMessage = new Conversation;
+  newMessage = new Conversation();
 
   ngOnInit() {
 
     this.testProprio();
-    
+
     this.potagerActif = this.stockageterrain.terrain;
 
     this.userConnecte = this.servisession.userConnecte;
@@ -91,7 +92,7 @@ export class EspacePotagersComponent implements OnInit {
   testProprio(){
     if (this.servisession.userConnecte.id == this.stockageterrain.terrain.proprietaire.id){
       this.visible=true
-      
+
     }
 
     /*
@@ -104,6 +105,14 @@ export class EspacePotagersComponent implements OnInit {
   posterMessage(){
     this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id +  '/'+ this.stockageterrain.terrain.id, this.newMessage).subscribe(response => {
     })
-    
+
+  }
+
+  RajoutCard(){
+    const mydial2 = this.dialog.open(ModalenvoieimageComponent, {
+      height: '700px',
+      width: '500px',
+    });
+
   }
 }
