@@ -15,6 +15,7 @@
 </div>
 <br><br><br>
 <div class=container>
+    <form action="">
     <div class="row">
         <div class="example-container col-sm-6">
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
@@ -55,7 +56,8 @@
 <h6 class="font-italic font-weight-light">* : champs obligatoire</h6>
         </div>
     </div>
-    <div>
-        <button mat-button (click)="creationTerrrain(nomP.value,villeP.value,adrP.value,surfP.value,desP.value,hOuvP.value,hFermP.value,nbUser.value,gps.value)">Valider</button>
+    <div>      
+        <button type="submit" mat-stroked-button color="primary">Valider</button>
     </div>
+</form>
 </div>

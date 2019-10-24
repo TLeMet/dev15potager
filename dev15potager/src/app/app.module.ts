@@ -41,6 +41,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule, MatSelectModule } from '@angular/material';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.component';
+import { ImportimageComponent } from './importimage/importimage.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.c
     AccueilComponent,
     CreerjardinComponent,
     ModalmodifprofilComponent,
+    ImportimageComponent,
 
   ],
 
