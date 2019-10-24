@@ -1,5 +1,7 @@
 <app-navbar-perso></app-navbar-perso>
-<br><br>
+
+<br>
+<br>
 <div class=container>
     <div class="row">
         <div class="col-sm-2"></div>
@@ -22,20 +24,22 @@
                 <input matInput placeholder="Nom du potager" required [(ngModel)]="nouvTerrain.nom" #nomAction2="ngModel" name="aaa">
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Ville du potager" required [(ngModel)]="nouvTerrain.ville" name="bbb">
-            </mat-form-field>
-            <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
                 <input matInput placeholder="Adresse du potager" required [(ngModel)]="nouvTerrain.adresse" name="ccc"> 
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Surface du potager (m²)" required type="number" [(ngModel)]="nouvTerrain.surface" name="ddd">
+                <input matInput placeholder="Ville du potager" required [(ngModel)]="nouvTerrain.ville" name="bbb">
             </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <textarea matInput placeholder="Description du potager" required [(ngModel)]="nouvTerrain.description" name="eee"></textarea>
+                <input matInput placeholder="Code postal" required type="number" [(ngModel)]="nouvTerrain.postal" name="ddd">
             </mat-form-field>
+
+
         </div>
         
         <div class="example-container col-sm-6">
+                <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
+                    <input matInput placeholder="Surface du potager (m²)" required type="number" [(ngModel)]="nouvTerrain.surface" name="ddd">
+                </mat-form-field>
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
                 <input matInput [ngxTimepicker]="picker" [format]="24" placeholder="Heure d'ouverture" required [(ngModel)]="varhOuverture" name="h:M:s">
                 <ngx-material-timepicker #picker></ngx-material-timepicker>
@@ -47,8 +51,11 @@
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
                 <input matInput type="number" placeholder="Nombre d'utilisateurs max" [(ngModel)]="nouvTerrain.maxUser" name="hhh">
             </mat-form-field>
+            
+        </div>
+        <div class="example-container col-sm-12">
             <mat-form-field [hideRequiredMarker]="options.value.hideRequired" [floatLabel]="options.value.floatLabel">
-                <input matInput placeholder="Coordonnées GPS" type="number" required [(ngModel)]="nouvTerrain.gps" name="iii">
+                <textarea matInput placeholder="Description du potager" required [(ngModel)]="nouvTerrain.description" name="eee"></textarea>
             </mat-form-field>
         </div>
         

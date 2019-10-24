@@ -47,7 +47,10 @@ import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component'
 import { ModalenvoieimageComponent } from './modalenvoieimage/modalenvoieimage.component';
 import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.component';
 import { ImportimageconvComponent } from './importimageconv/importimageconv.component';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { ApimapsComponent } from './apimaps/apimaps.component';
 
+import { UTCDatePipe } from './pipe/UTCDatePipe';
 
 
 @NgModule({
@@ -77,6 +80,8 @@ import { ImportimageconvComponent } from './importimageconv/importimageconv.comp
     ModalenvoieimageComponent,
     DialogjardincreeComponent,
     ImportimageconvComponent,
+    ApimapsComponent,
+    UTCDatePipe,
 
   ],
 
@@ -109,6 +114,9 @@ import { ImportimageconvComponent } from './importimageconv/importimageconv.comp
       useFactory: adapterFactory
     }),
     MatListModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyANuXrEHBneMxQ5_AF1JDhvT9DjwcjTp1w'
+    }),
     ReactiveFormsModule,
     MatCheckboxModule,
     MatRadioModule,
@@ -117,7 +125,7 @@ import { ImportimageconvComponent } from './importimageconv/importimageconv.comp
 
 
   ],
-  providers: [],
+  providers: [GoogleMapsAPIWrapper],
   bootstrap: [AppComponent],
 
 })

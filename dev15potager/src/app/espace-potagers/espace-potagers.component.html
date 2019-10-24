@@ -54,7 +54,7 @@
                     <th>Prenom</th>
                     <th>Mail</th>
                     <th>Téléphone</th>
-                    <th *ngIf="visible">Exclure</th>
+                    <th>Exclure</th>
                 </tr>
             </thead>
             <tbody>
@@ -63,7 +63,7 @@
                     <td>{{m.user.prenom}}</td>
                     <td>{{m.user.mail}}</td>
                     <td>{{m.user.tel}}</td>
-                    <td><button class="btn btn-primary" *ngIf="visible" (click)= exclureUser(m.user) style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
+                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)" (click)= exclureUser(m.user) style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
                         <mat-icon>highlight_off</mat-icon>
                     </button></td>  
                 </tr>
@@ -116,17 +116,17 @@
                 <table>
                     <tr *ngFor="let m of messages">
                         <td>
-                            <strong>{{m.auteur.prenom}}</strong> : {{m.message}} <br> <p style="font-size: x-small;">{{m.dateMessage | date:'dd/MM/y, H:mm'}}</p>
+                            <strong>{{m.auteur.prenom}}</strong> : {{m.message}} <br> <p style="font-size: x-small;">{{m.dateMessage | UTCDate}}</p>
                         </td> 
                     </tr>
-                </table>
-                
+                </table>              
                     <div class="form-group">
-                        <textarea class="form-control" name="message" placeholder="Discuter..." rows=4 [(ngModel)]="newMessage.message"></textarea>
-                        
+                        <textarea class="form-control" name="message" placeholder="Discuter..." rows=4 [(ngModel)]="newMessage.message"></textarea>                     
                     </div>
                 <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
                 <br>
+            <app-apimaps></app-apimaps>
+
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-4">
