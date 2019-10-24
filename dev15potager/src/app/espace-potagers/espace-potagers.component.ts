@@ -6,6 +6,7 @@ import { ServicedemandeService } from '../servicedemande.service';
 import { ModalmodifterrainComponent } from '../modalmodifterrain/modalmodifterrain.component';
 import { StockageterrainService } from '../stockageterrain.service';
 import { SessionuserService } from '../sessionuser.service';
+import { Conversation } from '../model/Conversation';
 
 @Component({
   selector: 'app-espace-potagers',
@@ -24,6 +25,7 @@ export class EspacePotagersComponent implements OnInit {
   visible=false;
   messages;
   images;
+  newMessage = new Conversation;
 
   ngOnInit() {
 
@@ -97,5 +99,11 @@ export class EspacePotagersComponent implements OnInit {
     console.log("proprio testé")
     console.log(this.visible)
     */
+  }
+
+  posterMessage(){
+    this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id +  '/'+ this.stockageterrain.terrain.id, this.newMessage).subscribe(response => {
+    })
+    
   }
 }

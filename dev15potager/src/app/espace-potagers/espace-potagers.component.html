@@ -122,10 +122,10 @@
                 </table>
                 
                     <div class="form-group">
-                        <textarea class="form-control" name="message" placeholder="Discuter..." rows=4></textarea>
+                        <textarea class="form-control" name="message" placeholder="Discuter..." rows=4 [(ngModel)]="newMessage.message"></textarea>
                         
                     </div>
-                <button (click)="PosterMessage()" class="btn btn-secondary">poster</button>
+                <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
                 <br>
             </div>
             <div class="col-sm-1"></div>
