@@ -50,15 +50,11 @@ export class ModalmodifterrainComponent implements OnInit {
 
   
 
-  switchVisible(){
-    console.log("On rentre dans le switch");
-    console.log(this.visible);
-    if (this.visible = true){
-      this.visible = false;
-    }
-    else{
-      this.visible = true
-    }
-    console.log(this.visible);
+  switchVisibleTrue(){
+    this.visible = true
+  }
+
+  switchVisibleFalse(){
+    this.visible = false
   }
 }
