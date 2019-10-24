@@ -43,9 +43,11 @@ export class ModalmodifterrainComponent implements OnInit {
 
   supprimer(){
     const del = this.http.delete('http://localhost:8086//terrains/' + this.userTerrainActif.id).toPromise();
-    del.then(d => {this.ngOnInit()})
-    this.dialogRef.close();
+    del.then(d => {this.dialogRef.close();
     this.route.navigate(['/espaceperso']);
+  })
+    
+    
   }
 
   
