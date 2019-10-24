@@ -54,7 +54,7 @@
                     <th>Prenom</th>
                     <th>Mail</th>
                     <th>Téléphone</th>
-                    <th *ngIf="visible">Exclure</th>
+                    <th>Exclure</th>
                 </tr>
             </thead>
             <tbody>
@@ -63,7 +63,7 @@
                     <td>{{m.user.prenom}}</td>
                     <td>{{m.user.mail}}</td>
                     <td>{{m.user.tel}}</td>
-                    <td><button class="btn btn-primary" *ngIf="visible" (click)= exclureUser(m.user) style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
+                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)" (click)= exclureUser(m.user) style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
                         <mat-icon>highlight_off</mat-icon>
                     </button></td>  
                 </tr>
@@ -148,6 +148,11 @@
                     </li>
                 </ul>
                 <br>
+                <div class="scrollable">
+                        <div class="scrollable-content">
+
+                        </div>
+                      </div>
                 <button mat-raised-button (click)="RajoutCard()">
                     <mat-icon>add_circle</mat-icon>
                 </button>
