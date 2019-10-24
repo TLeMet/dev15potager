@@ -16,7 +16,7 @@ import { RecherchelistepotagersComponent } from './recherchelistepotagers/recher
 import { DialogdetailspotagerComponent } from './dialogdetailspotager/dialogdetailspotager.component';
 import { DialogconnexionComponent } from './dialogconnexion/dialogconnexion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';

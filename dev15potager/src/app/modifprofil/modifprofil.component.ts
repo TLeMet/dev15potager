@@ -32,7 +32,7 @@ export class ModifprofilComponent implements OnInit {
     var new_tel = (<HTMLInputElement>document.getElementById("new_tel")).value;
     var new_age = +(<HTMLInputElement>document.getElementById("new_age")).value;
 
-    var do_modif: boolean = false;
+    var do_modif: boolean = false; 
     var wrong_pw: boolean = false;
     var wrong_tel: boolean = false;
     var wrong_age: boolean = false;
@@ -71,9 +71,6 @@ export class ModifprofilComponent implements OnInit {
     this.servisession.userConnecte = this.userConnecte;
     this.ngOnInit();
   }
-
-
-
 
   ngOnInit() {
     this.userConnecte = this.servisession.userConnecte;
