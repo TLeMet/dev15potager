@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-5">
-        <h2>Info jardin</h2>     
+        <h2>Info potager</h2>     
         <table>
             <col width="130px">
             <col width="130px">
@@ -74,7 +74,7 @@
 
         <hr>
         <div *ngIf="visible">
-        <h2>Demandes d'adhésion au jardin</h2>
+        <h2>Demandes d'adhésion à votre potager</h2>
         <!-- Cacher si le gars n'est pas proprio -->
         
             <table>
@@ -107,9 +107,66 @@
         </div>
     </div>
     <div class="col-sm-5">
+        <h2 class="text-center">Actualités du potager</h2>
+        <hr>
+        <div class="row"> 
+            <div class="col-sm-6">
+                <h5 class="text-center">Messagerie de groupe</h5>
+                <br>
+                <table>
+                    <tr *ngFor="let m of messages">
+                        <td>
+                            <strong>{{m.auteur.prenom}}</strong> : {{m.message}} <br> <p style="font-size: x-small;">{{m.dateMessage | date:'dd/MM/y, h:mm'}}</p>
+                        </td> 
+                    </tr>
+                </table>
+                
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" placeholder="Discuter..." rows=4 [(ngModel)]="newMessage.message"></textarea>
+                        
+                    </div>
+                <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
+                <br>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4">
+                <h5 class="text-center">Photos</h5>
+                <br>
+                <table>
+                    <tr>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </table>
+                <ul>
+                    <li *ngFor="let card of CardList">
+                        <mat-card class="example-card" fxLayoutAlign="start start">
+                            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                            <p>Description</p>
+                        </mat-card>
+                    </li>
+                </ul>
+                <br>
+                <button mat-raised-button (click)="RajoutCard()">
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<br><br>
+
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-5">
+        <hr>
         <h2>Messagerie</h2>
         <app-calendar></app-calendar>
     </div>
+    <div class="col-sm-5"></div>
     <div class="col-sm-1"></div>
 </div>
 

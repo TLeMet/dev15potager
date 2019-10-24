@@ -6,6 +6,7 @@ import { ServicedemandeService } from '../servicedemande.service';
 import { ModalmodifterrainComponent } from '../modalmodifterrain/modalmodifterrain.component';
 import { StockageterrainService } from '../stockageterrain.service';
 import { SessionuserService } from '../sessionuser.service';
+import { Conversation } from '../model/Conversation';
 
 @Component({
   selector: 'app-espace-potagers',
@@ -22,6 +23,9 @@ export class EspacePotagersComponent implements OnInit {
   userConnecte;
   potagerActif;
   visible=false;
+  messages;
+  images;
+  newMessage = new Conversation;
 
   ngOnInit() {
 
@@ -42,6 +46,14 @@ export class EspacePotagersComponent implements OnInit {
     this.http.get('http://localhost:8086/requestofterrain/' + this.stockageterrain.terrain.id).subscribe(response => {
       this.datademandes = response;
       //console.log(response);
+    })
+    this.http.get('http://localhost:8086/messageGroupe/' + this.stockageterrain.terrain.id).subscribe(response => {
+      this.messages = response;
+      console.log("liste des messages")
+      console.log(response)
+    })
+    this.http.get('http://localhost:8086/imageGroup/' + this.stockageterrain.terrain.id).subscribe(response => {
+      this.images = response;
     })
   }
   
@@ -81,10 +93,17 @@ export class EspacePotagersComponent implements OnInit {
       this.visible=true
       
     }
+
     /*
     console.log(this.servisession.userConnecte.id)
     console.log("proprio testé")
     console.log(this.visible)
     */
+  }
+
+  posterMessage(){
+    this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id +  '/'+ this.stockageterrain.terrain.id, this.newMessage).subscribe(response => {
+    })
+    
   }
 }
