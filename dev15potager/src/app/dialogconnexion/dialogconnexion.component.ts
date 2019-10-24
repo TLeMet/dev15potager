@@ -164,7 +164,7 @@ constructor(private servisession: SessionuserService, private http: HttpClient, 
               this.userInscrit = response2;
                            
               localStorage.setItem('userConnecte', JSON.stringify(this.userInscrit));
-              this.fermerDialog()
+              this.fermerDialog();
               this.route.navigate(['/espaceperso']);
             }, err => {
             console.log("Erreur : " + err);

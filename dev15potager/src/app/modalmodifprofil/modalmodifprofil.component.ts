@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef, MatDialog } from '@angular/material';
+import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modalmodifprofil',
@@ -11,9 +12,16 @@ import { MatDialogRef, MatDialog } from '@angular/material';
 
 export class ModalmodifprofilComponent implements OnInit {
 
-  constructor( private dialogRef: MatDialogRef<ModalmodifprofilComponent>, private dialog: MatDialog) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private route: Router, private dialogRef: MatDialogRef<ModalmodifprofilComponent>, private dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  modalQuit(){
+    //console.log('start');
+    this.dialogRef.close();
+    this.route.navigate(['/espaceperso/modifprofil']);
+    //console.log('end');
   }
 
 }
