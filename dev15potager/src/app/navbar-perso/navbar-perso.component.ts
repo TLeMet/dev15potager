@@ -46,6 +46,12 @@ noPotagerPossede: boolean;
     return this.noPotagerPossede;
   }
 
+  navEspacePotager(v) {
+    localStorage.setItem('terrain', JSON.stringify(v));
+    location.reload();
+    
+  }
+
 
 
   ngOnInit() {
