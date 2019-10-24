@@ -22,8 +22,10 @@ export class ModifprofilComponent implements OnInit {
   userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
   regexTel = new RegExp('(0|\\+33|0033)[1-9][0-9]{8}');
   regexPw = new RegExp('^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$');
+  regexMail = new RegExp('*\@*\.*');
 
-  constructor(private http : HttpClient, private route: Router, private servi : ServiceinfouserService, private servisession: SessionuserService, private dialogRef: MatDialogRef<ModalmodifprofilComponent>, private dialog: MatDialog) { }
+  constructor(private http : HttpClient, private route: Router, private servi : ServiceinfouserService, 
+    private servisession: SessionuserService, private dialog: MatDialog) { }
 
   
   saveModifProfil() { 

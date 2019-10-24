@@ -42,6 +42,7 @@ import { MatRadioModule, MatSelectModule } from '@angular/material';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { ModalmodifprofilComponent } from './modalmodifprofil/modalmodifprofil.component';
 import { ImportimageComponent } from './importimage/importimage.component';
+import { ModalwronginscriptionComponent } from './modalwronginscription/modalwronginscription.component';
 
 
 
@@ -67,11 +68,12 @@ import { ImportimageComponent } from './importimage/importimage.component';
     CreerjardinComponent,
     ModalmodifprofilComponent,
     ImportimageComponent,
+    ModalwronginscriptionComponent,
 
   ],
 
   // tslint:disable-next-line: max-line-length
-  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent, ModalmodifprofilComponent],
+  entryComponents: [DialogdetailspotagerComponent, DialogconnexionComponent, ModalrechercheComponent, ModaldetailterrainComponent, ModalmodifterrainComponent, ModalmodifprofilComponent, ModalwronginscriptionComponent],
 
   imports: [
     
