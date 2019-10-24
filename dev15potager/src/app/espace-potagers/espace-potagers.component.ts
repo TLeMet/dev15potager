@@ -33,14 +33,15 @@ export class EspacePotagersComponent implements OnInit {
 
   ngOnInit() {
 
+    console.log("ICI ICI :" + JSON.parse(localStorage.getItem("userConnecte")) );
+
     if(JSON.parse(localStorage.getItem("userConnecte")) == null){
       this.route.navigate(['/accueil']);
     }
     else{
+     
       this.testProprio();
 
-
-      //this.userConnecte = JSON.parse(localStorage.getItem('userConnecte'));
       // mettre le terrain
       this.http.get('http://localhost:8086/terrains/' + this.potagerActif.id).subscribe(response => {
         this.datapotager = response;
@@ -123,11 +124,11 @@ export class EspacePotagersComponent implements OnInit {
       height: '700px',
       width: '500px',
     });
-
-    
-
-  
   }
 
-
+  isProprio(checked_user){
+    //console.log("user checked id ", checked_user.id);
+    //console.log("proprio ", this.potagerActif.proprietaire.id);
+    return checked_user.id != this.potagerActif.proprietaire.id;
+  }
 }
