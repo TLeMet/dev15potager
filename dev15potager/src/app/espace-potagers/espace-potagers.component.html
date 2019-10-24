@@ -139,18 +139,25 @@
                         </td>
                     </tr>
                 </table>
-                <ul>
-                    <li *ngFor="let card of CardList">
-                        <mat-card class="example-card" fxLayoutAlign="start start">
-                            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                            <p>Description</p>
-                        </mat-card>
-                    </li>
-                </ul>
+
+                <img [src]="myimg" alt="">
+
+                <div class="text-center"> 
+                        <input type="file"  (change)="onFileChanged($event)">
+                    </div>
+                
                 <br>
                 <div class="scrollable">
-                        <div class="scrollable-content">
-
+                        <div class="scrollable-content section " ui-scroll-bottom="loadMore()">
+                                <ul>
+                                        <li *ngFor="let card of datadec">
+                                            <mat-card class="example-card" fxLayoutAlign="start start">
+                                                <img mat-card-image src="https://cxfile.advences.com/asia/photosi/asia-conseiller-voyages-destinations-alexandre-paris-inde-bm.jpg?photo_id=10623">
+                                                <p>{{card.message}}</p>
+                                            </mat-card>
+                                            <br>
+                                        </li>
+                                    </ul>
                         </div>
                       </div>
                 <button mat-raised-button (click)="RajoutCard()">

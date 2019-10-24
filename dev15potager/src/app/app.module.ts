@@ -46,6 +46,7 @@ import { ModalwronginscriptionComponent } from './modalwronginscription/modalwro
 import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component';
 import { ModalenvoieimageComponent } from './modalenvoieimage/modalenvoieimage.component';
 import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.component';
+import { ImportimageconvComponent } from './importimageconv/importimageconv.component';
 
 
 
@@ -75,6 +76,7 @@ import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.c
     QuitterjardinComponent,
     ModalenvoieimageComponent,
     DialogjardincreeComponent,
+    ImportimageconvComponent,
 
   ],
 
