@@ -87,21 +87,11 @@ export class PersoComponent implements OnInit {
   }
 
   aucunPotager() {
-    if(this.noPotager == 1){
-      return true;
-    }
-    else{
-      return false;
-    }
+    return this.noPotager;
   }
 
   aucunPotagerPossede() {
-    if(this.noPotagerPossede == 1){
-      return true;
-    }
-    else{
-      return false;
-    }
+    return this.noPotagerPossede;
   }
 
 }

@@ -19,8 +19,8 @@ userConnecte;
 userConnectePrenom;
 datarejoints;
 dataproprio;
-noPotager;
-noPotagerPossede;
+noPotager: boolean;
+noPotagerPossede: boolean;
 
   ouvreRecherche(rechT) {
     this.servi.rechTerr = rechT;
@@ -39,21 +39,11 @@ noPotagerPossede;
 
 
   aucunPotager() {
-    if(this.noPotager == 1){
-      return true;
-    }
-    else{
-      return false;
-    }
+    return this.noPotager;
   }
 
   aucunPotagerPossede() {
-    if(this.noPotagerPossede == 1){
-      return true;
-    }
-    else{
-      return false;
-    }
+    return this.noPotagerPossede;
   }
 
 
@@ -66,10 +56,10 @@ noPotagerPossede;
       this.http.get('http://localhost:8086/terrainofuser/' + this.userConnecte.id).subscribe(response => {
         this.datarejoints = response;
         if(this.datarejoints!=null && this.datarejoints!=''){
-          this.noPotager = 0;
+          this.noPotager = false;
         }
         else{
-          this.noPotager = 1;
+          this.noPotager = true;
         }
         console.log(response);
       })
@@ -77,10 +67,10 @@ noPotagerPossede;
         this.http.get('http://localhost:8086/terrainsprop/' + this.userConnecte.id).subscribe(response => {
           this.dataproprio = response;
           if(this.dataproprio!=null && this.dataproprio!=''){
-            this.noPotagerPossede = 0;
+            this.noPotagerPossede = false;
           }
           else{
-            this.noPotagerPossede = 1;
+            this.noPotagerPossede = true;
           }
           console.log(response);
         });
