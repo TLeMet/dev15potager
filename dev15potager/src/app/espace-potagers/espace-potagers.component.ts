@@ -115,11 +115,11 @@ export class EspacePotagersComponent implements OnInit {
       height: '700px',
       width: '500px',
     });
-
-    
-
-  
   }
 
-
+  isProprio(checked_user){
+    //console.log("user checked id ", checked_user.id);
+    //console.log("proprio ", this.potagerActif.proprietaire.id);
+    return checked_user.id != this.potagerActif.proprietaire.id;
+  }
 }
