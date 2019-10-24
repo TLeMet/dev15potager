@@ -40,8 +40,6 @@ export class PersoComponent implements OnInit {
     this.http.get('http://localhost:8086/terrainofuser/' + this.userConnecte.id).subscribe(response => {
       this.datarejoints = response;
       if(this.datarejoints!=null && this.datarejoints!=''){
-        console.log("datarejoints:" + this.datarejoints);
-        console.log("Voilà.");
         this.noPotager = 0;
       }
       else{
@@ -53,8 +51,6 @@ export class PersoComponent implements OnInit {
     this.http.get('http://localhost:8086/terrainsprop/' + this.userConnecte.id).subscribe(response => {
       this.dataproprio = response;
       if(this.dataproprio!=null && this.dataproprio!=''){
-        console.log("dataproprio:" + this.dataproprio);
-        console.log("Voilà.");
         this.noPotagerPossede = 0;
       }
       else{
