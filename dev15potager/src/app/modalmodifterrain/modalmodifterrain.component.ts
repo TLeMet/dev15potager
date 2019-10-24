@@ -17,11 +17,11 @@ export class ModalmodifterrainComponent implements OnInit {
 
   userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
 
-  userTerrainActif = JSON.parse(localStorage.getItem("terrainmodif"));
+  userTerrainActif = JSON.parse(localStorage.getItem("terrain"));
   
 
   ngOnInit() {
- 
+    
   }
   /*
   validModif(){
@@ -34,6 +34,8 @@ export class ModalmodifterrainComponent implements OnInit {
 
   validModif(){
     this.http.put('http://localhost:8086//terrains/' + this.userTerrainActif.id, this.userTerrainActif).subscribe(response => {})
+    localStorage.setItem('terrain', JSON.stringify(this.userTerrainActif));
     this.dialogRef.close();
+    location.reload();
   }
 }
