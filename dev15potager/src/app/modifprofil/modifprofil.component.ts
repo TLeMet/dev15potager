@@ -35,7 +35,7 @@ export class ModifprofilComponent implements OnInit {
   userModif = new User();
 
   regexTel = new RegExp('(0|\\+33|0033)[1-9][0-9]{8}');
-  regexPw = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+  regexPw = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\.!@#\$%\^&\*])(?=.{8,})");
   regexMail = new RegExp('^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$');
 
   constructor(private http : HttpClient, private route: Router, private servi : ServiceinfouserService,
@@ -74,28 +74,28 @@ export class ModifprofilComponent implements OnInit {
     //console.log(this.userModif.pw,pw2);
     //console.log("regex: ",this.regexPw.test(this.userModif.pw));
     //console.log("same: ",this.userModif.pw == pw2);
-    console.log(this.userModif.pw,this.regexPw.test(this.userModif.pw))
+    //console.log(this.userModif.pw,this.regexPw.test(this.userModif.pw))
     if (!(this.regexPw.test(this.userModif.pw))){
       do_modif = false;
       type_error.push(error_messages["pw_hard"]);
     }
-    console.log("do_modif",do_modif)
+    //console.log("do_modif",do_modif)
     if (this.userModif.pw != pw2 ){
       do_modif = false;
       type_error.push(error_messages["pw_same"]);
     }
-    console.log("do_modif",do_modif)
+    //console.log("do_modif",do_modif)
     if (!this.regexTel.test(this.userModif.tel)){
       do_modif = false;
       type_error.push(error_messages["tel"]);
     }
-    console.log("do_modif",do_modif)
+    //console.log("do_modif",do_modif)
     if (!(this.userModif.age>0 && this.userModif.age<150)){
       do_modif = false;
       type_error.push(error_messages["age"]);
     }
 
-    console.log("do_modif",do_modif)
+    //console.log("do_modif",do_modif)
     if (do_modif) {
       const ins = this.http.put('http://localhost:8086/users/' + this.userConnecte.id, this.userModif).toPromise();
 
@@ -117,7 +117,7 @@ export class ModifprofilComponent implements OnInit {
 
   ngOnInit() {
     this.userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
-    console.log(this.userConnecte);
+    //console.log(this.userConnecte);
   }
 
 }
