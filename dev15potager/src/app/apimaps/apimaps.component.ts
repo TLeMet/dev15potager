@@ -9,29 +9,32 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./apimaps.component.css']
 })
 export class ApimapsComponent {
-  title = 'My first AGM project';
+  title = 'Map';
   lat;
   lng;
   dataadresse;
+  terrain = JSON.parse(localStorage.getItem("terrain"));
+  terraincp;
   terrainadresse;
   adressemodif;
-  terraincp;
 
-  constructor(private http: HttpClient, private stockageterrain: StockageterrainService) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.terraincp = this.stockageterrain.postal;
-    this.terrainadresse = this.stockageterrain.adresse;
-    console.log(this.terraincp);
-    console.log('' + this.stockageterrain.adresse);
-    console.log('' + this.terrainadresse);
+    this.terraincp = this.terrain.postal;
+    this.terrainadresse = this.terrain.adresse;
     this.adressemodif = this.terrainadresse.split(' ').join('+');
 
-  this.http.get('https://api-adresse.data.gouv.fr/search/?q=' + this.adressemodif + "&postcode=" + this.terraincp).subscribe(response => {
-    this.dataadresse = response;
-    console.log(this.dataadresse);
-  })
-  this.lat = this.dataadresse.features.geometry.coordinates[0];
-  this.lng = this.dataadresse.features.geometry.coordinates[1];
+  const gouv = this.http.get("https://api-adresse.data.gouv.fr/search/?q=" + this.adressemodif + "&postcode=" + this.terraincp).toPromise();
+
+  gouv.then(
+    rep => {
+      this.dataadresse = rep;
+      console.log('test ',  rep);
+      this.lat = this.dataadresse.features[0].geometry.coordinates[1];
+      this.lng = this.dataadresse.features[0].geometry.coordinates[0];
+      console.log('test lat ',  this.dataadresse.features[0].geometry.coordinates[0]);
+    }
+  )
   }
 }
