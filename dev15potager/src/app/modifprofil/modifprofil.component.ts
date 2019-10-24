@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/User';
 import { HttpClient } from '@angular/common/http';
@@ -18,7 +19,7 @@ import { MatDialog } from '@angular/material';
 
 export class ModifprofilComponent implements OnInit {
 
-  userConnecte;
+  userConnecte = JSON.parse(localStorage.getItem("userConnecte"));
   regexTel = new RegExp('(0|\\+33|0033)[1-9][0-9]{8}');
   regexPw = new RegExp('^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$');
 
@@ -68,13 +69,12 @@ export class ModifprofilComponent implements OnInit {
         width: '200px',
       });
     }
-    this.servisession.userConnecte = this.userConnecte;
+    localStorage.setItem('userConnecte', JSON.stringify(this.userConnecte));
     this.ngOnInit();
   }
 
   ngOnInit() {
-    this.userConnecte = this.servisession.userConnecte;
-
+    
   }
 
 }

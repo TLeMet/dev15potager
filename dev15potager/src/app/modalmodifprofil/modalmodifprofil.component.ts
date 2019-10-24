@@ -1,6 +1,6 @@
+import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
-import { MatDialog } from '@angular/material';
+import { MatDialogRef, MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-modalmodifprofil',
