@@ -20,10 +20,12 @@ export class ApimapsComponent {
   constructor(private http: HttpClient, private stockageterrain: StockageterrainService) { }
 
   ngOnInit() {
-
-    this.terraincp = this.stockageterrain.terrain.postal;
-    this.terrainadresse = this.stockageterrain.terrain.adresse;
-    this.adressemodif = this.terrainadresse.replace(' ', '+');
+    this.terraincp = this.stockageterrain.postal;
+    this.terrainadresse = this.stockageterrain.adresse;
+    console.log(this.terraincp);
+    console.log('' + this.stockageterrain.adresse);
+    console.log('' + this.terrainadresse);
+    this.adressemodif = this.terrainadresse.split(' ').join('+');
 
   this.http.get('https://api-adresse.data.gouv.fr/search/?q=' + this.adressemodif + "&postcode=" + this.terraincp).subscribe(response => {
     this.dataadresse = response;
