@@ -1,25 +1,30 @@
 <mat-card class="example-card" fxLayoutAlign="start start">
-    <mat-card-header>
-        <div mat-card-avatar></div>
-        <mat-card-title><strong>Demande d'adhésion à votre jardin</strong></mat-card-title>
-        <mat-card-subtitle>{{prenomuser}} {{nomuser}}</mat-card-subtitle>
-    </mat-card-header>
-    <div class="container">
+
+        <mat-card-header class="text-center">
+            <div mat-card-avatar></div>
+            <mat-card-title class="titre2">Demande d'adhésion à votre jardin</mat-card-title>
+            <mat-card-subtitle><strong>Date de la demande :</strong> {{ dateuser }}</mat-card-subtitle>
+        </mat-card-header>
+
+    <div class="container text-center">
 
     <mat-card-content>
-        
-        <p>
-            <strong>Téléphone : </strong> {{ teluser }}
-        </p>
-        <p>
-            <strong>Mail :</strong> {{ mailuser }}
-        </p>
-        <p>
-            <strong>Date de la demande :</strong> {{ dateuser }}
-        </p>
-        <p>
-            <strong>Message : </strong> {{ messageuser }}
-        </p>
+        <div class="backgroundcouleur">
+            <br>
+            <p>
+                <strong>Nom : </strong>{{prenomuser}} {{nomuser}}
+            </p>
+            <p>
+                <strong>Téléphone : </strong> {{ teluser }}
+            </p>
+            <p>
+                <strong>Mail :</strong> {{ mailuser }}
+            </p>
+            <p>
+                <strong>Message : </strong> {{ messageuser }}
+            </p>
+            <br>
+        </div>
     </mat-card-content>
     <mat-card-actions>
         <button mat-button (click) = "acceptDemand()">Accepter la demande</button>
