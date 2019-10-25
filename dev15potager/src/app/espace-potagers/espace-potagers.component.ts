@@ -22,8 +22,6 @@ export class EspacePotagersComponent implements OnInit {
   public decode(u) {
     let imf;
     if (u.image == null) {
-      imf = null;
-      //console.log('image null');
     } else {
       imf = window.atob(u.image);
       //console.log('image existante');
