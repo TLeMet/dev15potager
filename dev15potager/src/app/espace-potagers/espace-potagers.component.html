@@ -125,6 +125,8 @@
         <hr>
         <div class="row">
             <div class="col-sm-6">
+                    <div id="dialog-window">
+                            <div id="scrollable-content1">
                 <h5 class="text-center">Messagerie de groupe</h5>
                 <br>
                 <table>
@@ -139,8 +141,11 @@
                     <textarea class="form-control" name="message" placeholder="Discuter..." rows=4
                         [(ngModel)]="newMessage.message"></textarea>
                 </div>
+            </div>
+        </div>
                 <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
                 <br>
+
 
             </div>
             <div class="col-sm-1"></div>
@@ -156,15 +161,19 @@
                 </table>
 
                 <!--<img [src]="imgBazoka" alt="" width="90%">-->
-                <div *ngFor="let card of dataconv">
-                    <mat-card class="example-card" fxLayoutAlign="start start">
-                        <img mat-card-image [src]="decode(card)" width="90%">
-                        <p>{{card.message}}</p>
-                    </mat-card>
-                    <br>
+                <div id="dialog-window">
+                    <div id="scrollable-content">
+                        <div *ngFor="let card of dataconv">
+                            <mat-card class="example-card" fxLayoutAlign="start start">
+                                <img mat-card-image [src]="decode(card)" width="90%">
+                                <p>{{card.message}}</p>
+                            </mat-card>
+                            <br>
+                        </div>
+                    </div>
                 </div>
 
-                
+<br>
                 <div class="text-center">
                     <button mat-raised-button (click)="RajoutCard()">
                         <mat-icon>add_circle</mat-icon>
