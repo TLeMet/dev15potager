@@ -46,6 +46,7 @@ import { ModalwronginscriptionComponent } from './modalwronginscription/modalwro
 import { QuitterjardinComponent } from './quitterjardin/quitterjardin.component';
 import { ModalenvoieimageComponent } from './modalenvoieimage/modalenvoieimage.component';
 import { DialogjardincreeComponent } from './dialogjardincree/dialogjardincree.component';
+import { ImportimageconvComponent } from './importimageconv/importimageconv.component';
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { ApimapsComponent } from './apimaps/apimaps.component';
 
@@ -78,6 +79,7 @@ import { UTCDatePipe } from './pipe/UTCDatePipe';
     QuitterjardinComponent,
     ModalenvoieimageComponent,
     DialogjardincreeComponent,
+    ImportimageconvComponent,
     ApimapsComponent,
     UTCDatePipe,
 
