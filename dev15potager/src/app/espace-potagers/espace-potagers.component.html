@@ -153,21 +153,17 @@
                     </tr>
                 </table>
 
-                <img [src]="imgBazoka" alt="" width="90%">
-                <li *ngFor="let card of dataconv">
-                    
+                <!--<img [src]="imgBazoka" alt="" width="90%">--> 
+                <div *ngFor="let card of dataconv">
                     <mat-card class="example-card" fxLayoutAlign="start start">
-                            <div *ngFor="let card of decode(card.image)">
-                    
-                                </div>
-                        <img mat-card-image
-                            [src]="imf" width="90%">
+                        <img mat-card-image [src]="decode(card)" width="90%">
                         <p>{{card.message}}</p>
                     </mat-card>
-                </li>
+                    <br>
+                </div>
 
                 <br>
-                
+
                 <button mat-raised-button (click)="RajoutCard()">
                     <mat-icon>add_circle</mat-icon>
                 </button>
@@ -182,4 +178,3 @@
     <div class="col-sm-1"></div>
 </div>
 <br><br>
-
