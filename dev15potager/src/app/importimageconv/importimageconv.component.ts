@@ -34,6 +34,7 @@ export class ImportimageconvComponent implements OnInit {
   }
 
   onFileChanged(event) {
+
     console.log(event);
     this.selectedFile = event.target.files[0];
 
@@ -45,6 +46,7 @@ export class ImportimageconvComponent implements OnInit {
       this.ok = reader.result;
     };
   }
+  visibleUp = false;
 
   onUpload(desc) {
 
@@ -56,17 +58,26 @@ export class ImportimageconvComponent implements OnInit {
     // console.log('import imag ',  this.import);
 
     // tslint:disable-next-line: no-angle-bracket-type-assertion
-    this.http.post('http://localhost:8086/messageGroupe/' + this.usera.id + '/' + this.ceTerrain.id, this.import)
+   /* this.http.post('http://localhost:8086/messageGroupe/' + this.usera.id + '/' + this.ceTerrain.id, this.import)
       .subscribe(
         res => {
           console.log(res);
         },
-        err => console.log(err));
+        err => console.log(err));*/
+
+    const exh = this.http.post('http://localhost:8086/messageGroupe/' + this.usera.id + '/' + this.ceTerrain.id, this.import).toPromise();
+
+    exh.then(x => {
+      this.ngOnInit();
+  this.visibleUp = false;
+      
+    });
   }
+
 
   closeDialog() {
     this.dialogRef.close();
-    location.reload();
+    this.ngOnInit();
   }
 
 }

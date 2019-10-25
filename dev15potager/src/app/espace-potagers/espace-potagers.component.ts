@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { ModalenvoieimageComponent } from '../modalenvoieimage/modalenvoieimage.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ImageConv } from '../model/ImageConv';
+import { Terrain } from '../model/Terrain';
 
 @Component({
   selector: 'app-espace-potagers',
@@ -24,7 +25,7 @@ export class EspacePotagersComponent implements OnInit {
     if (u.image == null) {
     } else {
       imf = window.atob(u.image);
-      //console.log('image existante');
+      console.log('image existante');
     }
     return imf;
   }
@@ -110,11 +111,11 @@ export class EspacePotagersComponent implements OnInit {
 
 
       //dataconv = this.http.get('http://localhost:8086/messageGroupe/' + this.potagerActif.id).toPromise();
-      
+
       this.http.get('http://localhost:8086/allimageGroupe/' + this.potagerActif.id).subscribe(response => {
         this.dataconv = response;
 
-        console.log('dataconv' , this.dataconv);
+        console.log('dataconv', this.dataconv);
       });
 
       /*
@@ -201,10 +202,59 @@ export class EspacePotagersComponent implements OnInit {
   }
 
   RajoutCard() {
-    const mydial2 = this.dialog.open(ModalenvoieimageComponent, {
-      height: '700px',
-      width: '500px',
+    // const mydial2 = this.dialog.open(ModalenvoieimageComponent, {
+    //   height: '700px',
+    //   width: '500px',
+    // });
+
+    this.visibleUp = true;
+  }
+  visibleUp = false;
+  selectedFile: File = null;
+
+  import: ImageConv = new ImageConv();
+  ter: Terrain = new Terrain();
+  imgURL: any;
+  ok;
+  ceTerrain = JSON.parse(localStorage.getItem("terrain"));
+  usera = JSON.parse(localStorage.getItem('userConnecte'));
+
+
+  onUpload(desc) {
+this.visibleUp = false;
+    this.import.auteur = this.usera;
+    //this.import.name = desc;
+    this.import.message = desc;
+    this.import.image = window.btoa(this.ok);
+    this.import.terrain = this.ter;
+    // console.log('import imag ',  this.import);
+
+    // tslint:disable-next-line: no-angle-bracket-type-assertion
+    /* this.http.post('http://localhost:8086/messageGroupe/' + this.usera.id + '/' + this.ceTerrain.id, this.import)
+       .subscribe(
+         res => {
+           console.log(res);
+         },
+         err => console.log(err));*/
+
+    const exh = this.http.post('http://localhost:8086/messageGroupe/' + this.usera.id + '/' + this.ceTerrain.id, this.import).toPromise();
+
+    exh.then(x => {
+      this.ngOnInit();
     });
+  }
+
+  onFileChanged(event) {
+    console.log(event);
+    this.selectedFile = event.target.files[0];
+
+    const reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+
+    reader.onload = (event2) => {
+      this.imgURL = reader.result;
+      this.ok = reader.result;
+    };
   }
 
 
@@ -224,7 +274,7 @@ export class EspacePotagersComponent implements OnInit {
     } else {
       imf = window.atob(u.image);
     }
-    return imf + 
+    return imf +
     console.log('Je decodage');
   }
  */
