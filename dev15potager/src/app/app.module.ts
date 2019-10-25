@@ -51,6 +51,7 @@ import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { ApimapsComponent } from './apimaps/apimaps.component';
 
 import { UTCDatePipe } from './pipe/UTCDatePipe';
+import { ConvertImage } from './pipe/ConvertImage';
 import { DialogdemandeenvoyeeComponent } from './dialogdemandeenvoyee/dialogdemandeenvoyee.component';
 
 
@@ -84,6 +85,7 @@ import { DialogdemandeenvoyeeComponent } from './dialogdemandeenvoyee/dialogdema
     ApimapsComponent,
     UTCDatePipe,
     DialogdemandeenvoyeeComponent,
+    ConvertImage
 
   ],
 

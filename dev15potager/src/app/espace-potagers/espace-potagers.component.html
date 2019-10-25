@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-5">
-        <h2 class="titre2">Info potager</h2>     
+        <h2 class="titre2">Info potager</h2>
         <table>
             <col width="120px">
             <col width="120px">
@@ -22,7 +22,7 @@
                     <th>Ville</th>
                     <th>Surface</th>
                     <th>Description</th>
-                    
+
                 </tr>
             </thead>
 
@@ -59,7 +59,7 @@
                     <th>Prenom</th>
                     <th>Mail</th>
                     <th>Téléphone</th>
-                    
+
                 </tr>
             </thead>
             <tbody>
@@ -68,8 +68,9 @@
                     <td>{{m.user.prenom}}</td>
                     <td>{{m.user.mail}}</td>
                     <td>{{m.user.tel}}</td>
-                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)&&testProprio()" (click)=exclureUser(m.user)
-                            style="float: right; background-color:rgb(255, 148, 148)" button mat-mini-fab>
+                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)&&testProprio()"
+                            (click)=exclureUser(m.user) style="float: right; background-color:rgb(255, 148, 148)" button
+                            mat-mini-fab>
                             <mat-icon>highlight_off</mat-icon>
                         </button></td>
                 </tr>
@@ -80,10 +81,10 @@
 
         <hr>
         <div *ngIf="testProprio()">
-        <br>
-        <h2 class="titre2">Demandes d'adhésion à votre potager</h2>
-        <!-- Cacher si le gars n'est pas proprio -->
-        
+            <br>
+            <h2 class="titre2">Demandes d'adhésion à votre potager</h2>
+            <!-- Cacher si le gars n'est pas proprio -->
+
             <table>
                 <col width="170px">
                 <col width="170px">
@@ -96,7 +97,7 @@
                         <th>Prenom</th>
                         <th>Téléphone</th>
                         <th>Date de la demande</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -133,16 +134,17 @@
                             <p style="font-size: x-small;">{{m.dateMessage | UTCDate}}</p>
                         </td>
                     </tr>
-                </table>              
-                    <div class="form-group">
-                        <textarea class="form-control" name="message" placeholder="Discuter..." rows=4 [(ngModel)]="newMessage.message"></textarea>                     
-                    </div>
+                </table>
+                <div class="form-group">
+                    <textarea class="form-control" name="message" placeholder="Discuter..." rows=4
+                        [(ngModel)]="newMessage.message"></textarea>
+                </div>
                 <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
                 <br>
 
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <h5 class="text-center">Photos</h5>
                 <br>
                 <table>
@@ -153,7 +155,7 @@
                     </tr>
                 </table>
 
-                <!--<img [src]="imgBazoka" alt="" width="90%">--> 
+                <!--<img [src]="imgBazoka" alt="" width="90%">-->
                 <div *ngFor="let card of dataconv">
                     <mat-card class="example-card" fxLayoutAlign="start start">
                         <img mat-card-image [src]="decode(card)" width="90%">
@@ -168,13 +170,42 @@
                     <mat-icon>add_circle</mat-icon>
                 </button>
             </div>
-            <div class="col-sm-1"></div>
+            <div class="col-sm-1">
+                <div>
+                    <div *ngIf="visibleUp">
+                        <form #form (ngSubmit)="onUpload(desc.value)">
+
+                            <div class="text-center">
+                                <img [src]="imgURL" height="100" *ngIf="imgURL">
+                            </div>
+                            <br>
+                            <div class="text-center">
+
+                                <input style="width:60px" type="file" name="pic" (change)="onFileChanged($event)">
+                            </div>
+                            <br>
+                            <div class="text-center">
+                                <textarea type="text" class="text-center" placeholder="Description" #desc></textarea>
+                            </div>
+                            <br><br><br>
+
+                            <div class="text-center">
+                                <button (click)="trueFalse()">Upload</button>
+                            </div>
+                            <p *ngIf="visible" style="color: rgb(35, 190, 56);" class="text-center">Image bien envoyée !
+                            </p>
+                            <br>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="text-center">
             <app-apimaps></app-apimaps>
         </div>
     </div>
-    <div class="col-sm-1"></div>
+    <div class="col-sm-1">
+    </div>
 </div>
 <br><br>
