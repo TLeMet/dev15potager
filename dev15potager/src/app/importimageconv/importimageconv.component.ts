@@ -4,7 +4,6 @@ import { ImageConv } from '../model/ImageConv';
 import { Router } from '@angular/router';
 import { Terrain } from '../model/Terrain';
 import { MatDialogRef } from '@angular/material';
-import { StockageterrainService } from '../stockageterrain.service';
 import { Image } from '../model/Image';
 
 @Component({
@@ -21,17 +20,17 @@ export class ImportimageconvComponent implements OnInit {
   imgURL: any;
   ok;
   visible = false;
-  ceTerrain = this.stockageterrain.terrain;
+  ceTerrain = JSON.parse(localStorage.getItem("terrain"));
   usera = JSON.parse(localStorage.getItem('userConnecte'));
 
   trueFalse() {
     this.visible = true;
   }
 
-  constructor(private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<ImportimageconvComponent>, private stockageterrain: StockageterrainService) { }
+  constructor(private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<ImportimageconvComponent>) { }
 
   ngOnInit() {
-    
+
   }
 
   onFileChanged(event) {
@@ -57,7 +56,7 @@ export class ImportimageconvComponent implements OnInit {
    // console.log('import imag ',  this.import);
 
     // tslint:disable-next-line: no-angle-bracket-type-assertion
-    this.http.post('http://localhost:8086/uploadGroupImage/' + 1, this.import)
+    this.http.post('http://localhost:8086/uploadGroupImage/' + this.ceTerrain.id, this.import)
     .subscribe(
       res => {
         console.log(res);
