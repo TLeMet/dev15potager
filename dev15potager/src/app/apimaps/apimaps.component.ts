@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./apimaps.component.css']
 })
 export class ApimapsComponent {
-  title = 'Map';
+  title = 'Adresse du potager';
   lat;
   lng;
   dataadresse;
