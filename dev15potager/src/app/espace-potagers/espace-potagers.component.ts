@@ -22,7 +22,7 @@ export class EspacePotagersComponent implements OnInit {
   datamembres;
   datademandes;
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService, private route: Router, private sanitizer: DomSanitizer) { }
+  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private servisession: SessionuserService, private route: Router, private sanitizer: DomSanitizer) { }
 
   //userConnecte;
   potagerActif = JSON.parse(localStorage.getItem("terrain"));
@@ -89,11 +89,11 @@ export class EspacePotagersComponent implements OnInit {
           this.datacod = r;
 
           console.log('img ', window.atob(this.datacod.image));
-          var the_file = new Blob([window.atob(this.datacod.image)]);
+           this.myimg = window.atob(this.datacod.image);
 
-          console.log('the file', the_file);
+          //console.log('the file', the_file);
 
-          this.im = window.URL.createObjectURL(the_file);
+          //this.im = window.URL.createObjectURL(the_file);
 
           console.log('the file va te fair ', this.im);
 
@@ -107,7 +107,7 @@ export class EspacePotagersComponent implements OnInit {
           console.log('my img', this.myimg);
 
           var reader = new FileReader();
-          reader.readAsDataURL(the_file);
+         // reader.readAsDataURL(the_file);
           reader.onloadend = function () {
             base64data = reader.result;
             console.log('image base ecf', base64data);
@@ -151,12 +151,8 @@ export class EspacePotagersComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
-  modifDetailTerrain() {
-=======
   modifDetailTerrain(){
     localStorage.setItem('terrain', JSON.stringify(this.potagerActif));
->>>>>>> a4ff5d21584b36aeb8643451072519b32d569666
     const mydial2 = this.dialog.open(ModalmodifterrainComponent, {
       height: '870px',
       width: '500px',
@@ -170,17 +166,10 @@ export class EspacePotagersComponent implements OnInit {
     this.ngOnInit();
   }
 
-<<<<<<< HEAD
-  testProprio() {
-    console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.stockageterrain.terrain.proprietaire.id);
-    if (this.userConnecte.id == this.stockageterrain.terrain.proprietaire.id) {
-      this.visible = true;
-=======
   testProprio(){
     console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.potagerActif.proprietaire.id );
     if (this.userConnecte.id == this.potagerActif.proprietaire.id){
       this.visible=true;
->>>>>>> a4ff5d21584b36aeb8643451072519b32d569666
 
     }
   }
@@ -192,15 +181,9 @@ export class EspacePotagersComponent implements OnInit {
     this.newMessage.auteur = this.userConnecte;
     this.newMessage.terrain = this.potagerActif;
     this.newMessage.image = null;
-<<<<<<< HEAD
-
-    const post = this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id + '/' + this.stockageterrain.terrain.id, this.newMessage).toPromise()
-    post.then(d => { this.ngOnInit() })
-=======
     
     const post = this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id +  '/'+ this.potagerActif.id, this.newMessage).toPromise()
     post.then(d => {this.ngOnInit()})
->>>>>>> a4ff5d21584b36aeb8643451072519b32d569666
     this.ngOnInit();
 
     this.newMessage = new Conversation();
@@ -211,13 +194,10 @@ export class EspacePotagersComponent implements OnInit {
       height: '700px',
       width: '500px',
     });
-<<<<<<< HEAD
 
 
 
 
-=======
->>>>>>> a4ff5d21584b36aeb8643451072519b32d569666
   }
 
   isProprio(checked_user){
