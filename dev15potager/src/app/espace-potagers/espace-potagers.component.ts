@@ -22,7 +22,7 @@ export class EspacePotagersComponent implements OnInit {
   datamembres;
   datademandes;
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private servisession: SessionuserService, private route: Router, private sanitizer: DomSanitizer) { }
+  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, /*private stockageterrain: StockageterrainService,*/ private servisession: SessionuserService, private route: Router, private sanitizer: DomSanitizer) { }
 
   //userConnecte;
 
@@ -70,31 +70,30 @@ export class EspacePotagersComponent implements OnInit {
         this.datademandes = response;
         //console.log(response);
       })
-      this.http.get('http://localhost:8086/messageGroupe/' + this.potagerActif.id).subscribe(response => {
+      /*this.http.get('http://localhost:8086/messageGroupe/' + this.potagerActif.id).subscribe(response => {
         this.messages = response;
         console.log("liste des messages")
         console.log(response)
-      });
+      });*/
       //#endregion
+      /*
+            this.http.get('http://localhost:8086/imageGroup/' + this.potagerActif.id).subscribe(response => {
+              this.images = response;
+            })*/
+    }
 
-      this.http.get('http://localhost:8086/imageGroup/' + this.potagerActif.id).subscribe(response => {
-        this.images = response;
+    this.http.get('http://localhost:8086/messageGroupe/' + this.userConnecte.id).subscribe(response => {
+      this.data = response;
+      console.log(this.data);
 
-      });
-
-      this.http.get('http://localhost:8086/messageGroupe/' + this.userConnecte.id).subscribe(response => {
-        this.data = response;
-        console.log(this.data);
-      });
-
-      this.http.get('http://localhost:8086/imageGroup/1').subscribe(response => {
-        this.datacod = response;
-        console.log(this.datacod);
-      });
+      /* this.http.get('http://localhost:8086/imageGroup/1').subscribe(response => {
+         this.datacod = response;
+         console.log(this.datacod);
+       });*/
 
       this.myimg = 'https://cxfile.advences.com/asia/photosi/asia-conseiller-voyages-destinations-alexandre-paris-inde-bm.jpg?photo_id=10623';
 
-      const imr = this.http.get('http://localhost:8086/image/3').toPromise();
+      const imr = this.http.get('http://localhost:8086/image/5').toPromise();
 
       imr.then(
         r => {
@@ -123,7 +122,7 @@ export class EspacePotagersComponent implements OnInit {
 
 
 
-    }
+    });
   }
 
   //#region blablabla
@@ -185,10 +184,6 @@ export class EspacePotagersComponent implements OnInit {
       height: '700px',
       width: '500px',
     });
-
-
-
-
   }
 
   isProprio(checked_user) {
