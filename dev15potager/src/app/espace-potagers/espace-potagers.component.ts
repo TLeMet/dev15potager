@@ -183,10 +183,7 @@ export class EspacePotagersComponent implements OnInit {
 
   testProprio() {
     console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.potagerActif.proprietaire.id);
-    if (this.userConnecte.id == this.potagerActif.proprietaire.id) {
-      this.visible = true;
-
-    }
+    return this.userConnecte.id == this.potagerActif.proprietaire.id;
   }
 
   posterMessage() {

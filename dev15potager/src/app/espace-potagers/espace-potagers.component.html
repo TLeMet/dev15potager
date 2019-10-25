@@ -19,7 +19,7 @@
                     <th>Ville</th>
                     <th>Surface</th>
                     <th>Description</th>
-                    <th *ngIf="visible" mat-button>Modifier</th>
+                    <th *ngIf="testProprio()" mat-button>Modifier</th>
                 </tr>
             </thead>
 
@@ -30,7 +30,7 @@
                     <td>{{potagerActif.ville}}</td>
                     <td>{{potagerActif.surface}} m²</td>
                     <td>{{potagerActif.description}}</td>
-                    <td *ngIf="visible">
+                    <td *ngIf="testProprio()">
                         <button (click)="modifDetailTerrain()" class="text-center"
                             style="background-color:darkturquoise" button mat-mini-fab>
                             <mat-icon>edit</mat-icon>
@@ -55,7 +55,7 @@
                     <th>Prenom</th>
                     <th>Mail</th>
                     <th>Téléphone</th>
-                    <th>Exclure</th>
+                    <th *ngIf="testProprio()">Exclure</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,7 +64,7 @@
                     <td>{{m.user.prenom}}</td>
                     <td>{{m.user.mail}}</td>
                     <td>{{m.user.tel}}</td>
-                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)" (click)=exclureUser(m.user)
+                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)&&testProprio()" (click)=exclureUser(m.user)
                             style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
                             <mat-icon>highlight_off</mat-icon>
                         </button></td>
@@ -75,7 +75,7 @@
 
 
         <hr>
-        <div *ngIf="visible">
+        <div *ngIf="testProprio()">
         <h2>Demandes d'adhésion à votre potager</h2>
         <!-- Cacher si le gars n'est pas proprio -->
         
