@@ -5,6 +5,7 @@ import { DialogconnexionComponent } from '../dialogconnexion/dialogconnexion.com
 import { User } from '../model/User';
 import { Terrain } from '../model/Terrain';
 import { ServiceTerrainService } from '../service-terrain.service';
+import { DialogdemandeenvoyeeComponent } from '../dialogdemandeenvoyee/dialogdemandeenvoyee.component';
 
 
 @Component({
@@ -42,5 +43,9 @@ export class DialogdetailspotagerComponent implements OnInit {
 
   testco() {
 
+    const mydial = this.dialog.open(DialogdemandeenvoyeeComponent, {
+      height: '500px',
+      width: '500px',
+    });
   }
 }
