@@ -1,5 +1,6 @@
 # Projet de potager collaboratif de l'équipe dev15 2019, Solutec.
-# Front-end
+## Front-end
+Back-end : https://github.com/TLeMet/dev15potagerB
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
 
