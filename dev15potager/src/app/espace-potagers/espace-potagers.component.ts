@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 
 import { ModalenvoieimageComponent } from '../modalenvoieimage/modalenvoieimage.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ImageConv } from '../model/ImageConv';
 
 @Component({
   selector: 'app-espace-potagers',
@@ -17,6 +18,18 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./espace-potagers.component.css']
 })
 export class EspacePotagersComponent implements OnInit {
+
+  public decode(u) {
+    let imf;
+    if (u.image == null) {
+      imf = null;
+      console.log('image null');
+    } else {
+      imf = window.atob(u.image);
+      console.log('image existante');
+    }
+    return imf
+  }
 
   datapotager;
   datamembres;
@@ -42,6 +55,9 @@ export class EspacePotagersComponent implements OnInit {
   im;
   imageJo;
   imgBazoka;
+  datacorr: ImageConv = new ImageConv();
+  dataparc;
+  dataconv;
 
   //#endregion
   ngOnInit() {
@@ -76,25 +92,33 @@ export class EspacePotagersComponent implements OnInit {
         console.log(response)
       });
       //#endregion
-
-      this.http.get('http://localhost:8086/imageGroup/' + this.potagerActif.id).subscribe(response => {
-        this.images = response;
-
-      });
-
-      this.http.get('http://localhost:8086/messageGroupe/' + this.userConnecte.id).subscribe(response => {
-        this.data = response;
-        console.log(this.data);
-      });
-
-      this.http.get('http://localhost:8086/imageGroup/1').subscribe(response => {
-        this.datacod = response;
-        console.log(this.datacod);
-      });
+      /*
+            this.http.get('http://localhost:8086/imageGroup/' + this.potagerActif.id).subscribe(response => {
+              this.images = response;
+      
+            });
+      
+            this.http.get('http://localhost:8086/messageGroupe/' + this.userConnecte.id).subscribe(response => {
+              this.data = response;
+              console.log(this.data);
+            });
+      
+            this.http.get('http://localhost:8086/imageGroup/1').subscribe(response => {
+              this.datacod = response;
+              console.log(this.datacod);
+            }); */
 
       this.myimg = 'https://cxfile.advences.com/asia/photosi/asia-conseiller-voyages-destinations-alexandre-paris-inde-bm.jpg?photo_id=10623';
 
+
+      //dataconv = this.http.get('http://localhost:8086/messageGroupe/' + this.potagerActif.id).toPromise();
+      this.http.get('http://localhost:8086/allimageGroupe/' + this.potagerActif.id).subscribe(response => {
+        this.dataconv = response;
+        console.log('dataconv' , this.dataconv);
+      });
+
       const imr = this.http.get('http://localhost:8086/image/3').toPromise();
+
 
       imr.then(
         r => {
@@ -165,8 +189,6 @@ export class EspacePotagersComponent implements OnInit {
     }
   }
 
-
-
   posterMessage() {
 
     this.newMessage.auteur = this.userConnecte;
@@ -185,11 +207,18 @@ export class EspacePotagersComponent implements OnInit {
       height: '700px',
       width: '500px',
     });
-
-
-
-
   }
+  decodeIm(u) {
+    let imf;
+    if (u.image == null) {
+      imf = null;
+    } else {
+      imf = window.atob(u.image);
+    }
+    return imf + 
+    console.log('Je decodage');
+  }
+
 
   isProprio(checked_user) {
     //console.log("user checked id ", checked_user.id);
@@ -197,4 +226,19 @@ export class EspacePotagersComponent implements OnInit {
     return checked_user.id != this.potagerActif.proprietaire.id;
   }
 }
+
+
+/**
+ *  decodeIm(u) {
+    let imf;
+    if (u.image == null) {
+      imf = null;
+    } else {
+      imf = window.atob(u.image);
+    }
+    return imf + 
+    console.log('Je decodage');
+  }
+ */
+
 //#endregion

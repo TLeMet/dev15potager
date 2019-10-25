@@ -15,7 +15,7 @@ export class ImportimageconvComponent implements OnInit {
 
   selectedFile: File = null;
 
-  import: Image = new Image();
+  import: ImageConv = new ImageConv();
   ter: Terrain = new Terrain();
   imgURL: any;
   ok;
@@ -48,20 +48,20 @@ export class ImportimageconvComponent implements OnInit {
 
   onUpload(desc) {
 
-   // this.import.auteur = this.usera;
-    this.import.name = desc;
-   // this.import.message = desc;
+    this.import.auteur = this.usera;
+    //this.import.name = desc;
+    this.import.message = desc;
     this.import.image = window.btoa(this.ok);
     this.import.terrain = this.ter;
-   // console.log('import imag ',  this.import);
+    // console.log('import imag ',  this.import);
 
     // tslint:disable-next-line: no-angle-bracket-type-assertion
-    this.http.post('http://localhost:8086/uploadGroupImage/' + this.ceTerrain.id, this.import)
-    .subscribe(
-      res => {
-        console.log(res);
-      },
-      err => console.log(err));
+    this.http.post('http://localhost:8086/messageGroupe/' + this.usera.id + '/' + this.ceTerrain.id, this.import)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => console.log(err));
   }
 
   closeDialog() {
