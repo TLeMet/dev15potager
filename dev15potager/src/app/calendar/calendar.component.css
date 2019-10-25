@@ -6,3 +6,10 @@ h3 {
     background-color: #f5f5f5;
     padding: 15px;
   }
+
+  
+.titre2 {
+  color : #27ac39;
+  font : 200% georgia, palatino, serif;
+  font-weight: bold;
+}

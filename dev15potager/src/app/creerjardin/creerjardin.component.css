@@ -18,3 +18,10 @@
   .example-container .mat-radio-button {
     margin: 0 12px;
   }
+
+  
+.titre2 {
+  color : #27ac39;
+  font : 200% georgia, palatino, serif;
+  font-weight: bold;
+}
