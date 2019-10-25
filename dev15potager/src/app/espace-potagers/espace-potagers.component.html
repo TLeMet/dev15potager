@@ -42,9 +42,7 @@
         </table>
 
         <hr>
-
-        <br><br>
-        <h2 class="titre2">Membres</h2>
+        <h2>Membres</h2>
         <table>
             <col width="170px">
             <col width="170px">
@@ -77,10 +75,8 @@
 
 
         <hr>
-        <br><br>
-
-        <div *ngIf="testProprio()">
-        <h2 class="titre2">Demandes d'adhésion à votre potager</h2>
+        <div *ngIf="visible">
+        <h2>Demandes d'adhésion à votre potager</h2>
         <!-- Cacher si le gars n'est pas proprio -->
         
             <table>
@@ -112,12 +108,7 @@
                 </tbody>
             </table>
         </div>
-        <hr>
-        <br><br>
-        <h2 class="titre2">Calendrier des événements</h2>
-        <app-calendar></app-calendar>
     </div>
-
     <div class="col-sm-5">
         <h2 class="text-center titre2">Actualités du potager</h2>
         <hr>
@@ -136,12 +127,8 @@
                     <div class="form-group">
                         <textarea class="form-control" name="message" placeholder="Discuter..." rows=4 [(ngModel)]="newMessage.message"></textarea>                     
                     </div>
-                    <div class="text-center">
-
-                        <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
-                    </div>
+                <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
                 <br>
-
 
             </div>
             <div class="col-sm-1"></div>
@@ -177,8 +164,6 @@
             </div>
             <div class="col-sm-1"></div>
         </div>
-        <br><br>
-        <app-apimaps></app-apimaps>
     </div>
     <div class="col-sm-1"></div>
 </div>
