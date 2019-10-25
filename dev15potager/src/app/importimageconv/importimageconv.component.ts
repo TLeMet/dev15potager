@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Terrain } from '../model/Terrain';
 import { MatDialogRef } from '@angular/material';
 import { StockageterrainService } from '../stockageterrain.service';
+import { Image } from '../model/Image';
 
 @Component({
   selector: 'app-importimageconv',
@@ -15,7 +16,7 @@ export class ImportimageconvComponent implements OnInit {
 
   selectedFile: File = null;
 
-  import: ImageConv = new ImageConv();
+  import: Image = new Image();
   ter: Terrain = new Terrain();
   imgURL: any;
   ok;
@@ -48,13 +49,15 @@ export class ImportimageconvComponent implements OnInit {
 
   onUpload(desc) {
 
-    this.import.auteur = this.usera;
-    this.import.message = desc;
+   // this.import.auteur = this.usera;
+    this.import.name = desc;
+   // this.import.message = desc;
     this.import.image = window.btoa(this.ok);
     this.import.terrain = this.ter;
+   // console.log('import imag ',  this.import);
 
     // tslint:disable-next-line: no-angle-bracket-type-assertion
-    this.http.post('http://localhost:8086/messageGroupe/' + this.usera.id + '/' + this.ceTerrain.id , this.import)
+    this.http.post('http://localhost:8086/uploadGroupImage/' + 1, this.import)
     .subscribe(
       res => {
         console.log(res);
