@@ -66,6 +66,7 @@ export class ImportimageconvComponent implements OnInit {
 
   closeDialog() {
     this.dialogRef.close();
+    location.reload();
   }
 
 }

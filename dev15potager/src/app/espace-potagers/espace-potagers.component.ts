@@ -23,12 +23,12 @@ export class EspacePotagersComponent implements OnInit {
     let imf;
     if (u.image == null) {
       imf = null;
-      console.log('image null');
+      //console.log('image null');
     } else {
       imf = window.atob(u.image);
-      console.log('image existante');
+      //console.log('image existante');
     }
-    return imf
+    return imf;
   }
 
   datapotager;
@@ -112,11 +112,14 @@ export class EspacePotagersComponent implements OnInit {
 
 
       //dataconv = this.http.get('http://localhost:8086/messageGroupe/' + this.potagerActif.id).toPromise();
+      
       this.http.get('http://localhost:8086/allimageGroupe/' + this.potagerActif.id).subscribe(response => {
         this.dataconv = response;
+
         console.log('dataconv' , this.dataconv);
       });
 
+      /*
       const imr = this.http.get('http://localhost:8086/image/5').toPromise();
 
 
@@ -142,7 +145,7 @@ export class EspacePotagersComponent implements OnInit {
         }
 
 
-      );
+      );*/
 
 
 
@@ -182,7 +185,7 @@ export class EspacePotagersComponent implements OnInit {
   }
 
   testProprio() {
-    console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.potagerActif.proprietaire.id);
+    //console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.potagerActif.proprietaire.id);
     if (this.userConnecte.id == this.potagerActif.proprietaire.id) {
       this.visible = true;
 
@@ -207,16 +210,6 @@ export class EspacePotagersComponent implements OnInit {
       height: '700px',
       width: '500px',
     });
-  }
-  decodeIm(u) {
-    let imf;
-    if (u.image == null) {
-      imf = null;
-    } else {
-      imf = window.atob(u.image);
-    }
-    return imf + 
-    console.log('Je decodage');
   }
 
 
