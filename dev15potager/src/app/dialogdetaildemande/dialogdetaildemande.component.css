@@ -1,0 +1,16 @@
+
+.titre {
+    color : #27ac39;
+    font : 250% georgia, palatino, serif;
+    font-weight: bold;
+}
+
+.titre2 {
+    color : #27ac39;
+    font : 200% georgia, palatino, serif;
+    font-weight: bold;
+}
+
+.backgroundcouleur {
+    background-color: rgb(240, 255, 240);
+}
