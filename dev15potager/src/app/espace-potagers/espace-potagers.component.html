@@ -1,5 +1,8 @@
 <app-navbar-perso></app-navbar-perso>
-<br><br><br>
+<br>
+
+<h1 class="titre text-center">{{potagerActif.nom}}</h1>
+<br><br>
 
 <div class="row">
     <div class="col-sm-1"></div>
@@ -42,7 +45,8 @@
         </table>
 
         <hr>
-        <h2>Membres</h2>
+        <br><br>
+        <h2 class="titre2">Membres</h2>
         <table>
             <col width="170px">
             <col width="170px">
@@ -75,8 +79,14 @@
 
 
         <hr>
+<<<<<<< HEAD
         <div *ngIf="testProprio()">
         <h2>Demandes d'adhésion à votre potager</h2>
+=======
+        <br><br>
+        <div *ngIf="visible">
+        <h2 class="titre2">Demandes d'adhésion à votre potager</h2>
+>>>>>>> 16852bc64bb9dd6b17141fa5e1c3e4b43fc3d3a1
         <!-- Cacher si le gars n'est pas proprio -->
         
             <table>
@@ -108,6 +118,11 @@
                 </tbody>
             </table>
         </div>
+        <hr>
+        <br><br>
+        <h2 class="titre2">Calendrier des événements</h2>
+        <app-calendar></app-calendar>
+
     </div>
     <div class="col-sm-5">
         <h2 class="text-center titre2">Actualités du potager</h2>
@@ -163,6 +178,10 @@
                 </button>
             </div>
             <div class="col-sm-1"></div>
+        </div>
+
+        <div class="text-center">
+            <app-apimaps></app-apimaps>
         </div>
     </div>
     <div class="col-sm-1"></div>
