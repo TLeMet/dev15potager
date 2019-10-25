@@ -4,7 +4,7 @@ import { Image } from '../model/Image';
 import { Router } from '@angular/router';
 import { Terrain } from '../model/Terrain';
 import { MatDialogRef } from '@angular/material';
-import { StockageterrainService } from '../stockageterrain.service';
+
 
 @Component({
   selector: 'app-importimage',
@@ -20,14 +20,14 @@ export class ImportimageComponent implements OnInit {
   imgURL: any;
   ok;
   visible = false;
-  ceTerrain = this.stockageterrain.terrain;
+  ceTerrain = JSON.parse(localStorage.getItem("terrain"));
 
 
   trueFalse() {
     this.visible = true;
   }
 
-  constructor(private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<ImportimageComponent>, private stockageterrain: StockageterrainService) { }
+  constructor(private http: HttpClient, private route: Router, private dialogRef: MatDialogRef<ImportimageComponent>) { }
 
   ngOnInit() {
   }
@@ -56,7 +56,7 @@ export class ImportimageComponent implements OnInit {
    // console.log('import imag ',  this.import);
 
     // tslint:disable-next-line: no-angle-bracket-type-assertion
-    this.http.post('http://localhost:8086/uploadGroupImage/' + 1, this.import)
+    this.http.post('http://localhost:8086/uploadGroupImage/' + this.ceTerrain.id, this.import)
     .subscribe(
       res => {
         console.log(res);
