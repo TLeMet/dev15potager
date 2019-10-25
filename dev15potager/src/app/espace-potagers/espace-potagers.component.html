@@ -14,15 +14,15 @@
             <col width="130px">
             <thead>
                 <tr>
-                    <th >Nom du potager</th>
-                    <th >Adresse</th>
-                    <th >Ville</th>
-                    <th >Surface</th>
-                    <th >Description</th>
+                    <th>Nom du potager</th>
+                    <th>Adresse</th>
+                    <th>Ville</th>
+                    <th>Surface</th>
+                    <th>Description</th>
                     <th *ngIf="visible" mat-button>Modifier</th>
                 </tr>
             </thead>
-            
+
             <tbody>
                 <tr>
                     <td>{{potagerActif.nom}}</td>
@@ -31,23 +31,24 @@
                     <td>{{potagerActif.surface}} m²</td>
                     <td>{{potagerActif.description}}</td>
                     <td *ngIf="visible">
-                        <button (click)="modifDetailTerrain()" class="text-center" style="background-color:darkturquoise" button mat-mini-fab>
-                        <mat-icon>edit</mat-icon>
+                        <button (click)="modifDetailTerrain()" class="text-center"
+                            style="background-color:darkturquoise" button mat-mini-fab>
+                            <mat-icon>edit</mat-icon>
                         </button>
                     </td>
                 </tr>
             </tbody>
-            
+
         </table>
 
         <hr>
         <h2>Membres</h2>
         <table>
-                <col width="170px">
-                <col width="170px">
-                <col width="170px">
-                <col width="170px">
-                <col width="170px">
+            <col width="170px">
+            <col width="170px">
+            <col width="170px">
+            <col width="170px">
+            <col width="170px">
             <thead>
                 <tr>
                     <th>Nom</th>
@@ -63,9 +64,10 @@
                     <td>{{m.user.prenom}}</td>
                     <td>{{m.user.mail}}</td>
                     <td>{{m.user.tel}}</td>
-                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)" (click)= exclureUser(m.user) style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
-                        <mat-icon>highlight_off</mat-icon>
-                    </button></td>  
+                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)" (click)=exclureUser(m.user)
+                            style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
+                            <mat-icon>highlight_off</mat-icon>
+                        </button></td>
                 </tr>
             </tbody>
         </table>
@@ -98,9 +100,10 @@
                         <td>{{d.user.prenom}}</td>
                         <td>{{d.user.tel}}</td>
                         <td>{{d.dateDemande}}</td>
-                        <td><button mat-mini-fab aria-label="Example icon-button with a heart icon" (click) = openDemande(d)>
+                        <td><button mat-mini-fab aria-label="Example icon-button with a heart icon"
+                                (click)=openDemande(d)>
                                 <mat-icon>search</mat-icon>
-                        </button></td>
+                            </button></td>
                     </tr>
                 </tbody>
             </table>
@@ -109,15 +112,16 @@
     <div class="col-sm-5">
         <h2 class="text-center">Actualités du potager</h2>
         <hr>
-        <div class="row"> 
+        <div class="row">
             <div class="col-sm-6">
                 <h5 class="text-center">Messagerie de groupe</h5>
                 <br>
                 <table>
                     <tr *ngFor="let m of messages">
                         <td>
-                            <strong>{{m.auteur.prenom}}</strong> : {{m.message}} <br> <p style="font-size: x-small;">{{m.dateMessage | UTCDate}}</p>
-                        </td> 
+                            <strong>{{m.auteur.prenom}}</strong> : {{m.message}} <br>
+                            <p style="font-size: x-small;">{{m.dateMessage | UTCDate}}</p>
+                        </td>
                     </tr>
                 </table>              
                     <div class="form-group">
@@ -125,7 +129,6 @@
                     </div>
                 <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
                 <br>
-            <app-apimaps></app-apimaps>
 
             </div>
             <div class="col-sm-1"></div>
@@ -135,19 +138,26 @@
                 <table>
                     <tr>
                         <td>
-                            
+
                         </td>
                     </tr>
                 </table>
 
                 <img [src]="imgBazoka" alt="" width="90%">
-
-                <mat-card class="example-card" fxLayoutAlign="start start">
-                    <img mat-card-image src="https://cxfile.advences.com/asia/photosi/asia-conseiller-voyages-destinations-alexandre-paris-inde-bm.jpg?photo_id=10623">
-                    <p></p> <!--{{card.message}}-->
-                </mat-card>
+                <li *ngFor="let card of dataconv">
+                    
+                    <mat-card class="example-card" fxLayoutAlign="start start">
+                            <div *ngFor="let card of decode(card.image)">
+                    
+                                </div>
+                        <img mat-card-image
+                            [src]="imf" width="90%">
+                        <p>{{card.message}}</p>
+                    </mat-card>
+                </li>
 
                 <br>
+<<<<<<< HEAD
                 <div class="scrollable">
                         <div class="scrollable-content section " ui-scroll-bottom="loadMore()">
                                 <ul>
@@ -161,6 +171,9 @@
                                     </ul>
                         </div>
                       </div>
+=======
+                
+>>>>>>> c1f426403af08cfc4d205343e5dc3a2e01f2e76b
                 <button mat-raised-button (click)="RajoutCard()">
                     <mat-icon>add_circle</mat-icon>
                 </button>
@@ -172,6 +185,7 @@
 </div>
 <br><br>
 
+<<<<<<< HEAD
 <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-5">
@@ -183,3 +197,5 @@
     <div class="col-sm-1"></div>
 </div>
 
+=======
+>>>>>>> c1f426403af08cfc4d205343e5dc3a2e01f2e76b
