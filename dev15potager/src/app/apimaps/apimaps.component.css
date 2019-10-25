@@ -2,3 +2,10 @@ agm-map {
     height: 450px;
     width: 500px;
   }
+
+
+  .titre2 {
+    color : #27ac39;
+    font : 200% georgia, palatino, serif;
+    font-weight: bold;
+}

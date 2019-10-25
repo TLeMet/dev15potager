@@ -1,10 +1,14 @@
 <app-navbar-perso></app-navbar-perso>
-<br><br><br>
+<br><br>
 
 <div class="row">
+    <div class="col-sm-12 text-center">
+        <h1 class="titre">{{ potagerActif.nom }}</h1>
+    </div>
+    <br><br><br>
     <div class="col-sm-1"></div>
     <div class="col-sm-5 couleurfond">
-        <h2>Info potager</h2>     
+        <h2 class="titre2">Info potager</h2>     
         <table>
             <col width="130px">
             <col width="130px">
@@ -41,7 +45,7 @@
         </table>
 
         <hr>
-        <h2>Membres</h2>
+        <h2 class="titre2">Membres</h2>
         <table>
                 <col width="170px">
                 <col width="170px">
@@ -74,7 +78,7 @@
 
         <hr>
         <div *ngIf="visible">
-        <h2>Demandes d'adhésion à votre potager</h2>
+        <h2 class="titre2">Demandes d'adhésion à votre potager</h2>
         <!-- Cacher si le gars n'est pas proprio -->
         
             <table>
@@ -107,7 +111,7 @@
         </div>
     </div>
     <div class="col-sm-5">
-        <h2 class="text-center">Actualités du potager</h2>
+        <h2 class="text-center titre2">Actualités du potager</h2>
         <hr>
         <div class="row"> 
             <div class="col-sm-6">
@@ -182,7 +186,7 @@
     <div class="col-sm-1"></div>
     <div class="col-sm-5">
         <hr>
-        <h2>Messagerie</h2>
+        <h2 class="titre2">Messagerie</h2>
         <app-calendar></app-calendar>
     </div>
     <div class="col-sm-5"></div>
