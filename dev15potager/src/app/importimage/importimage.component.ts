@@ -22,6 +22,7 @@ export class ImportimageComponent implements OnInit {
   visible = false;
   ceTerrain = this.stockageterrain.terrain;
 
+
   trueFalse() {
     this.visible = true;
   }
@@ -52,8 +53,10 @@ export class ImportimageComponent implements OnInit {
     this.import.image = window.btoa(this.ok);
     this.import.terrain = this.ter;
 
+   // console.log('import imag ',  this.import);
+
     // tslint:disable-next-line: no-angle-bracket-type-assertion
-    this.http.post('http://localhost:8086/uploadGroupImage/' + this.ceTerrain.id, this.import)
+    this.http.post('http://localhost:8086/uploadGroupImage/' + 1, this.import)
     .subscribe(
       res => {
         console.log(res);

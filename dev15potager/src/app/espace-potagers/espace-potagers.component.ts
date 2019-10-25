@@ -22,9 +22,12 @@ export class EspacePotagersComponent implements OnInit {
   datamembres;
   datademandes;
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private stockageterrain: StockageterrainService, private servisession: SessionuserService, private route: Router, private sanitizer: DomSanitizer) { }
+  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, /*private stockageterrain: StockageterrainService,*/ private servisession: SessionuserService, private route: Router, private sanitizer: DomSanitizer) { }
 
   //userConnecte;
+
+  //#region les variable de la classe
+
   potagerActif = JSON.parse(localStorage.getItem("terrain"));
   visible = false;
   messages;
@@ -37,12 +40,16 @@ export class EspacePotagersComponent implements OnInit {
   myimg;
   image;
   im;
+  imageJo;
+  imgBazoka;
 
+  //#endregion
   ngOnInit() {
 
-    console.log("ICI ICI :" + JSON.parse(localStorage.getItem("userConnecte")) );
+    //#region trop de blabla
+    console.log("ICI ICI :" + JSON.parse(localStorage.getItem("userConnecte")));
 
-    if(JSON.parse(localStorage.getItem("userConnecte")) == null){
+    if (JSON.parse(localStorage.getItem("userConnecte")) == null) {
       this.route.navigate(['/accueil']);
     }
     else {
@@ -63,71 +70,54 @@ export class EspacePotagersComponent implements OnInit {
         this.datademandes = response;
         //console.log(response);
       })
-      this.http.get('http://localhost:8086/messageGroupe/' + this.potagerActif.id).subscribe(response => {
+      /*this.http.get('http://localhost:8086/messageGroupe/' + this.potagerActif.id).subscribe(response => {
         this.messages = response;
         console.log("liste des messages")
         console.log(response)
-      })
-      this.http.get('http://localhost:8086/imageGroup/' + this.potagerActif.id).subscribe(response => {
-        this.images = response;
-      })
+      });*/
+      //#endregion
+      /*
+            this.http.get('http://localhost:8086/imageGroup/' + this.potagerActif.id).subscribe(response => {
+              this.images = response;
+            })*/
     }
 
     this.http.get('http://localhost:8086/messageGroupe/' + this.userConnecte.id).subscribe(response => {
       this.data = response;
       console.log(this.data);
 
-      this.http.get('http://localhost:8086/imageGroup/1').subscribe(response => {
-        this.datacod = response;
-        console.log(this.datacod);
-      });
+      /* this.http.get('http://localhost:8086/imageGroup/1').subscribe(response => {
+         this.datacod = response;
+         console.log(this.datacod);
+       });*/
 
-      const imr = this.http.get('http://localhost:8086/imageGroup/1').toPromise();
+      this.myimg = 'https://cxfile.advences.com/asia/photosi/asia-conseiller-voyages-destinations-alexandre-paris-inde-bm.jpg?photo_id=10623';
+
+      const imr = this.http.get('http://localhost:8086/image/5').toPromise();
 
       imr.then(
         r => {
           this.datacod = r;
+          this.imgBazoka = window.atob(this.datacod.image); // ok
+          console.log('img atob bazoka', this.imgBazoka);
 
-          console.log('img ', window.atob(this.datacod.image));
-          var the_file = new Blob([window.atob(this.datacod.image)]);
+          let the_file = new Blob([window.atob(this.datacod.image)]);
+          console.log('blob ', the_file);
 
-          console.log('the file', the_file);
+          let objectURL = URL.createObjectURL(the_file);
+          this.imageJo = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+          console.log(' image jo ', this.imageJo);
 
-          this.im = window.URL.createObjectURL(the_file);
+          new Response(the_file).text().then(t => this.im = t);
+          let objectUR = 'data:image/jpeg;base64,' + btoa(this.im);
 
-          console.log('the file va te fair ', this.im);
-
-          //this.myimg = this.sanitizer.bypassSecurityTrustUrl(this.im);
-          this.myimg = this.sanitizer.sanitize(SecurityContext.STYLE, 'url(' + this.im + ')');
-
-          console.log('the file vat e fai 2', this.myimg);
-
-
-          let base64data;
-          console.log('my img', this.myimg);
-
-          var reader = new FileReader();
-          reader.readAsDataURL(the_file);
-          reader.onloadend = function () {
-            base64data = reader.result;
-            console.log('image base ecf', base64data);
-
-          };
-          let mySrc;
-          /*  const reader = new FileReader();
-            reader.readAsDataURL(the_file);
-            reader.onloadend = function (e) {
-              // result includes identifier 'data:image/png;base64,' plus the base64 data
-              mySrc = reader.result;
-              console.log('ultime ', mySrc);
-  
-            };*/
-          console.log('ultime bis ', this.myimg);
-          //this.myimg = this.sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + base64data);
+          console.log('bto ', btoa(this.im));
+          this.imageJo = this.sanitizer.bypassSecurityTrustUrl(objectUR);
+          console.log('final imag j', this.imageJo);
         }
 
 
-      )
+      );
 
 
 
@@ -135,7 +125,7 @@ export class EspacePotagersComponent implements OnInit {
     });
   }
 
-
+  //#region blablabla
   openDemande(d) {
     this.servi.id = d.user.id;
     this.servi.nom = d.user.nom;
@@ -151,12 +141,8 @@ export class EspacePotagersComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
   modifDetailTerrain() {
-=======
-  modifDetailTerrain(){
     localStorage.setItem('terrain', JSON.stringify(this.potagerActif));
->>>>>>> a4ff5d21584b36aeb8643451072519b32d569666
     const mydial2 = this.dialog.open(ModalmodifterrainComponent, {
       height: '870px',
       width: '500px',
@@ -170,17 +156,10 @@ export class EspacePotagersComponent implements OnInit {
     this.ngOnInit();
   }
 
-<<<<<<< HEAD
   testProprio() {
-    console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.stockageterrain.terrain.proprietaire.id);
-    if (this.userConnecte.id == this.stockageterrain.terrain.proprietaire.id) {
+    console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.potagerActif.proprietaire.id);
+    if (this.userConnecte.id == this.potagerActif.proprietaire.id) {
       this.visible = true;
-=======
-  testProprio(){
-    console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.potagerActif.proprietaire.id );
-    if (this.userConnecte.id == this.potagerActif.proprietaire.id){
-      this.visible=true;
->>>>>>> a4ff5d21584b36aeb8643451072519b32d569666
 
     }
   }
@@ -192,15 +171,9 @@ export class EspacePotagersComponent implements OnInit {
     this.newMessage.auteur = this.userConnecte;
     this.newMessage.terrain = this.potagerActif;
     this.newMessage.image = null;
-<<<<<<< HEAD
 
-    const post = this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id + '/' + this.stockageterrain.terrain.id, this.newMessage).toPromise()
+    const post = this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id + '/' + this.potagerActif.id, this.newMessage).toPromise()
     post.then(d => { this.ngOnInit() })
-=======
-    
-    const post = this.http.post('http://localhost:8086/messageGroupe/' + this.userConnecte.id +  '/'+ this.potagerActif.id, this.newMessage).toPromise()
-    post.then(d => {this.ngOnInit()})
->>>>>>> a4ff5d21584b36aeb8643451072519b32d569666
     this.ngOnInit();
 
     this.newMessage = new Conversation();
@@ -211,18 +184,12 @@ export class EspacePotagersComponent implements OnInit {
       height: '700px',
       width: '500px',
     });
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> a4ff5d21584b36aeb8643451072519b32d569666
   }
 
-  isProprio(checked_user){
+  isProprio(checked_user) {
     //console.log("user checked id ", checked_user.id);
     //console.log("proprio ", this.potagerActif.proprietaire.id);
     return checked_user.id != this.potagerActif.proprietaire.id;
   }
 }
+//#endregion
