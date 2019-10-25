@@ -70,11 +70,11 @@ export class EspacePotagersComponent implements OnInit {
         this.datademandes = response;
         //console.log(response);
       })
-      /*this.http.get('http://localhost:8086/messageGroupe/' + this.potagerActif.id).subscribe(response => {
+      this.http.get('http://localhost:8086/messageGroupe/' + this.potagerActif.id).subscribe(response => {
         this.messages = response;
         console.log("liste des messages")
         console.log(response)
-      });*/
+      });
       //#endregion
       /*
             this.http.get('http://localhost:8086/imageGroup/' + this.potagerActif.id).subscribe(response => {
@@ -158,13 +158,10 @@ export class EspacePotagersComponent implements OnInit {
 
   testProprio() {
     console.log("userConnecte id : " + this.userConnecte + " stockterainproprio : " + this.potagerActif.proprietaire.id);
-    return this.userConnecte.id == this.potagerActif.proprietaire.id;
-  }
+    if (this.userConnecte.id == this.potagerActif.proprietaire.id) {
+      this.visible = true;
 
-  isProprio(checked_user) {
-    //console.log("user checked id ", checked_user.id);
-    //console.log("proprio ", this.potagerActif.proprietaire.id);
-    return checked_user.id != this.potagerActif.proprietaire.id;
+    }
   }
 
 
@@ -187,6 +184,12 @@ export class EspacePotagersComponent implements OnInit {
       height: '700px',
       width: '500px',
     });
+  }
+
+  isProprio(checked_user) {
+    //console.log("user checked id ", checked_user.id);
+    //console.log("proprio ", this.potagerActif.proprietaire.id);
+    return checked_user.id != this.potagerActif.proprietaire.id;
   }
 }
 //#endregion
