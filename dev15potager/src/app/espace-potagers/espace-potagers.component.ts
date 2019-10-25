@@ -35,7 +35,7 @@ export class EspacePotagersComponent implements OnInit {
   datamembres;
   datademandes;
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, private servisession: SessionuserService, private route: Router, private sanitizer: DomSanitizer) { }
+  constructor(private http: HttpClient, private dialog: MatDialog, private servi: ServicedemandeService, /*private stockageterrain: StockageterrainService,*/ private servisession: SessionuserService, private route: Router, private sanitizer: DomSanitizer) { }
 
   //userConnecte;
 
@@ -117,7 +117,7 @@ export class EspacePotagersComponent implements OnInit {
         console.log('dataconv' , this.dataconv);
       });
 
-      const imr = this.http.get('http://localhost:8086/image/3').toPromise();
+      const imr = this.http.get('http://localhost:8086/image/5').toPromise();
 
 
       imr.then(
@@ -147,7 +147,7 @@ export class EspacePotagersComponent implements OnInit {
 
 
 
-    }
+    });
   }
 
   //#region blablabla

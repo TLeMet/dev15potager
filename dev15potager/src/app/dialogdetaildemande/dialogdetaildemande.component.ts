@@ -18,6 +18,7 @@ export class DialogdetaildemandeComponent implements OnInit {
   messageuser;
   dateuser;
   user: User = new User;
+  terrainSelect = JSON.parse(localStorage.getItem("terrain"));
 
   constructor(private http: HttpClient, private servi: ServicedemandeService,private dialogRef: MatDialogRef<DialogdetaildemandeComponent>) { }
 
@@ -30,6 +31,7 @@ export class DialogdetaildemandeComponent implements OnInit {
     this.messageuser = this.servi.message;
     this.dateuser = this.servi.dateDemande;
     this.user = this.servi.user;
+
   }
 
   closeDialog() {
@@ -37,10 +39,12 @@ export class DialogdetaildemandeComponent implements OnInit {
   }
 
   acceptDemand(){
-    //Mettre le terrain
-    this.http.post('http://localhost:8086/accept.userofterrain/' + this.id + '/1', this.user)
-    .subscribe(
+    const dele2 = this.http.post('http://localhost:8086/accept.userofterrain/' + this.id + '/' + this.terrainSelect.id, this.user).toPromise();
+    
+    dele2.then(
       data=>{
+        this.dialogRef.close();
+        location.reload();
       }, err =>{
         console.log(err)
       }
@@ -49,12 +53,12 @@ export class DialogdetaildemandeComponent implements OnInit {
   }
 
   refuseDemand(){
-    //Mettre le terrain
     console.log(this.id);
-    const dele = this.http.delete('http://localhost:8086/del.userofterrain/' + this.id + "/1").toPromise();
+    const dele = this.http.delete('http://localhost:8086/del.userofterrain/' + this.id + "/" + this.terrainSelect.id).toPromise();
     dele.then(
     ar =>{
-      this.ngOnInit();
+      this.dialogRef.close();
+      location.reload();
     }
   )
   this.dialogRef.close('Pizza!');
