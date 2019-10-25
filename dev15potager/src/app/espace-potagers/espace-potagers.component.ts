@@ -147,7 +147,7 @@ export class EspacePotagersComponent implements OnInit {
 
 
 
-    });
+    }
   }
 
   //#region blablabla
