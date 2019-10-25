@@ -162,8 +162,8 @@ export class EspacePotagersComponent implements OnInit {
     this.servi.dateDemande = d.dateDemande;
     this.servi.user = d.user;
     const mydial2 = this.dialog.open(DialogdetaildemandeComponent, {
-      height: '680px',
-      width: '1400px',
+      height: '450px',
+      width: '800px',
     });
   }
 
