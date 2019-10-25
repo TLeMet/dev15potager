@@ -1,6 +1,6 @@
 
 .couleurfond {
-    background-color: rgb(212, 255, 248);
+    background-color: rgb(214, 255, 228);
 }
 
 .titre {
@@ -14,3 +14,9 @@
     font : 200% georgia, palatino, serif;
     font-weight: bold;
 }
+
+.espace {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }

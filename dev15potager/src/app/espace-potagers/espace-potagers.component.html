@@ -110,6 +110,7 @@
             </table>
         </div>
     </div>
+
     <div class="col-sm-5">
         <h2 class="text-center titre2">Actualités du potager</h2>
         <hr>
@@ -127,9 +128,12 @@
                     <div class="form-group">
                         <textarea class="form-control" name="message" placeholder="Discuter..." rows=4 [(ngModel)]="newMessage.message"></textarea>                     
                     </div>
-                <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
+                    <div class="text-center">
+
+                        <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
+                    </div>
                 <br>
-            <app-apimaps></app-apimaps>
+            
 
             </div>
             <div class="col-sm-1"></div>
@@ -165,12 +169,17 @@
                                     </ul>
                         </div>
                       </div>
-                <button mat-raised-button (click)="RajoutCard()">
-                    <mat-icon>add_circle</mat-icon>
-                </button>
+                      <div class="text-center">
+                          <button mat-raised-button (click)="RajoutCard()">
+                              <mat-icon>add_circle</mat-icon>
+                          </button>
+
+                      </div>
             </div>
             <div class="col-sm-1"></div>
         </div>
+        <br><br>
+        <app-apimaps></app-apimaps>
     </div>
     <div class="col-sm-1"></div>
 </div>
