@@ -45,6 +45,8 @@
         </table>
 
         <hr>
+
+        <br><br>
         <h2 class="titre2">Membres</h2>
         <table>
                 <col width="170px">
@@ -77,6 +79,8 @@
 
 
         <hr>
+        <br><br>
+
         <div *ngIf="testProprio()">
         <h2 class="titre2">Demandes d'adhésion à votre potager</h2>
         <!-- Cacher si le gars n'est pas proprio -->
@@ -109,6 +113,10 @@
                 </tbody>
             </table>
         </div>
+        <hr>
+        <br><br>
+        <h2 class="titre2">Calendrier des événements</h2>
+        <app-calendar></app-calendar>
     </div>
 
     <div class="col-sm-5">
@@ -185,14 +193,4 @@
 </div>
 <br><br>
 
-<div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-5">
-        <hr>
-        <h2 class="titre2">Messagerie</h2>
-        <app-calendar></app-calendar>
-    </div>
-    <div class="col-sm-5"></div>
-    <div class="col-sm-1"></div>
-</div>
 
