@@ -1,14 +1,10 @@
 <app-navbar-perso></app-navbar-perso>
-<br><br>
+<br><br><br>
 
 <div class="row">
-    <div class="col-sm-12 text-center">
-        <h1 class="titre">{{ potagerActif.nom }}</h1>
-    </div>
-    <br><br><br>
     <div class="col-sm-1"></div>
-    <div class="col-sm-5 couleurfond">
-        <h2 class="titre2">Info potager</h2>     
+    <div class="col-sm-5">
+        <h2>Info potager</h2>     
         <table>
             <col width="130px">
             <col width="130px">
@@ -23,7 +19,7 @@
                     <th >Ville</th>
                     <th >Surface</th>
                     <th >Description</th>
-                    <th *ngIf="testProprio()" mat-button>Modifier</th>
+                    <th *ngIf="visible" mat-button>Modifier</th>
                 </tr>
             </thead>
             
@@ -34,7 +30,7 @@
                     <td>{{potagerActif.ville}}</td>
                     <td>{{potagerActif.surface}} m²</td>
                     <td>{{potagerActif.description}}</td>
-                    <td *ngIf="testProprio()">
+                    <td *ngIf="visible">
                         <button (click)="modifDetailTerrain()" class="text-center" style="background-color:darkturquoise" button mat-mini-fab>
                         <mat-icon>edit</mat-icon>
                         </button>
@@ -120,7 +116,7 @@
     </div>
 
     <div class="col-sm-5">
-        <h2 class="text-center titre2">Actualités du potager</h2>
+        <h2 class="text-center">Actualités du potager</h2>
         <hr>
         <div class="row"> 
             <div class="col-sm-6">
