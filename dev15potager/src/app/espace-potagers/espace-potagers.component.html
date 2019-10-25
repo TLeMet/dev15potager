@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col-sm-1"></div>
-    <div class="col-sm-5">
+    <div class="col-sm-5 couleurfond">
         <h2>Info potager</h2>     
         <table>
             <col width="130px">
@@ -123,9 +123,11 @@
                     <div class="form-group">
                         <textarea class="form-control" name="message" placeholder="Discuter..." rows=4 [(ngModel)]="newMessage.message"></textarea>                     
                     </div>
-                <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
+                    <div class="text-center">
+                        <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
+                    </div>
                 <br>
-            <app-apimaps></app-apimaps>
+            
 
             </div>
             <div class="col-sm-1"></div>
@@ -167,6 +169,10 @@
             </div>
             <div class="col-sm-1"></div>
         </div>
+        <div class="text-center">
+            <app-apimaps></app-apimaps>
+        </div>
+
     </div>
     <div class="col-sm-1"></div>
 </div>
