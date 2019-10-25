@@ -23,7 +23,7 @@
                     <th >Ville</th>
                     <th >Surface</th>
                     <th >Description</th>
-                    <th *ngIf="visible" mat-button>Modifier</th>
+                    <th *ngIf="testProprio()" mat-button>Modifier</th>
                 </tr>
             </thead>
             
@@ -34,7 +34,7 @@
                     <td>{{potagerActif.ville}}</td>
                     <td>{{potagerActif.surface}} m²</td>
                     <td>{{potagerActif.description}}</td>
-                    <td *ngIf="visible">
+                    <td *ngIf="testProprio()">
                         <button (click)="modifDetailTerrain()" class="text-center" style="background-color:darkturquoise" button mat-mini-fab>
                         <mat-icon>edit</mat-icon>
                         </button>
@@ -67,7 +67,7 @@
                     <td>{{m.user.prenom}}</td>
                     <td>{{m.user.mail}}</td>
                     <td>{{m.user.tel}}</td>
-                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)&&testProprio()" (click)= exclureUser(m.user) style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
+                    <td><button class="btn btn-primary" *ngIf="isProprio(m.user)" (click)= exclureUser(m.user) style="background-color:rgb(255, 148, 148)" button mat-mini-fab>
                         <mat-icon>highlight_off</mat-icon>
                     </button></td>  
                 </tr>
@@ -77,7 +77,7 @@
 
 
         <hr>
-        <div *ngIf="visible">
+        <div *ngIf="testProprio()">
         <h2 class="titre2">Demandes d'adhésion à votre potager</h2>
         <!-- Cacher si le gars n'est pas proprio -->
         
@@ -127,11 +127,9 @@
                     <div class="form-group">
                         <textarea class="form-control" name="message" placeholder="Discuter..." rows=4 [(ngModel)]="newMessage.message"></textarea>                     
                     </div>
-                    <div class="text-center">
-                        <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
-                    </div>
+                <button (click)="posterMessage()" class="btn btn-secondary">poster</button>
                 <br>
-            
+            <app-apimaps></app-apimaps>
 
             </div>
             <div class="col-sm-1"></div>
@@ -173,10 +171,6 @@
             </div>
             <div class="col-sm-1"></div>
         </div>
-        <div class="text-center">
-            <app-apimaps></app-apimaps>
-        </div>
-
     </div>
     <div class="col-sm-1"></div>
 </div>
