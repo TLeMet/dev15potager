@@ -19,7 +19,7 @@
                     <th >Ville</th>
                     <th >Surface</th>
                     <th >Description</th>
-                    <th *ngIf="visible" mat-button>Modifier</th>
+                    <th *ngIf="testProprio()" mat-button>Modifier</th>
                 </tr>
             </thead>
             
@@ -30,7 +30,7 @@
                     <td>{{potagerActif.ville}}</td>
                     <td>{{potagerActif.surface}} m²</td>
                     <td>{{potagerActif.description}}</td>
-                    <td *ngIf="visible">
+                    <td *ngIf="testProprio()">
                         <button (click)="modifDetailTerrain()" class="text-center" style="background-color:darkturquoise" button mat-mini-fab>
                         <mat-icon>edit</mat-icon>
                         </button>
@@ -73,7 +73,7 @@
 
 
         <hr>
-        <div *ngIf="visible">
+        <div *ngIf="testProprio()">
         <h2>Demandes d'adhésion à votre potager</h2>
         <!-- Cacher si le gars n'est pas proprio -->
         
